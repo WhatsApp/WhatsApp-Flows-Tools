@@ -7,13 +7,13 @@
 
 import crypto from "crypto";
 
-export const decryptRequest = (body, privatePem) => {
+export const decryptRequest = (body, privatePem, passphrase) => {
   const { encrypted_aes_key, encrypted_flow_data, initial_vector } = body;
 
   // decrypt AES key created by client
   const decryptedAesKey = crypto.privateDecrypt(
     {
-      key: crypto.createPrivateKey(privatePem),
+      key: crypto.createPrivateKey({ key: privatePem, passphrase}),
       padding: crypto.constants.RSA_PKCS1_OAEP_PADDING,
       oaepHash: "sha256",
     },

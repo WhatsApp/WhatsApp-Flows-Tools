@@ -16,9 +16,11 @@ Refer to the [docs here for implementing your Flow Endpoint](https://developers.
 1. Create an account on Glitch to have access to all features mentioned here.
 2. Remix this project on Glitch.
 3. Click on the file ".env" on the left sidebar, then click on `✏️ Plain text` on top. **Do not edit it directly from UI as it will break your key formatting.**
-4. Edit it with your private key. Make sure a multiline key has the same line breaks like below. Env variables are only visible to the owner of the Glitch project. **Use a separate private key for testing only, and not your production key.** Follow [these steps to create a key pair](https://developers.facebook.com/docs/whatsapp/flows/guides/implementingyourflowendpoint#upload_public_key) and upload it to your account.
+4. Edit it with your private key and passphrase. Make sure a multiline key has the same line breaks like below. Env variables are only visible to the owner of the Glitch project. **Use a separate private key for testing only, and not your production key.** Follow [these steps to create a key pair](https://developers.facebook.com/docs/whatsapp/flows/guides/implementingyourflowendpoint#upload_public_key) and upload it to your account.
 
 ```
+PASSPHRASE="my-secret"
+
 PRIVATE_KEY="-----[REPLACE THIS] BEGIN RSA PRIVATE KEY-----
 MIIE...
 ...
