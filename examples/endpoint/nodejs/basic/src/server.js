@@ -14,13 +14,13 @@ app.use(express.json());
 
 const PORT = process.env.PORT;
 const PRIVATE_KEY = process.env.PRIVATE_KEY;
-/* 
+/*
 Example:
-```-----BEGIN RSA PRIVATE KEY----
+```-----[REPLACE THIS] BEGIN RSA PRIVATE KEY-----
 MIIE...
 ...
 ...AQAB
------END RSA PRIVATE KEY-----```
+-----[REPLACE THIS] END RSA PRIVATE KEY-----```
 */
 
 app.post("/", async ({ body }, res) => {
@@ -29,7 +29,10 @@ app.post("/", async ({ body }, res) => {
     PRIVATE_KEY
   );
 
+  console.log('💬 Decrypted Request:', decryptedBody);
   const screenResponse = await getNextScreen(decryptedBody);
+  console.log('👉 Response to Encrypt:', screenResponse);
+
   res.send(encryptResponse(screenResponse, aesKeyBuffer, initialVectorBuffer));
 });
 
