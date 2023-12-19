@@ -24,6 +24,10 @@ MIIE...
 */
 
 app.post("/", async ({ body }, res) => {
+  if (!PRIVATE_KEY) {
+    throw new Error('Private key is empty. Please check your env variable "PRIVATE_KEY".')
+  }
+
   const { decryptedBody, aesKeyBuffer, initialVectorBuffer } = decryptRequest(
     body,
     PRIVATE_KEY
