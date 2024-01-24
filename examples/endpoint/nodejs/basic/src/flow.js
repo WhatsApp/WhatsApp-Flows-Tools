@@ -40,23 +40,32 @@ export const getNextScreen = async (decryptedBody) => {
     };
   }
 
-  if (action === "data_exchange" && screen === "MY_SCREEN") {
-    // TODO: process flow input data
-    console.info("Input name:", data?.name);
+  if (action === "data_exchange") {
+    // handle the request based on the current screen
+    switch (screen) {
+      case "MY_SCREEN":
+        // TODO: process flow input data
+        console.info("Input name:", data?.name);
 
-    // send success payload to finish the flow
-    return {
-      version,
-      screen: "SUCCESS",
-      data: {
-        extension_message_response: {
-          params: {
-            flow_token,
+        // send success response to complete and close the flow
+        return {
+          version,
+          screen: "SUCCESS",
+          data: {
+            extension_message_response: {
+              params: {
+                flow_token,
+              },
+            },
           },
-        },
-      },
-    };
+        };
+      default:
+        break;
+    }
   }
 
-  throw new Error(`Unsupported request action ${action} & screen: ${screen}`);
+  console.error("Unhandled request body:", decryptedBody);
+  throw new Error(
+    "Unhandled endpoint request. Make sure you handle the request action & screen logged above."
+  );
 };
