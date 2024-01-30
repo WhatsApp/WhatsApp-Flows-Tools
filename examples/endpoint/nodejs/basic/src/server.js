@@ -6,7 +6,7 @@
  */
 
 import express from "express";
-import { decryptRequest, encryptResponse } from "./encryption.js";
+import { decryptRequest, encryptResponse, FlowEndpointException } from "./encryption.js";
 import { getNextScreen } from "./flow.js";
 import crypto from "crypto";
 
@@ -44,12 +44,18 @@ app.post("/", async (req, res) => {
     return res.status(432).send();
   }
 
-  const { decryptedBody, aesKeyBuffer, initialVectorBuffer } = decryptRequest(
-    req.body,
-    PRIVATE_KEY,
-    PASSPHRASE
-  );
+  let decryptedRequest = null;
+  try {
+    decryptedRequest = decryptRequest(req.body, PRIVATE_KEY, PASSPHRASE);
+  } catch (err) {
+    console.error(err);
+    if (err instanceof FlowEndpointException) {
+      return res.status(err.statusCode).send();
+    }
+    return res.status(500).send();
+  }
 
+  const { aesKeyBuffer, initialVectorBuffer, decryptedBody } = decryptedRequest;
   console.log("💬 Decrypted Request:", decryptedBody);
 
   // TODO: Uncomment this block and add your flow token validation logic.
