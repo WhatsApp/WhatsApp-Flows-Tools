@@ -15,9 +15,12 @@ Refer to the [docs here for implementing your Flow Endpoint](https://developers.
 
 1. Create an account on Glitch to have access to all features mentioned here.
 2. Remix this project on Glitch.
-3. Click on the file ".env" on the left sidebar, then click on `✏️ Plain text` on top. **Do not edit it directly from UI as it will break your key formatting.**
-4. Edit it with your private key and passphrase. Make sure a multiline key has the same line breaks like below. Env variables are only visible to the owner of the Glitch project. **Use a separate private key for testing only, and not your production key.** Follow [these steps to create a key pair](https://developers.facebook.com/docs/whatsapp/flows/guides/implementingyourflowendpoint#upload_public_key) and upload it to your account.
-
+3. Create a private & public key pair for testing, if you haven't already, using the included script `src/keyGenerator.js`. Run the below command in the terminal to generate a key pair, then follow [these steps to upload the key pair](https://developers.facebook.com/docs/whatsapp/flows/guides/implementingyourflowendpoint#upload_public_key) to your business phone number.
+```
+ node src/keyGenerator.js
+```
+4. Click on the file ".env" on the left sidebar, **then click on `✏️ Plain text` on top. Do not edit it directly from UI as it will break your key formatting.**
+5. Edit it with your private key and passphrase. Make sure a multiline key has the same line breaks like below. Env variables are only visible to the owner of the Glitch project. **Use a separate private key for testing only, and not your production key.**
 ```
 PASSPHRASE="my-secret"
 
@@ -27,7 +30,6 @@ MIIE...
 ...xyz
 -----[REPLACE THIS] END RSA PRIVATE KEY-----"
 ```
-
-5. Use the new Glitch URL as your endpoint URL, eg: `https://project-name.glitch.me`. You can find this URL by clicking on `Share` on top right, then copy the `Live Site` URL.
-6. Edit `src/flow.js` with your logic to navigate between screens.
-7. Click on the `Logs` tab at the bottom to view server logs. The logs section also has a button to attach a debugger via Chrome devtools.
+6. Use the new Glitch URL as your endpoint URL, eg: `https://project-name.glitch.me`. You can find this URL by clicking on `Share` on top right, then copy the `Live Site` URL.
+7. Edit `src/flow.js` with your logic to navigate between the Flow screens.
+8. Click on the `Logs` tab at the bottom to view server logs. The logs section also has a button to attach a debugger via Chrome devtools.
