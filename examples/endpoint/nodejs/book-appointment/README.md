@@ -1,4 +1,5 @@
 # WhatsApp Flow Endpoint Server
+This endpoint example is designed to be used with the [appointment booking Flow template](https://developers.facebook.com/docs/whatsapp/flows/examples/templates#book-an-appointment)
 
 ## Flow Endpoint Docs
 
