@@ -1,0 +1,303 @@
+{
+    "version": "3.1",
+    "screens": [
+        {
+            "id": "SURVEY_SCREEN",
+            "title": "Survey",
+            "terminal": true,
+            "data": {},
+            "layout": {
+                "type": "SingleColumnLayout",
+                "children": [
+                    {
+                        "type": "Form",
+                        "name": "form",
+                        "children": [
+                            {
+                                "type": "TextHeading",
+                                "text": "Tour Company Feedback Survey"
+                            },
+                            {
+                                "type": "TextCaption",
+                                "text": "Enhancing Your Tour Experience. Your Valuable Feedback Matters.\n\n"
+                            },
+                            {
+                                "type": "TextSubheading",
+                                "text": "How did you hear about our tour company?"
+                            },
+                            {
+                                "type": "RadioButtonsGroup",
+                                "required": true,
+                                "name": "source",
+                                "data-source": [
+                                    {
+                                        "id": "0",
+                                        "title": "Online search"
+                                    },
+                                    {
+                                        "id": "1",
+                                        "title": "Social media"
+                                    },
+                                    {
+                                        "id": "2",
+                                        "title": " Referral from a friend/family"
+                                    },
+                                    {
+                                        "id": "3",
+                                        "title": "Advertisement"
+                                    },
+                                    {
+                                        "id": "4",
+                                        "title": "Others"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "TextSubheading",
+                                "text": "Which type of tour did you recently experience with us?"
+                            },
+                            {
+                                "type": "RadioButtonsGroup",
+                                "required": true,
+                                "name": "tour_type",
+                                "data-source": [
+                                    {
+                                        "id": "0",
+                                        "title": "Cultural tour"
+                                    },
+                                    {
+                                        "id": "1",
+                                        "title": "Adventure tour"
+                                    },
+                                    {
+                                        "id": "2",
+                                        "title": "Historical tour"
+                                    },
+                                    {
+                                        "id": "3",
+                                        "title": "Wildlife tour"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "TextSubheading",
+                                "text": "On a scale of 1 to 5, how would you rate the overall quality of the tour?"
+                            },
+                            {
+                                "type": "RadioButtonsGroup",
+                                "required": true,
+                                "name": "tour_quality",
+                                "data-source": [
+                                    {
+                                        "id": "0",
+                                        "title": "1 - Poor"
+                                    },
+                                    {
+                                        "id": "1",
+                                        "title": "2 - Below Average"
+                                    },
+                                    {
+                                        "id": "2",
+                                        "title": "3 - Average"
+                                    },
+                                    {
+                                        "id": "3",
+                                        "title": "4 - Good"
+                                    },
+                                    {
+                                        "id": "4",
+                                        "title": "5 - Excellent"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "TextSubheading",
+                                "text": "What influenced your decision to choose our tour company?"
+                            },
+                            {
+                                "type": "RadioButtonsGroup",
+                                "required": true,
+                                "name": "decision_influencer",
+                                "data-source": [
+                                    {
+                                        "id": "0",
+                                        "title": "Positive reviews"
+                                    },
+                                    {
+                                        "id": "1",
+                                        "title": "Pricing"
+                                    },
+                                    {
+                                        "id": "2",
+                                        "title": "Tour destinations offered"
+                                    },
+                                    {
+                                        "id": "3",
+                                        "title": "Reputation"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "TextSubheading",
+                                "text": "How knowledgeable and friendly were our tour guides?"
+                            },
+                            {
+                                "type": "RadioButtonsGroup",
+                                "required": true,
+                                "name": "tour_guides",
+                                "data-source": [
+                                    {
+                                        "id": "0",
+                                        "title": "Knowledgeable and friendly"
+                                    },
+                                    {
+                                        "id": "1",
+                                        "title": "Knowledgeable but not friendly"
+                                    },
+                                    {
+                                        "id": "2",
+                                        "title": "Friendly but not knowledgeable"
+                                    },
+                                    {
+                                        "id": "3",
+                                        "title": "Neither of the two"
+                                    },
+                                    {
+                                        "id": "4",
+                                        "title": "I didn’t interact with them"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "TextSubheading",
+                                "text": "What aspects of the tour did you find most enjoyable?"
+                            },
+                            {
+                                "type": "RadioButtonsGroup",
+                                "required": true,
+                                "name": "aspects_enjoyed",
+                                "data-source": [
+                                    {
+                                        "id": "0",
+                                        "title": "Tourist attractions visited"
+                                    },
+                                    {
+                                        "id": "1",
+                                        "title": "Tour guide's commentary"
+                                    },
+                                    {
+                                        "id": "2",
+                                        "title": " Group dynamics/interaction"
+                                    },
+                                    {
+                                        "id": "3",
+                                        "title": "Activities offered"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "TextSubheading",
+                                "text": "Were there any aspects of the tour that could be improved?"
+                            },
+                            {
+                                "type": "RadioButtonsGroup",
+                                "required": true,
+                                "name": "improvements",
+                                "data-source": [
+                                    {
+                                        "id": "0",
+                                        "title": "Tour itinerary"
+                                    },
+                                    {
+                                        "id": "1",
+                                        "title": "Communication before the tour"
+                                    },
+                                    {
+                                        "id": "2",
+                                        "title": "Transportation arrangements"
+                                    },
+                                    {
+                                        "id": "3",
+                                        "title": "Advertisement"
+                                    },
+                                    {
+                                        "id": "4",
+                                        "title": "Accommodation quality"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "TextSubheading",
+                                "text": "Would you recommend our tour company to a friend or family member?"
+                            },
+                            {
+                                "type": "RadioButtonsGroup",
+                                "required": true,
+                                "name": "recommend",
+                                "data-source": [
+                                    {
+                                        "id": "0",
+                                        "title": "Yes, definitely"
+                                    },
+                                    {
+                                        "id": "1",
+                                        "title": "Yes, but with reservations"
+                                    },
+                                    {
+                                        "id": "2",
+                                        "title": "No, I would not"
+                                    }
+                                ]
+                            },
+                             {
+                                "type": "TextSubheading",
+                                "text": "How likely are you to book another tour with us in the future?"
+                            },
+                            {
+                                "type": "RadioButtonsGroup",
+                                "required": true,
+                                "name": "return_booking",
+                                "data-source": [
+                                    {
+                                        "id": "0",
+                                        "title": "Very likely"
+                                    },
+                                    {
+                                        "id": "1",
+                                        "title": "Likely"
+                                    },
+                                    {
+                                        "id": "2",
+                                        "title": "Undecided"
+                                    },
+                                    {
+                                        "id": "3",
+                                        "title": "Unlikely"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Footer",
+                                "label": "Submit",
+                                "on-click-action": {
+                                    "name": "complete",
+                                    "payload": {
+                                        "source": "${form.source}",
+                                        "tour_type": "${form.tour_type}",
+                                        "tour_quality": "${form.tour_quality}",
+                                        "decision_influencer": "${form.decision_influencer}",
+                                        "tour_guides": "${form.tour_guides}",
+                                        "aspects_enjoyed": "${form.aspects_enjoyed}",
+                                        "improvements": "${form.improvements}",
+                                        "recommend": "${form.recommend}",
+                                        "return_booking": "${form.return_booking}"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}
