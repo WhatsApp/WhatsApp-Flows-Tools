@@ -1,0 +1,57 @@
+{
+  "version": "3.1",
+  "screens": [
+    {
+      "id": "CONTACT_US",
+      "title": "Contact us",
+      "terminal": true,
+      "data": {},
+      "layout": {
+        "type": "SingleColumnLayout",
+        "children": [
+          {
+            "type": "Form",
+            "name": "form",
+            "children": [
+              {
+                "type": "TextInput",
+                "required": true,
+                "label": "First Name",
+                "name": "first_name"
+              },
+              {
+                "type": "TextInput",
+                "required": true,
+                "label": "Last Name/Surname",
+                "name": "second_name"
+              },
+              {
+                "type": "TextArea",
+                "required": true,
+                "label": "Type your message",
+                "name": "info"
+              },
+              {
+                "type": "TextBody",
+                "text": "We will try to reach out to you as soon as possible! Please allow 2 business days to receive a response."
+              },
+              {
+                "type": "Footer",
+                "label": "Submit",
+                "on-click-action": {
+                  "name": "complete",
+                  "payload": {
+                    "firstname": "${form.first_name}",
+                    "secondname": "${form.second_name}",
+                    "issue": "${form.info}",
+                    "flow_key": "contact"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

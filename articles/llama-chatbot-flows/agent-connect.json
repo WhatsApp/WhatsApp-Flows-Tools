@@ -1,0 +1,102 @@
+{
+    "version": "3.1",
+    "screens": [
+      {
+        "id": "TALK_TO_AN_AGENT",
+        "title": "Talk to an Agent",
+        "terminal": true,
+        "data": {},
+        "layout": {
+          "type": "SingleColumnLayout",
+          "children": [
+            {
+              "type": "Form",
+              "name": "form",
+              "children": [
+                {
+                  "type": "TextInput",
+                  "required": true,
+                  "label": "First Name",
+                  "name": "first_name"
+                },
+                {
+                  "type": "TextInput",
+                  "required": true,
+                  "label": "Last Name/Surname",
+                  "name": "second_name"
+                },
+                {
+                  "type": "CheckboxGroup",
+                  "name": "services_interested",
+                  "label":"Service(s) interested in",
+                  "required":true,
+                  "data-source": [
+                    {
+                      "id": "accomodation_services",
+                      "title": "Accommodation Services"
+                    },
+                    {
+                      "id": "spa_services",
+                      "title": "Spa Services"
+                    },
+                    {
+                      "id": "dining_services",
+                      "title": "Dining Services"
+                    },
+                    {
+                      "id": "recreational_services",
+                      "title": "Recreational Facilities"
+                    },
+                    {
+                      "id": "business_conf_services",
+                      "title": "Business & Conference Services"
+                    },
+                    {
+                      "id": "transportation_services",
+                      "title": "Transportation Services"
+                    },
+                     {
+                      "id": "accessibility_services",
+                      "title": "Accessibility Services"
+                    },
+                    {
+                      "id": "pet_services",
+                      "title": "Pet-Friendly Services"
+                    },
+                    {
+                      "id": "any_other_services",
+                      "title": "Other Services"
+                    }
+                  ]
+                },
+                {
+                  "type": "TextArea",
+                  "required": false,
+                  "label": "More information",
+                  "name": "additional_info"
+                },
+                {
+                    "type": "TextBody",
+                    "text": "We will try to reach out to you as soon as possible! Please allow 2 business days to receive a response."
+                },
+                {
+                  "type": "Footer",
+                  "label": "Submit",
+                  "on-click-action": {
+                    "name": "complete",
+                    "payload": {
+                      "firstname": "${form.first_name}",
+                      "secondname": "${form.second_name}",
+                      "services_interested": "${form.services_interested}",
+                      "additional_info": "${form.additional_info}",
+                      "flow_key": "agentconnect"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  }
