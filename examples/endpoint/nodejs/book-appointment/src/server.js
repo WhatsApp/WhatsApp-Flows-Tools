@@ -14,6 +14,7 @@ const app = express();
 
 app.use(
   express.json({
+    // store the raw request body to use it for signature verification
     verify: (req, res, buf, encoding) => {
       req.rawBody = buf?.toString(encoding || "utf8");
     },
