@@ -1,20 +1,20 @@
 {
-  "name": "whatsapp-cloudapi-quick-start",
+  "name": "whatsapp-echo-webhook",
   "version": "1.0.0",
-  "description": "An example webhook for WhatsApp Cloud API quick start tutorial.",
-  "main": "app.js",
+  "description": "An example WhatsApp webhook server https://developers.facebook.com/docs/whatsapp/sample-app-endpoints",
+  "main": "server.js",
+  "type": "module",
   "scripts": {
-    "start": "node app.js"
+    "start": "node server.js"
   },
-  "author": "WhatsApp",
-  "license": "ISC",
+  "author": "WhatsApp Team",
+  "license": "MIT",
   "dependencies": {
-    "axios": "^0.27.2",
-    "body-parser": "^1.20.0",
-    "express": "^4.18.1",
-    "request": "^2.88.2"
+    "axios": "^1.6.7",
+    "express": "^4.18.2"
   },
   "engines": {
-    "node": "12.x"
-  }
+    "node": ">=16.0.0"
+  },
+  "keywords": []
 }
