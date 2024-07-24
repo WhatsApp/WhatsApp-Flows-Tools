@@ -1,5 +1,5 @@
 # WhatsApp Flow Endpoint Server
-This endpoint example is designed to be used with the [pre-approved loan Flow template](https://developers.facebook.com/docs/whatsapp/flows/examples/templates)
+This endpoint example is designed to be used with the [pre-approved loan Flow template](https://developers.facebook.com/docs/whatsapp/flows/gettingstarted/pre-approved-loan)
 
 ## Flow Endpoint Docs
 
