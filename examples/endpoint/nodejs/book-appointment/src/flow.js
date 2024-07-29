@@ -8,7 +8,6 @@
 // this object is generated from Flow Builder under "..." > Endpoint > Snippets > Responses
 const SCREEN_RESPONSES = {
   APPOINTMENT: {
-    version: "3.0",
     screen: "APPOINTMENT",
     data: {
       department: [
@@ -95,7 +94,6 @@ const SCREEN_RESPONSES = {
     },
   },
   DETAILS: {
-    version: "3.0",
     screen: "DETAILS",
     data: {
       department: "beauty",
@@ -105,7 +103,6 @@ const SCREEN_RESPONSES = {
     },
   },
   SUMMARY: {
-    version: "3.0",
     screen: "SUMMARY",
     data: {
       appointment:
@@ -123,12 +120,10 @@ const SCREEN_RESPONSES = {
     },
   },
   TERMS: {
-    version: "3.0",
     screen: "TERMS",
     data: {},
   },
   SUCCESS: {
-    version: "3.0",
     screen: "SUCCESS",
     data: {
       extension_message_response: {
@@ -146,7 +141,6 @@ export const getNextScreen = async (decryptedBody) => {
   // handle health check request
   if (action === "ping") {
     return {
-      version,
       data: {
         status: "active",
       },
@@ -157,7 +151,6 @@ export const getNextScreen = async (decryptedBody) => {
   if (data?.error) {
     console.warn("Received client error:", data);
     return {
-      version,
       data: {
         acknowledged: true,
       },

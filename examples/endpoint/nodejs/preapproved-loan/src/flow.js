@@ -9,7 +9,6 @@
 // To navigate to a screen, return the corresponding response from the endpoint. Make sure the response is enccrypted.
 const SCREEN_RESPONSES = {
   LOAN: {
-    version: "3.0",
     screen: "LOAN",
     data: {
       tenure: [
@@ -48,7 +47,6 @@ const SCREEN_RESPONSES = {
     },
   },
   DETAILS: {
-    version: "3.0",
     screen: "DETAILS",
     data: {
       is_upi: false,
@@ -59,7 +57,6 @@ const SCREEN_RESPONSES = {
     },
   },
   SUMMARY: {
-    version: "3.0",
     screen: "SUMMARY",
     data: {
       amount: "\u20b9 7,20,000",
@@ -71,12 +68,10 @@ const SCREEN_RESPONSES = {
     },
   },
   COMPLETE: {
-    version: "3.0",
     screen: "COMPLETE",
     data: {},
   },
   SUCCESS: {
-    version: "3.0",
     screen: "SUCCESS",
     data: {
       extension_message_response: {
@@ -111,7 +106,6 @@ export const getNextScreen = async (decryptedBody) => {
   // handle health check request
   if (action === "ping") {
     return {
-      version,
       data: {
         status: "active",
       },
@@ -122,7 +116,6 @@ export const getNextScreen = async (decryptedBody) => {
   if (data?.error) {
     console.warn("Received client error:", data);
     return {
-      version,
       data: {
         acknowledged: true,
       },

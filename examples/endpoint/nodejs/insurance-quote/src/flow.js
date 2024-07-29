@@ -9,7 +9,6 @@
 // To navigate to a screen, return the corresponding response from the endpoint. Make sure the response is encrypted.
 const SCREEN_RESPONSES = {
   APPLICANTS: {
-    version: "3.0",
     screen: "APPLICANTS",
     data: {
       cover: [
@@ -60,12 +59,10 @@ const SCREEN_RESPONSES = {
     },
   },
   COVER_LEVEL: {
-    version: "3.0",
     screen: "COVER_LEVEL",
     data: {},
   },
   EXCESS: {
-    version: "3.0",
     screen: "EXCESS",
     data: {
       excess: [
@@ -93,17 +90,14 @@ const SCREEN_RESPONSES = {
     },
   },
   DETAILS: {
-    version: "3.0",
     screen: "DETAILS",
     data: {},
   },
   YOUR_HEALTH: {
-    version: "3.0",
     screen: "YOUR_HEALTH",
     data: {},
   },
   ADDTIONAL_APPLICANT: {
-    version: "3.0",
     screen: "ADDTIONAL_APPLICANT",
     data: {
       additional_applicant_title: "Additional Applicant 1",
@@ -111,7 +105,6 @@ const SCREEN_RESPONSES = {
     },
   },
   POLICY_SELECTION: {
-    version: "3.0",
     screen: "POLICY_SELECTION",
     data: {
       recommended_policies: [
@@ -131,7 +124,6 @@ const SCREEN_RESPONSES = {
     },
   },
   SELECTED_POLICY: {
-    version: "3.0",
     screen: "SELECTED_POLICY",
     data: {
       selected_policy: "CS Simple",
@@ -141,7 +133,6 @@ const SCREEN_RESPONSES = {
     },
   },
   YOUR_QUOTE: {
-    version: "3.0",
     screen: "YOUR_QUOTE",
     data: {
       payment_method: [
@@ -159,7 +150,6 @@ const SCREEN_RESPONSES = {
     },
   },
   SUMMARY: {
-    version: "3.0",
     screen: "SUMMARY",
     data: {
       summary_policy: "CS Simple",
@@ -171,7 +161,6 @@ const SCREEN_RESPONSES = {
     },
   },
   SUCCESS: {
-    version: "3.0",
     screen: "SUCCESS",
     data: {
       extension_message_response: {
@@ -189,7 +178,6 @@ export const getNextScreen = async (decryptedBody) => {
   // handle health check request
   if (action === "ping") {
     return {
-      version,
       data: {
         status: "active",
       },
@@ -200,7 +188,6 @@ export const getNextScreen = async (decryptedBody) => {
   if (data?.error) {
     console.warn("Received client error:", data);
     return {
-      version,
       data: {
         acknowledged: true,
       },

@@ -10,7 +10,6 @@ export const getNextScreen = async (decryptedBody) => {
   // handle health check request
   if (action === "ping") {
     return {
-      version,
       data: {
         status: "active",
       },
@@ -21,7 +20,6 @@ export const getNextScreen = async (decryptedBody) => {
   if (data?.error) {
     console.warn("Received client error:", data);
     return {
-      version,
       data: {
         acknowledged: true,
       },
@@ -31,7 +29,6 @@ export const getNextScreen = async (decryptedBody) => {
   // handle initial request when opening the flow
   if (action === "INIT") {
     return {
-      version,
       screen: "MY_SCREEN",
       data: {
         // custom data for the screen
@@ -49,7 +46,6 @@ export const getNextScreen = async (decryptedBody) => {
 
         // send success response to complete and close the flow
         return {
-          version,
           screen: "SUCCESS",
           data: {
             extension_message_response: {

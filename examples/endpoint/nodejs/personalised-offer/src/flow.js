@@ -9,7 +9,6 @@
 // To navigate to a screen, return the corresponding response from the endpoint. Make sure the response is enccrypted.
 const SCREEN_RESPONSES = {
     PRODUCT_SELECTOR: {
-        "version": "3.0",
         "screen": "PRODUCT_SELECTOR",
         "data": {
             "products": [
@@ -29,7 +28,6 @@ const SCREEN_RESPONSES = {
         }
     },
     OPTIONS: {
-        "version": "3.0",
         "screen": "OPTIONS",
         "data": {
             "selected_product": "phone",
@@ -99,7 +97,6 @@ const SCREEN_RESPONSES = {
         }
     },
     OFFER: {
-        "version": "3.0",
         "screen": "OFFER",
         "data": {
             "selected_product": "phone",
@@ -125,7 +122,6 @@ const SCREEN_RESPONSES = {
         }
     },
     PRODUCT_DETAIL: {
-        "version": "3.0",
         "screen": "PRODUCT_DETAIL",
         "data": {
             "selected_device": "0_TechWave_TW14_Pro",
@@ -137,7 +133,6 @@ const SCREEN_RESPONSES = {
         }
     },
     SUCCESS: {
-        "version": "3.0",
         "screen": "SUCCESS",
         "data": {
             "extension_message_response": {
@@ -156,7 +151,6 @@ export const getNextScreen = async (decryptedBody) => {
   // handle health check request
   if (action === "ping") {
     return {
-      version,
       data: {
         status: "active",
       },
@@ -167,7 +161,6 @@ export const getNextScreen = async (decryptedBody) => {
   if (data?.error) {
     console.warn("Received client error:", data);
     return {
-      version,
       data: {
         acknowledged: true,
       },
@@ -209,7 +202,7 @@ export const getNextScreen = async (decryptedBody) => {
             selected_product: data.selected_product,
           },
         };
-        
+
       case "OFFER":
         // TODO return details of selected device
         return {
