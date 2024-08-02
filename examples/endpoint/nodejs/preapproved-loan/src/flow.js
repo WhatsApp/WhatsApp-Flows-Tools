@@ -6,7 +6,7 @@
  */
 
 // this object is generated from Flow Builder under "..." > Endpoint > Snippets > Responses
-// To navigate to a screen, return the corresponding response from the endpoint. Make sure the response is enccrypted.
+// To navigate to a screen, return the corresponding response from the endpoint. Make sure the response is encrypted.
 const SCREEN_RESPONSES = {
   LOAN: {
     screen: "LOAN",
@@ -85,7 +85,7 @@ const SCREEN_RESPONSES = {
 };
 
 
-// Example loan repayments for the ammounts listed above
+// Example loan repayments for the amounts listed above
 const LOAN_OPTIONS = {
   amount1: {
     months12: "₹ 63,000",

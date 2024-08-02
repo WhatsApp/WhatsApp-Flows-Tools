@@ -6,7 +6,7 @@
  */
 
 // this object is generated from Flow Builder under "..." > Endpoint > Snippets > Responses
-// To navigate to a screen, return the corresponding response from the endpoint. Make sure the response is enccrypted.
+// To navigate to a screen, return the corresponding response from the endpoint. Make sure the response is encrypted.
 const SCREEN_RESPONSES = {
     PRODUCT_SELECTOR: {
         "screen": "PRODUCT_SELECTOR",

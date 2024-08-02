@@ -97,8 +97,8 @@ const SCREEN_RESPONSES = {
     screen: "YOUR_HEALTH",
     data: {},
   },
-  ADDTIONAL_APPLICANT: {
-    screen: "ADDTIONAL_APPLICANT",
+  ADDITIONAL_APPLICANT: {
+    screen: "ADDITIONAL_APPLICANT",
     data: {
       additional_applicant_title: "Additional Applicant 1",
       additional_applicant_index: 0,
@@ -141,7 +141,7 @@ const SCREEN_RESPONSES = {
           title: "Monthly",
         },
         {
-          id: "anuallly",
+          id: "annually",
           title: "Annually (Save \u20b9 1000)",
         },
       ],
@@ -156,7 +156,7 @@ const SCREEN_RESPONSES = {
       summary_cover_level: "Treatment & full diagnosis",
       summary_people_covered: "Yourself with 2 children",
       summary_excess: "₹ 20000.00",
-      summary_payment_method: "Anually",
+      summary_payment_method: "Annually",
       summary_cost_per_month: "₹ 1000.00",
     },
   },
@@ -259,7 +259,7 @@ export const getNextScreen = async (decryptedBody) => {
         // If user has selected they want to cover only their children skip "YOUR_HEALTH" screen
         if (data.cover === "my_children") {
           return {
-            ...SCREEN_RESPONSES.ADDTIONAL_APPLICANT,
+            ...SCREEN_RESPONSES.ADDITIONAL_APPLICANT,
             data: {
               ...data,
               additional_applicants: [],
@@ -291,9 +291,9 @@ export const getNextScreen = async (decryptedBody) => {
           };
         }
 
-        // Navigate to next screen (ADDTIONAL_APPLICANT)
+        // Navigate to next screen (ADDITIONAL_APPLICANT)
         return {
-          ...SCREEN_RESPONSES.ADDTIONAL_APPLICANT,
+          ...SCREEN_RESPONSES.ADDITIONAL_APPLICANT,
           data: {
             ...data,
             additional_applicants: [],
@@ -302,8 +302,8 @@ export const getNextScreen = async (decryptedBody) => {
           },
         };
 
-      // handles when user interacts with ADDTIONAL_APPLICANT screen
-      case "ADDTIONAL_APPLICANT":
+      // handles when user interacts with ADDITIONAL_APPLICANT screen
+      case "ADDITIONAL_APPLICANT":
         const {
           additional_relation,
           additional_dob,
@@ -322,10 +322,10 @@ export const getNextScreen = async (decryptedBody) => {
           },
         ];
 
-        // Continue sending the same screen ID (ADDTIONAL_APPLICANT) until we have collected information for all additional applicants
+        // Continue sending the same screen ID (ADDITIONAL_APPLICANT) until we have collected information for all additional applicants
         if (applicant_index < data.additional_applicants_count) {
           return {
-            ...SCREEN_RESPONSES.ADDTIONAL_APPLICANT,
+            ...SCREEN_RESPONSES.ADDITIONAL_APPLICANT,
             data: {
               ...rest,
               additional_applicant_title: `Additional Applicant ${
@@ -337,7 +337,7 @@ export const getNextScreen = async (decryptedBody) => {
           };
         }
 
-        // After all information is collected, navigate to next screen (ADDTIONAL_APPLICANT)
+        // After all information is collected, navigate to next screen (ADDITIONAL_APPLICANT)
         return {
           ...SCREEN_RESPONSES.POLICY_SELECTION,
           data: {
@@ -353,7 +353,7 @@ export const getNextScreen = async (decryptedBody) => {
       // handles when user interacts with POLICY_SELECTION screen
       case "POLICY_SELECTION":
         const policy =
-          data.selected_policy === "essenital"
+          data.selected_policy === "essential"
             ? {
                 selected_policy: "CS Essential",
                 policy_features:
