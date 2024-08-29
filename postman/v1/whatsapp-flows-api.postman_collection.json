@@ -102,16 +102,12 @@
 									}
 								},
 								"url": {
-									"raw": "https://graph.facebook.com/v18.0/<WABA_ID>/flows",
-									"protocol": "https",
+									"raw": "{{base-url}}/{{waba-id}}/flows",
 									"host": [
-										"graph",
-										"facebook",
-										"com"
+										"{{base-url}}"
 									],
 									"path": [
-										"v18.0",
-										"<WABA_ID>",
+										"{{waba-id}}",
 										"flows"
 									]
 								}
@@ -155,16 +151,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://graph.facebook.com/v18.0/<FLOW_ID>?fields=id,name,categories,preview,status,validation_errors,json_version,data_api_version,data_channel_uri,whatsapp_business_account,application",
-									"protocol": "https",
+									"raw": "{{base-url}}/{{flow-id}}?fields=id,name,categories,preview,status,validation_errors,json_version,data_api_version,data_channel_uri,whatsapp_business_account,application",
 									"host": [
-										"graph",
-										"facebook",
-										"com"
+										"{{base-url}}"
 									],
 									"path": [
-										"v18.0",
-										"<FLOW_ID>"
+										"{{flow-id}}"
 									],
 									"query": [
 										{
@@ -207,16 +199,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://graph.facebook.com/v18.0/<WABA_ID>/flows",
-									"protocol": "https",
+									"raw": "{{base-url}}/{{waba-id}}/flows",
 									"host": [
-										"graph",
-										"facebook",
-										"com"
+										"{{base-url}}"
 									],
 									"path": [
-										"v18.0",
-										"<WABA_ID>",
+										"{{waba-id}}",
 										"flows"
 									]
 								}
@@ -254,16 +242,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://graph.facebook.com/v18.0/<WABA_ID>/",
-									"protocol": "https",
+									"raw": "{{base-url}}/{{waba-id}}/",
 									"host": [
-										"graph",
-										"facebook",
-										"com"
+										"{{base-url}}"
 									],
 									"path": [
-										"v18.0",
-										"<WABA_ID>",
+										"{{waba-id}}",
 										""
 									]
 								}
@@ -346,16 +330,12 @@
 									]
 								},
 								"url": {
-									"raw": "https://graph.facebook.com/v18.0/<FLOW_ID>/assets",
-									"protocol": "https",
+									"raw": "{{base-url}}/{{flow-id}}/assets",
 									"host": [
-										"graph",
-										"facebook",
-										"com"
+										"{{base-url}}"
 									],
 									"path": [
-										"v18.0",
-										"<FLOW_ID>",
+										"{{flow-id}}",
 										"assets"
 									]
 								}
@@ -405,16 +385,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://graph.facebook.com/v18.0/<FLOW_ID>?fields=preview.invalidate(false)",
-									"protocol": "https",
+									"raw": "{{base-url}}/{{flow-id}}?fields=preview.invalidate(false)",
 									"host": [
-										"graph",
-										"facebook",
-										"com"
+										"{{base-url}}"
 									],
 									"path": [
-										"v18.0",
-										"<FLOW_ID>"
+										"{{flow-id}}"
 									],
 									"query": [
 										{
@@ -464,16 +440,12 @@
 								"method": "POST",
 								"header": [],
 								"url": {
-									"raw": "https://graph.facebook.com/v18.0/<FLOW_ID>/publish",
-									"protocol": "https",
+									"raw": "{{base-url}}/{{flow-id}}/publish",
 									"host": [
-										"graph",
-										"facebook",
-										"com"
+										"{{base-url}}"
 									],
 									"path": [
-										"v18.0",
-										"<FLOW_ID>",
+										"{{flow-id}}",
 										"publish"
 									]
 								}
@@ -561,16 +533,12 @@
 									}
 								},
 								"url": {
-									"raw": "https://graph.facebook.com/v18.0/<FLOW_ID>",
-									"protocol": "https",
+									"raw": "{{base-url}}/{{flow-id}}",
 									"host": [
-										"graph",
-										"facebook",
-										"com"
+										"{{base-url}}"
 									],
 									"path": [
-										"v18.0",
-										"<FLOW_ID>"
+										"{{flow-id}}"
 									]
 								}
 							},
@@ -614,16 +582,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://graph.facebook.com/v18.0/<FLOW_ID>/assets",
-									"protocol": "https",
+									"raw": "{{base-url}}/{{flow-id}}/assets",
 									"host": [
-										"graph",
-										"facebook",
-										"com"
+										"{{base-url}}"
 									],
 									"path": [
-										"v18.0",
-										"<FLOW_ID>",
+										"{{flow-id}}",
 										"assets"
 									]
 								}
@@ -661,16 +625,12 @@
 								"method": "POST",
 								"header": [],
 								"url": {
-									"raw": "https://graph.facebook.com/v18.0/<FLOW_ID>/publish",
-									"protocol": "https",
+									"raw": "{{base-url}}/{{flow-id}}/publish",
 									"host": [
-										"graph",
-										"facebook",
-										"com"
+										"{{base-url}}"
 									],
 									"path": [
-										"v18.0",
-										"<FLOW_ID>",
+										"{{flow-id}}",
 										"publish"
 									]
 								}
