@@ -1,0 +1,20 @@
+name: Sync Postman Collection
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Upload Collection
+      run: |
+        curl -L -f -X PUT 'https://api.getpostman.com/collections/24926895-7bf51205-92ed-49d1-af4a-0130cf84b6f6' \
+        --header 'X-Api-Key: ${{ secrets.POSTMAN_API_KEY }}' \
+        -F 'collection=@postman/v1/whatsapp-flows-api.postman_collection.json;type=application/json'
