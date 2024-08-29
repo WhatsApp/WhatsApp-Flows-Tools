@@ -1127,6 +1127,281 @@
 					]
 				}
 			]
+		},
+		{
+			"name": "Metrics API",
+			"item": [
+				{
+					"name": "Get Endpoint Request Count Metric",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base-url}}/{{flow-id}}?fields=metric.name(ENDPOINT_REQUEST_COUNT).granularity(DAY).since(2024-01-28).until(2024-01-30)",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"{{flow-id}}"
+							],
+							"query": [
+								{
+									"key": "fields",
+									"value": "metric.name(ENDPOINT_REQUEST_COUNT).granularity(DAY).since(2024-01-28).until(2024-01-30)"
+								}
+							]
+						},
+						"description": "Can request specific fields by enabling the \\`fields\\` query param"
+					},
+					"response": [
+						{
+							"name": "Get Endpoint Request Count Metric",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base-url}}/{{flow-id}}?fields=metric.name(ENDPOINT_REQUEST_COUNT).granularity(DAY).since(2024-01-28).until(2024-01-30)",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"{{flow-id}}"
+									],
+									"query": [
+										{
+											"key": "fields",
+											"value": "metric.name(ENDPOINT_REQUEST_COUNT).granularity(DAY).since(2024-01-28).until(2024-01-30)",
+											"description": "Return specific fields in the response"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    \"id\": \"flow-1\",\n    \"metric\": {\n        \"granularity\": \"DAY\",\n        \"name\": \"ENDPOINT_REQUEST_COUNT\",\n        \"data_points\": [\n            {\n                \"timestamp\": \"2024-01-28T08:00:00+0000\",\n                \"data\": [\n                    {\n                        \"key\": \"value\",\n                        \"value\": 138\n                    }\n                ]\n            },\n            {\n                \"timestamp\": \"2024-01-29T08:00:00+0000\",\n                \"data\": [\n                    {\n                        \"key\": \"value\",\n                        \"value\": 361\n                    }\n                ]\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Endpoint Request Error Metric",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base-url}}/{{flow-id}}?fields=metric.name(ENDPOINT_REQUEST_ERROR).granularity(DAY).since(2024-01-28).until(2024-01-30)",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"{{flow-id}}"
+							],
+							"query": [
+								{
+									"key": "fields",
+									"value": "metric.name(ENDPOINT_REQUEST_ERROR).granularity(DAY).since(2024-01-28).until(2024-01-30)"
+								}
+							]
+						},
+						"description": "Can request specific fields by enabling the \\`fields\\` query param"
+					},
+					"response": [
+						{
+							"name": "Get Endpoint Request Error Metric",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base-url}}/{{flow-id}}?fields=metric.name(ENDPOINT_REQUEST_ERROR).granularity(DAY).since(2024-01-28).until(2024-01-30)",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"{{flow-id}}"
+									],
+									"query": [
+										{
+											"key": "fields",
+											"value": "metric.name(ENDPOINT_REQUEST_ERROR).granularity(DAY).since(2024-01-28).until(2024-01-30)",
+											"description": "Return specific fields in the response"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    \"id\": \"flow-1\",\n    \"metric\": {\n        \"granularity\": \"DAY\",\n        \"name\": \"ENDPOINT_REQUEST_ERROR\",\n        \"data_points\": [\n            {\n                \"timestamp\": \"2024-01-28T08:00:00+0000\",\n                \"data\": [\n                    {\n                        \"key\": \"timeout_error\",\n                        \"value\": 25\n                    }\n                ]\n            },\n            {\n                \"timestamp\": \"2024-01-29T08:00:00+0000\",\n                \"data\": [\n                    {\n                        \"key\": \"timeout_error\",\n                        \"value\": 64\n                    }\n                ]\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Endpoint Request Error Rate Metric",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base-url}}/{{flow-id}}?fields=metric.name(ENDPOINT_REQUEST_ERROR_RATE).granularity(LIFETIME).since(2024-01-28).until(2024-01-30)",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"{{flow-id}}"
+							],
+							"query": [
+								{
+									"key": "fields",
+									"value": "metric.name(ENDPOINT_REQUEST_ERROR_RATE).granularity(LIFETIME).since(2024-01-28).until(2024-01-30)"
+								}
+							]
+						},
+						"description": "Can request specific fields by enabling the \\`fields\\` query param"
+					},
+					"response": [
+						{
+							"name": "Get Endpoint Request Error Rate Metric",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base-url}}/{{flow-id}}?fields=metric.name(ENDPOINT_REQUEST_ERROR_RATE).granularity(LIFETIME).since(2024-01-28).until(2024-01-30)",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"{{flow-id}}"
+									],
+									"query": [
+										{
+											"key": "fields",
+											"value": "metric.name(ENDPOINT_REQUEST_ERROR_RATE).granularity(LIFETIME).since(2024-01-28).until(2024-01-30)",
+											"description": "Return specific fields in the response"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    \"id\": \"flow-1\",\n    \"metric\": {\n        \"granularity\": \"LIFETIME\",\n        \"name\": \"ENDPOINT_REQUEST_ERROR_RATE\",\n        \"data_points\": [\n            {\n                \"timestamp\": \"2024-01-28T08:00:00+0000\",\n                \"data\": [\n                    {\n                        \"key\": \"value\",\n                        \"value\": 0.12625250501002\n                    }\n                ]\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Endpoint Request Latencies Metric",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base-url}}/{{flow-id}}?fields=metric.name(ENDPOINT_REQUEST_LATENCY_SECONDS_CEIL).granularity(DAY).since(2024-01-28).until(2024-01-30)",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"{{flow-id}}"
+							],
+							"query": [
+								{
+									"key": "fields",
+									"value": "metric.name(ENDPOINT_REQUEST_LATENCY_SECONDS_CEIL).granularity(DAY).since(2024-01-28).until(2024-01-30)"
+								}
+							]
+						},
+						"description": "Can request specific fields by enabling the \\`fields\\` query param"
+					},
+					"response": [
+						{
+							"name": "Get Endpoint Request Latencies Metric",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base-url}}/{{flow-id}}?fields=metric.name(ENDPOINT_REQUEST_LATENCY_SECONDS_CEIL).granularity(DAY).since(2024-01-28).until(2024-01-30)",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"{{flow-id}}"
+									],
+									"query": [
+										{
+											"key": "fields",
+											"value": "metric.name(ENDPOINT_REQUEST_LATENCY_SECONDS_CEIL).granularity(DAY).since(2024-01-28).until(2024-01-30)",
+											"description": "Return specific fields in the response"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    \"id\": \"flow-1\",\n    \"metric\": {\n        \"granularity\": \"DAY\",\n        \"name\": \"ENDPOINT_REQUEST_LATENCY_SECONDS_CEIL\",\n        \"data_points\": [\n            {\n                \"timestamp\": \"2024-01-28T08:00:00+0000\",\n                \"data\": [\n                    {\n                        \"key\": \"1\",\n                        \"value\": 106\n                    }\n                ]\n            },\n            {\n                \"timestamp\": \"2024-01-29T08:00:00+0000\",\n                \"data\": [\n                    {\n                        \"key\": \"1\",\n                        \"value\": 328\n                    },\n                    {\n                        \"key\": \"2\",\n                        \"value\": 2\n                    }\n                ]\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Endpoint Availability Metric",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base-url}}/{{flow-id}}?fields=metric.name(ENDPOINT_AVAILABILITY).granularity(DAY).since(2024-01-28).until(2024-01-30)",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"{{flow-id}}"
+							],
+							"query": [
+								{
+									"key": "fields",
+									"value": "metric.name(ENDPOINT_AVAILABILITY).granularity(DAY).since(2024-01-28).until(2024-01-30)"
+								}
+							]
+						},
+						"description": "Can request specific fields by enabling the \\`fields\\` query param"
+					},
+					"response": [
+						{
+							"name": "Get Endpoint Availability Metric",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base-url}}/{{flow-id}}?fields=metric.name(ENDPOINT_AVAILABILITY).granularity(DAY).since(2024-01-28).until(2024-01-30)",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"{{flow-id}}"
+									],
+									"query": [
+										{
+											"key": "fields",
+											"value": "metric.name(ENDPOINT_AVAILABILITY).granularity(DAY).since(2024-01-28).until(2024-01-30)",
+											"description": "Return specific fields in the response"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    \"id\": \"flow-1\",\n    \"metric\": {\n        \"granularity\": \"DAY\",\n        \"name\": \"ENDPOINT_AVAILABILITY\",\n        \"data_points\": [\n            {\n                \"timestamp\": \"2024-01-28T08:00:00+0000\",\n                \"data\": [\n                    {\n                        \"key\": \"succeeded\",\n                        \"value\": 713\n                    },\n                    {\n                        \"key\": \"failed\",\n                        \"value\": 335\n                    }\n                ]\n            },\n            {\n                \"timestamp\": \"2024-01-29T08:00:00+0000\",\n                \"data\": [\n                    {\n                        \"key\": \"succeeded\",\n                        \"value\": 623\n                    },\n                    {\n                        \"key\": \"failed\",\n                        \"value\": 2\n                    }\n                ]\n            }\n        ]\n    }\n}"
+						}
+					]
+				}
+			]
 		}
 	],
 	"auth": {
