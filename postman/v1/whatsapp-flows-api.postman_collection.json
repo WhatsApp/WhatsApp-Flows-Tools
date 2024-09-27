@@ -127,7 +127,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{base-url}}/{{flow-id}}?fields=id,name,categories,preview,status,validation_errors,json_version,data_api_version,data_channel_uri,whatsapp_business_account,application",
+							"raw": "{{base-url}}/{{flow-id}}?fields=id,name,categories,preview,status,validation_errors,json_version,data_api_version,data_channel_uri,health_status,whatsapp_business_account,application",
 							"host": [
 								"{{base-url}}"
 							],
@@ -137,7 +137,7 @@
 							"query": [
 								{
 									"key": "fields",
-									"value": "id,name,categories,preview,status,validation_errors,json_version,data_api_version,data_channel_uri,whatsapp_business_account,application",
+									"value": "id,name,categories,preview,status,validation_errors,json_version,data_api_version,data_channel_uri,health_status,whatsapp_business_account,application",
 									"description": "Return specific fields in the response"
 								}
 							]
@@ -172,7 +172,7 @@
 							"_postman_previewlanguage": "json",
 							"header": [],
 							"cookie": [],
-							"body": "{\n    \"id\": \"flow-1\",\n    \"name\": \"my first flow\",\n    \"categories\": [\n        \"OTHER\"\n    ],\n    \"preview\": {\n        \"preview_url\": \"https://business.facebook.com/wa/manage/flows/55000..../preview/?token=b9d6.....\",\n        \"expires_at\": \"2023-05-21T11:18:09+0000\"\n    },\n    \"status\": \"DRAFT\",\n    \"validation_errors\": [],\n    \"json_version\": \"2.1\",\n    \"data_api_version\": \"3.0\",\n    \"data_channel_uri\": \"https://example.com\",\n    \"whatsapp_business_account\": {\n        \"id\": \"waba-1\",\n        \"name\": \"My Awesome WABA\",\n        \"timezone_id\": \"54\",\n        \"business_type\": \"ent\",\n        \"message_template_namespace\": \"namespace-1\"\n    },\n    \"application\": {\n        \"link\": \"https://www.facebook.com/games/?app_id=app-1\",\n        \"name\": \"My Awesome App\",\n        \"id\": \"app-1\"\n    }\n}"
+							"body": "{\n    \"id\": \"flow-1\",\n    \"name\": \"my first flow\",\n    \"categories\": [\n        \"OTHER\"\n    ],\n    \"preview\": {\n        \"preview_url\": \"https://business.facebook.com/wa/manage/flows/55000..../preview/?token=b9d6.....\",\n        \"expires_at\": \"2023-05-21T11:18:09+0000\"\n    },\n    \"status\": \"DRAFT\",\n    \"validation_errors\": [],\n    \"json_version\": \"2.1\",\n    \"data_api_version\": \"3.0\",\n    \"data_channel_uri\": \"https://example.com\",\n    \"health_status\": {\n        \"can_send_message\": \"BLOCKED\",\n        \"entities\": [\n            {\n                \"entity_type\": \"FLOW\",\n                \"id\": \"flow-1\",\n                \"can_send_message\": \"AVAILABLE\"\n            },\n            {\n                \"entity_type\": \"WABA\",\n                \"id\": \"waba-1\",\n                \"can_send_message\": \"BLOCKED\",\n                \"errors\": [\n                    {\n                        \"error_code\": 141006,\n                        \"error_description\": \"There is an error with the payment method. This will block business initiated conversations.\",\n                        \"possible_solution\": \"There was an error with your payment method. Please add a new payment method to the account.\"\n                    },\n                    {\n                        \"error_code\": 141014,\n                        \"error_description\": \"The WABA is banned.\",\n                        \"possible_solution\": \"Please visit Business Support Home for more details (https://business.facebook.com/accountquality) on how to appeal the ban.\"\n                    }\n                ]\n            },\n            {\n                \"entity_type\": \"BUSINESS\",\n                \"id\": \"business-1\",\n                \"can_send_message\": \"LIMITED\",\n                \"errors\": [\n                    {\n                        \"error_code\": 141010,\n                        \"error_description\": \"The Business has not passed business verification.\",\n                        \"possible_solution\": \"Visit business settings and start or resolve the business verification request.\"\n                    }\n                ]\n            },\n            {\n                \"entity_type\": \"APP\",\n                \"id\": \"app-1\",\n                \"can_send_message\": \"AVAILABLE\"\n            }\n        ]\n    },\n    \"whatsapp_business_account\": {\n        \"id\": \"waba-1\",\n        \"name\": \"My Awesome WABA\",\n        \"timezone_id\": \"54\",\n        \"business_type\": \"ent\",\n        \"message_template_namespace\": \"namespace-1\"\n    },\n    \"application\": {\n        \"link\": \"https://www.facebook.com/games/?app_id=app-1\",\n        \"name\": \"My Awesome App\",\n        \"id\": \"app-1\"\n    }\n}"
 						}
 					]
 				},
@@ -1060,7 +1060,7 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
-							"header": null,
+							"header": [],
 							"cookie": [],
 							"body": "{\n    \"id\": \"template-1\",\n    \"status\": \"PENDING\",\n    \"category\": \"MARKETING\"\n}"
 						}
@@ -1120,7 +1120,7 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
-							"header": null,
+							"header": [],
 							"cookie": [],
 							"body": "{\n    \"messaging_product\": \"whatsapp\",\n    \"contacts\": [\n        {\n            \"input\": \"18055555555\",\n            \"wa_id\": \"18055555555\"\n        }\n    ],\n    \"messages\": [\n        {\n            \"id\": \"wamid.HBgL...\"\n        }\n    ]\n}"
 						}
