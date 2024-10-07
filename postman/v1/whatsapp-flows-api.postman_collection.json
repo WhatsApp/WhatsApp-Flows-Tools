@@ -811,7 +811,7 @@
 			]
 		},
 		{
-			"name": "4. Send Flow via CAPI",
+			"name": "4. Send Flow via Cloud API",
 			"item": [
 				{
 					"name": "Get WABA Phone Numbers",
@@ -885,7 +885,68 @@
 					"response": []
 				},
 				{
-					"name": "Send Draft Flow",
+					"name": "Send Draft Flow by Name",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"messaging_product\": \"whatsapp\",\n    \"to\": \"{{customer-phone-number}}\",\n    \"recipient_type\": \"individual\",\n    \"type\": \"interactive\",\n    \"interactive\": {\n        \"type\": \"flow\",\n        \"header\": {\n            \"type\": \"text\",\n            \"text\": \"Not shown in draft mode\"\n        },\n        \"body\": {\n            \"text\": \"Not shown in draft mode\"\n        },\n        \"footer\": {\n            \"text\": \"Not shown in draft mode\"\n        },\n        \"action\": {\n            \"name\": \"flow\",\n            \"parameters\": {\n                \"flow_message_version\": \"3\",\n                \"flow_action\": \"navigate\",\n                \"flow_token\": \"<FLOW_TOKEN>\",\n                \"flow_name\": \"{{flow-name}}\",\n                \"flow_cta\": \"Not shown in draft mode\",\n                \"mode\": \"draft\",\n                \"flow_action_payload\": {\n                    \"screen\": \"<SCREEN_ID>\",\n                    \"data\": {\n                        \"<CUSTOM_KEY>\": \"<CUSTOM_VALUE>\"\n                    }\n                }\n            }\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-url}}/{{business-phone-number-id}}/messages",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"{{business-phone-number-id}}",
+								"messages"
+							]
+						},
+						"description": "Flow messages won't be delivered to unsupported WhatsApp versions"
+					},
+					"response": [
+						{
+							"name": "Send Draft Flow by Name",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"messaging_product\": \"whatsapp\",\n    \"to\": \"{{customer-phone-number}}\",\n    \"recipient_type\": \"individual\",\n    \"type\": \"interactive\",\n    \"interactive\": {\n        \"type\": \"flow\",\n        \"header\": {\n            \"type\": \"text\",\n            \"text\": \"Not shown in draft mode\"\n        },\n        \"body\": {\n            \"text\": \"Not shown in draft mode\"\n        },\n        \"footer\": {\n            \"text\": \"Not shown in draft mode\"\n        },\n        \"action\": {\n            \"name\": \"flow\",\n            \"parameters\": {\n                \"flow_message_version\": \"3\",\n                \"flow_action\": \"navigate\",\n                \"flow_token\": \"<FLOW_TOKEN>\",\n                \"flow_name\": \"{{flow-name}}\",\n                \"flow_cta\": \"Not shown in draft mode\",\n                \"mode\": \"draft\",\n                \"flow_action_payload\": {\n                    \"screen\": \"<SCREEN_ID>\",\n                    \"data\": {\n                        \"<CUSTOM_KEY>\": \"<CUSTOM_VALUE>\"\n                    }\n                }\n            }\n        }\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base-url}}/{{business-phone-number-id}}/messages",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"{{business-phone-number-id}}",
+										"messages"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    \"messaging_product\": \"whatsapp\",\n    \"contacts\": [\n        {\n            \"input\": \"18055555555\",\n            \"wa_id\": \"18055555555\"\n        }\n    ],\n    \"messages\": [\n        {\n            \"id\": \"wamid.HBgL...\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Send Draft Flow by ID",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -912,7 +973,7 @@
 					},
 					"response": [
 						{
-							"name": "Send Draft Flow",
+							"name": "Send Draft Flow by ID",
 							"originalRequest": {
 								"method": "POST",
 								"header": [],
@@ -946,7 +1007,68 @@
 					]
 				},
 				{
-					"name": "Send Published Flow",
+					"name": "Send Published Flow by Name",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"messaging_product\": \"whatsapp\",\n    \"to\": \"{{customer-phone-number}}\",\n    \"recipient_type\": \"individual\",\n    \"type\": \"interactive\",\n    \"interactive\": {\n        \"type\": \"flow\",\n        \"header\": {\n            \"type\": \"text\",\n            \"text\": \"<HEADER_TEXT>\"\n        },\n        \"body\": {\n            \"text\": \"<BODY_TEXT>\"\n        },\n        \"footer\": {\n            \"text\": \"<FOOTER_TEXT>\"\n        },\n        \"action\": {\n            \"name\": \"flow\",\n            \"parameters\": {\n                \"flow_message_version\": \"3\",\n                \"flow_action\": \"navigate\",\n                \"flow_token\": \"<FLOW_TOKEN>\",\n                \"flow_name\": \"{{flow-name}}\",\n                \"flow_cta\": \"Open Flow!\",\n                \"flow_action_payload\": {\n                    \"screen\": \"<SCREEN_ID>\",\n                    \"data\": {\n                        \"<CUSTOM_KEY>\": \"<CUSTOM_VALUE>\"\n                    }\n                }\n            }\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-url}}/{{business-phone-number-id}}/messages",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"{{business-phone-number-id}}",
+								"messages"
+							]
+						},
+						"description": "Flow messages won't be delivered to unsupported WhatsApp versions"
+					},
+					"response": [
+						{
+							"name": "Send Published Flow by Name",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"messaging_product\": \"whatsapp\",\n    \"to\": \"{{customer-phone-number}}\",\n    \"recipient_type\": \"individual\",\n    \"type\": \"interactive\",\n    \"interactive\": {\n        \"type\": \"flow\",\n        \"header\": {\n            \"type\": \"text\",\n            \"text\": \"<HEADER_TEXT>\"\n        },\n        \"body\": {\n            \"text\": \"<BODY_TEXT>\"\n        },\n        \"footer\": {\n            \"text\": \"<FOOTER_TEXT>\"\n        },\n        \"action\": {\n            \"name\": \"flow\",\n            \"parameters\": {\n                \"flow_message_version\": \"3\",\n                \"flow_action\": \"navigate\",\n                \"flow_token\": \"<FLOW_TOKEN>\",\n                \"flow_name\": \"{{flow-name}}\",\n                \"flow_cta\": \"Open Flow!\",\n                \"flow_action_payload\": {\n                    \"screen\": \"<SCREEN_ID>\",\n                    \"data\": {\n                        \"<CUSTOM_KEY>\": \"<CUSTOM_VALUE>\"\n                    }\n                }\n            }\n        }\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base-url}}/{{business-phone-number-id}}/messages",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"{{business-phone-number-id}}",
+										"messages"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    \"messaging_product\": \"whatsapp\",\n    \"contacts\": [\n        {\n            \"input\": \"18055555555\",\n            \"wa_id\": \"18055555555\"\n        }\n    ],\n    \"messages\": [\n        {\n            \"id\": \"wamid.HBgL...\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Send Published Flow by ID",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -973,7 +1095,7 @@
 					},
 					"response": [
 						{
-							"name": "Send Published Flow",
+							"name": "Send Published Flow by ID",
 							"originalRequest": {
 								"method": "POST",
 								"header": [],
@@ -1007,13 +1129,13 @@
 					]
 				},
 				{
-					"name": "Create Flow Template Message",
+					"name": "Create Flow Template Message by Name",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"<TEMPLATE_NAME>\",\n    \"language\": \"en_US\",\n    \"category\": \"MARKETING\",\n    \"components\": [\n        {\n            \"type\": \"body\",\n            \"text\": \"<MESSAGE_BODY>\"\n        },\n        {\n            \"type\": \"BUTTONS\",\n            \"buttons\": [\n                {\n                    \"type\": \"FLOW\",\n                    \"text\": \"Open flow!\",\n                    \"flow_id\": \"{{flow-id}}\",\n                    \"navigate_screen\": \"<SCREEN_ID>\",\n                    \"flow_action\": \"navigate\"\n                }\n            ]\n        }\n    ]\n}",
+							"raw": "{\n    \"name\": \"<TEMPLATE_NAME>\",\n    \"language\": \"en_US\",\n    \"category\": \"MARKETING\",\n    \"components\": [\n        {\n            \"type\": \"body\",\n            \"text\": \"Check out this new offer\"\n        },\n        {\n            \"type\": \"BUTTONS\",\n            \"buttons\": [\n                {\n                    \"type\": \"FLOW\",\n                    \"text\": \"Check out this offer!\",\n                    \"flow_name\": \"{{flow-name}}\",\n                    \"navigate_screen\": \"<SCREEN_ID>\",\n                    \"flow_action\": \"navigate\"\n                }\n            ]\n        }\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1033,13 +1155,73 @@
 					},
 					"response": [
 						{
-							"name": "Create Flow Template Message",
+							"name": "Create Flow Template Message by Name",
 							"originalRequest": {
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"name\": \"<TEMPLATE_NAME>\",\n    \"language\": \"en_US\",\n    \"category\": \"MARKETING\",\n    \"components\": [\n        {\n            \"type\": \"body\",\n            \"text\": \"<MESSAGE_BODY>\"\n        },\n        {\n            \"type\": \"BUTTONS\",\n            \"buttons\": [\n                {\n                    \"type\": \"FLOW\",\n                    \"text\": \"Open flow!\",\n                    \"flow_id\": \"{{flow-id}}\",\n                    \"navigate_screen\": \"<SCREEN_ID>\",\n                    \"flow_action\": \"navigate\"\n                }\n            ]\n        }\n    ]\n}",
+									"raw": "{\n    \"name\": \"<TEMPLATE_NAME>\",\n    \"language\": \"en_US\",\n    \"category\": \"MARKETING\",\n    \"components\": [\n        {\n            \"type\": \"body\",\n            \"text\": \"Check out this new offer\"\n        },\n        {\n            \"type\": \"BUTTONS\",\n            \"buttons\": [\n                {\n                    \"type\": \"FLOW\",\n                    \"text\": \"Check out this offer!\",\n                    \"flow_name\": \"{{flow-name}}\",\n                    \"navigate_screen\": \"<SCREEN_ID>\",\n                    \"flow_action\": \"navigate\"\n                }\n            ]\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base-url}}/{{waba-id}}/message_templates",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"{{waba-id}}",
+										"message_templates"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    \"id\": \"template-1\",\n    \"status\": \"PENDING\",\n    \"category\": \"MARKETING\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Create Flow Template Message by ID",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"<TEMPLATE_NAME>\",\n    \"language\": \"en_US\",\n    \"category\": \"MARKETING\",\n    \"components\": [\n        {\n            \"type\": \"body\",\n            \"text\": \"Check out this new offer\"\n        },\n        {\n            \"type\": \"BUTTONS\",\n            \"buttons\": [\n                {\n                    \"type\": \"FLOW\",\n                    \"text\": \"Check out this offer!\",\n                    \"flow_id\": \"{{flow-id}}\",\n                    \"navigate_screen\": \"<SCREEN_ID>\",\n                    \"flow_action\": \"navigate\"\n                }\n            ]\n        }\n    ]\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-url}}/{{waba-id}}/message_templates",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"{{waba-id}}",
+								"message_templates"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Flow Template Message by ID",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"<TEMPLATE_NAME>\",\n    \"language\": \"en_US\",\n    \"category\": \"MARKETING\",\n    \"components\": [\n        {\n            \"type\": \"body\",\n            \"text\": \"Check out this new offer\"\n        },\n        {\n            \"type\": \"BUTTONS\",\n            \"buttons\": [\n                {\n                    \"type\": \"FLOW\",\n                    \"text\": \"Check out this offer!\",\n                    \"flow_id\": \"{{flow-id}}\",\n                    \"navigate_screen\": \"<SCREEN_ID>\",\n                    \"flow_action\": \"navigate\"\n                }\n            ]\n        }\n    ]\n}\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1455,6 +1637,11 @@
 		{
 			"key": "flow-id",
 			"value": "<FLOW_ID>"
+		},
+		{
+			"key": "flow-name",
+			"value": "<FLOW_NAME>",
+			"type": "string"
 		},
 		{
 			"key": "business-phone-number-id",
