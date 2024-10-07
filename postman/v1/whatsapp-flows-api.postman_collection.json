@@ -1189,6 +1189,66 @@
 					]
 				},
 				{
+					"name": "Create Flow Template Message by Flow JSON",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"<TEMPLATE_NAME>\",\n    \"language\": \"en_US\",\n    \"category\": \"MARKETING\",\n    \"components\": [\n        {\n            \"type\": \"body\",\n            \"text\": \"Check out this new offer\"\n        },\n        {\n            \"type\": \"BUTTONS\",\n            \"buttons\": [\n                {\n                    \"type\": \"FLOW\",\n                    \"text\": \"Check out this offer!\",\n                    \"flow_json\": \"{\\\"version\\\":\\\"5.0\\\",\\\"screens\\\":[{\\\"id\\\":\\\"WELCOME_SCREEN\\\",\\\"layout\\\":{\\\"type\\\":\\\"SingleColumnLayout\\\",\\\"children\\\":[{\\\"type\\\":\\\"TextHeading\\\",\\\"text\\\":\\\"Hello World\\\"},{\\\"type\\\":\\\"Footer\\\",\\\"label\\\":\\\"Complete\\\",\\\"on-click-action\\\":{\\\"name\\\":\\\"complete\\\",\\\"payload\\\":{}}}]},\\\"title\\\":\\\"Welcome\\\",\\\"terminal\\\":true,\\\"success\\\":true,\\\"data\\\":{}}]}\",\n                    \"navigate_screen\": \"WELCOME_SCREEN\",\n                    \"flow_action\": \"navigate\"\n                }\n            ]\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-url}}/{{waba-id}}/message_templates",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"{{waba-id}}",
+								"message_templates"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Flow Template Message by Flow JSON",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"<TEMPLATE_NAME>\",\n    \"language\": \"en_US\",\n    \"category\": \"MARKETING\",\n    \"components\": [\n        {\n            \"type\": \"body\",\n            \"text\": \"Check out this new offer\"\n        },\n        {\n            \"type\": \"BUTTONS\",\n            \"buttons\": [\n                {\n                    \"type\": \"FLOW\",\n                    \"text\": \"Check out this offer!\",\n                    \"flow_json\": \"{\\\"version\\\":\\\"5.0\\\",\\\"screens\\\":[{\\\"id\\\":\\\"WELCOME_SCREEN\\\",\\\"layout\\\":{\\\"type\\\":\\\"SingleColumnLayout\\\",\\\"children\\\":[{\\\"type\\\":\\\"TextHeading\\\",\\\"text\\\":\\\"Hello World\\\"},{\\\"type\\\":\\\"Footer\\\",\\\"label\\\":\\\"Complete\\\",\\\"on-click-action\\\":{\\\"name\\\":\\\"complete\\\",\\\"payload\\\":{}}}]},\\\"title\\\":\\\"Welcome\\\",\\\"terminal\\\":true,\\\"success\\\":true,\\\"data\\\":{}}]}\",\n                    \"navigate_screen\": \"WELCOME_SCREEN\",\n                    \"flow_action\": \"navigate\"\n                }\n            ]\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base-url}}/{{waba-id}}/message_templates",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"{{waba-id}}",
+										"message_templates"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    \"id\": \"template-1\",\n    \"status\": \"PENDING\",\n    \"category\": \"MARKETING\"\n}"
+						}
+					]
+				},
+				{
 					"name": "Create Flow Template Message by ID",
 					"request": {
 						"method": "POST",
