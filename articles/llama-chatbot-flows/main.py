@@ -69,10 +69,13 @@ def webhook_post():
             else:
                 # checking that there is data in a flow's response object before processing it
                 if (
-                    request_data["entry"][0]["changes"][0]["value"]["messages"][0][
-                        "interactive"
-                    ]["nfm_reply"]["response_json"]
-                ) is not None:
+                    (
+                        request_data["entry"][0]["changes"][0]["value"]["messages"][0][
+                            "interactive"
+                        ]["nfm_reply"]["response_json"]
+                    )
+                    is not None
+                ):
                     flow_reply_processor(request)
 
     return make_response("PROCESSED", 200)
