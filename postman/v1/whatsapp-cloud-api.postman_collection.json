@@ -1652,11 +1652,7 @@
 											"type": "text"
 										}
 									],
-									"cookie": [
-										{
-											"expires": "Invalid Date"
-										}
-									],
+									"cookie": [],
 									"body": "{\n    \"success\": true\n}"
 								}
 							]
@@ -2584,11 +2580,7 @@
 											"type": "text"
 										}
 									],
-									"cookie": [
-										{
-											"expires": "Invalid Date"
-										}
-									],
+									"cookie": [],
 									"body": "{\n  \"messaging_product\": \"whatsapp\",\n  \"contacts\": [{\n      \"input\": \"15555551234\",\n      \"wa_id\": \"<WHATSAPP_ID>\"\n    }],\n  \"messages\": [{\n      \"id\": \"wamid.ID\"\n    }]\n}"
 								}
 							]
@@ -2848,11 +2840,7 @@
 											"value": "application/json"
 										}
 									],
-									"cookie": [
-										{
-											"expires": "Invalid Date"
-										}
-									],
+									"cookie": [],
 									"body": "{\n    \"messaging_product\": \"whatsapp\",\n    \"contacts\": [\n        {\n            \"input\": \"48XXXXXXXXX\",\n            \"wa_id\": \"48XXXXXXXXX \"\n        }\n    ],\n    \"messages\": [\n        {\n            \"id\": \"wamid.gBGGSFcCNEOPAgkO_KJ55r4w_ww\"\n        }\n    ]\n}"
 								}
 							]
@@ -3025,11 +3013,7 @@
 											"value": "application/json"
 										}
 									],
-									"cookie": [
-										{
-											"expires": "Invalid Date"
-										}
-									],
+									"cookie": [],
 									"body": "{\n    \"messaging_product\": \"whatsapp\",\n    \"contacts\": [\n        {\n            \"input\": \"48XXXXXXXXX\",\n            \"wa_id\": \"48XXXXXXXXX \"\n        }\n    ],\n    \"messages\": [\n        {\n            \"id\": \"wamid.gBGGSFcCNEOPAgkO_KJ55r4w_ww\"\n        }\n    ]\n}"
 								}
 							]
@@ -3210,11 +3194,7 @@
 											"type": "text"
 										}
 									],
-									"cookie": [
-										{
-											"expires": "Invalid Date"
-										}
-									],
+									"cookie": [],
 									"body": "{\n    \"messaging_product\": \"whatsapp\",\n    \"contacts\": [\n        {\n            \"input\": \"48XXXXXXXXX\",\n            \"wa_id\": \"48XXXXXXXXX \"\n        }\n    ],\n    \"messages\": [\n        {\n            \"id\": \"wamid.gBGGSFcCNEOPAgkO_KJ55r4w_ww\"\n        }\n    ]\n}"
 								}
 							]
@@ -3400,11 +3380,7 @@
 											"type": "text"
 										}
 									],
-									"cookie": [
-										{
-											"expires": "Invalid Date"
-										}
-									],
+									"cookie": [],
 									"body": "{\n    \"messaging_product\": \"whatsapp\",\n    \"contacts\": [\n        {\n            \"input\": \"48XXXXXXXXX\",\n            \"wa_id\": \"48XXXXXXXXX \"\n        }\n    ],\n    \"messages\": [\n        {\n            \"id\": \"wamid.gBGGSFcCNEOPAgkO_KJ55r4w_ww\"\n        }\n    ]\n}"
 								}
 							]
@@ -3590,11 +3566,7 @@
 											"type": "text"
 										}
 									],
-									"cookie": [
-										{
-											"expires": "Invalid Date"
-										}
-									],
+									"cookie": [],
 									"body": "{\n    \"messaging_product\": \"whatsapp\",\n    \"contacts\": [\n        {\n            \"input\": \"48XXXXXXXXX\",\n            \"wa_id\": \"48XXXXXXXXX \"\n        }\n    ],\n    \"messages\": [\n        {\n            \"id\": \"wamid.gBGGSFcCNEOPAgkO_KJ55r4w_ww\"\n        }\n    ]\n}"
 								}
 							]
@@ -3780,11 +3752,7 @@
 											"type": "text"
 										}
 									],
-									"cookie": [
-										{
-											"expires": "Invalid Date"
-										}
-									],
+									"cookie": [],
 									"body": "{\n    \"messaging_product\": \"whatsapp\",\n    \"contacts\": [\n        {\n            \"input\": \"48XXXXXXXXX\",\n            \"wa_id\": \"48XXXXXXXXX \"\n        }\n    ],\n    \"messages\": [\n        {\n            \"id\": \"wamid.gBGGSFcCNEOPAgkO_KJ55r4w_ww\"\n        }\n    ]\n}"
 								}
 							]
@@ -3970,11 +3938,7 @@
 											"type": "text"
 										}
 									],
-									"cookie": [
-										{
-											"expires": "Invalid Date"
-										}
-									],
+									"cookie": [],
 									"body": "{\n    \"messaging_product\": \"whatsapp\",\n    \"contacts\": [\n        {\n            \"input\": \"48XXXXXXXXX\",\n            \"wa_id\": \"48XXXXXXXXX \"\n        }\n    ],\n    \"messages\": [\n        {\n            \"id\": \"wamid.gBGGSFcCNEOPAgkO_KJ55r4w_ww\"\n        }\n    ]\n}"
 								}
 							]
@@ -4160,11 +4124,7 @@
 											"type": "text"
 										}
 									],
-									"cookie": [
-										{
-											"expires": "Invalid Date"
-										}
-									],
+									"cookie": [],
 									"body": "{\n    \"messaging_product\": \"whatsapp\",\n    \"contacts\": [\n        {\n            \"input\": \"48XXXXXXXXX\",\n            \"wa_id\": \"48XXXXXXXXX \"\n        }\n    ],\n    \"messages\": [\n        {\n            \"id\": \"wamid.gBGGSFcCNEOPAgkO_KJ55r4w_ww\"\n        }\n    ]\n}"
 								}
 							]
@@ -4350,11 +4310,7 @@
 											"type": "text"
 										}
 									],
-									"cookie": [
-										{
-											"expires": "Invalid Date"
-										}
-									],
+									"cookie": [],
 									"body": "{\n    \"messaging_product\": \"whatsapp\",\n    \"contacts\": [\n        {\n            \"input\": \"48XXXXXXXXX\",\n            \"wa_id\": \"48XXXXXXXXX \"\n        }\n    ],\n    \"messages\": [\n        {\n            \"id\": \"wamid.gBGGSFcCNEOPAgkO_KJ55r4w_ww\"\n        }\n    ]\n}"
 								}
 							]
@@ -4540,11 +4496,7 @@
 											"type": "text"
 										}
 									],
-									"cookie": [
-										{
-											"expires": "Invalid Date"
-										}
-									],
+									"cookie": [],
 									"body": "{\n    \"messaging_product\": \"whatsapp\",\n    \"contacts\": [\n        {\n            \"input\": \"48XXXXXXXXX\",\n            \"wa_id\": \"48XXXXXXXXX \"\n        }\n    ],\n    \"messages\": [\n        {\n            \"id\": \"wamid.gBGGSFcCNEOPAgkO_KJ55r4w_ww\"\n        }\n    ]\n}"
 								}
 							]
@@ -5458,11 +5410,7 @@
 											"type": "text"
 										}
 									],
-									"cookie": [
-										{
-											"expires": "Invalid Date"
-										}
-									],
+									"cookie": [],
 									"body": "{\n  \"messaging_product\": \"whatsapp\",\n  \"contacts\": [{\n      \"input\": \"PHONE_NUMBER\",\n      \"wa_id\": \"WHATSAPP_ID\"\n    }],\n  \"messages\": [{\n      \"id\": \"wamid.ID\"\n    }]\n}"
 								}
 							]
@@ -7587,11 +7535,7 @@
 									"value": "application/json"
 								}
 							],
-							"cookie": [
-								{
-									"expires": "Invalid Date"
-								}
-							],
+							"cookie": [],
 							"body": ""
 						}
 					]
