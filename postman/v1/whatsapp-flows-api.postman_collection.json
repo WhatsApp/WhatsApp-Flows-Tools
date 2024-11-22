@@ -9,7 +9,7 @@
 	},
 	"item": [
 		{
-			"name": "1. Create Flow",
+			"name": "Create Flow",
 			"item": [
 				{
 					"name": "Create Flow",
@@ -177,6 +177,73 @@
 					]
 				},
 				{
+					"name": "Get Preview URL",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base-url}}/{{flow-id}}?fields=preview.invalidate(false)",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"{{flow-id}}"
+							],
+							"query": [
+								{
+									"key": "fields",
+									"value": "preview.invalidate(false)",
+									"description": "Set to true to generate a new preview link and expire old link"
+								},
+								{
+									"key": "date_format",
+									"value": "U",
+									"description": "Returns date as unix timestamp in seconds",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Returns link to web page with preview of the flow. The link has an expiry time which is returned in the response. The same link will be returned as long as it's still valid, a new link will be generated when it expires.\n\nTo generate a new link and invalidate the existing link, set\n\n`fields=preview.invalidate(true)`"
+					},
+					"response": [
+						{
+							"name": "Get Preview URL",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base-url}}/{{flow-id}}?fields=preview.invalidate(false)",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"{{flow-id}}"
+									],
+									"query": [
+										{
+											"key": "fields",
+											"value": "preview.invalidate(false)",
+											"description": "Set to true to generate a new preview link and expire old link"
+										},
+										{
+											"key": "date_format",
+											"value": "U",
+											"description": "Returns date as unix timestamp in seconds",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    \"preview\": {\n        \"preview_url\": \"https://business.facebook.com/wa/manage/flows/550.../preview/?token=b9d6....\",\n        \"expires_at\": \"2023-05-21T11:18:09+0000\"\n    },\n    \"id\": \"flow-1\"\n\n}"
+						}
+					]
+				},
+				{
 					"name": "List Flows",
 					"request": {
 						"method": "GET",
@@ -264,10 +331,10 @@
 			]
 		},
 		{
-			"name": "2. Update Flow",
+			"name": "Update Flow",
 			"item": [
 				{
-					"name": "Upload Flow JSON Asset",
+					"name": "Update Flow JSON",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -346,73 +413,6 @@
 							"header": [],
 							"cookie": [],
 							"body": "{\n    \"success\": true,\n    \"validation_errors\": [\n        {\n            \"error\": \"INVALID_PROPERTY\",\n            \"error_type\": \"JSON_SCHEMA_ERROR\",\n            \"message\": \"The property \\\"initial-text\\\" cannot be specified at \\\"$root/screens/0/layout/children/2/children/0\\\".\",\n            \"line_start\": 46,\n            \"line_end\": 46,\n            \"column_start\": 17,\n            \"column_end\": 30\n        }\n    ]\n}"
-						}
-					]
-				},
-				{
-					"name": "Get Preview URL",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base-url}}/{{flow-id}}?fields=preview.invalidate(false)",
-							"host": [
-								"{{base-url}}"
-							],
-							"path": [
-								"{{flow-id}}"
-							],
-							"query": [
-								{
-									"key": "fields",
-									"value": "preview.invalidate(false)",
-									"description": "Set to true to generate a new preview link and expire old link"
-								},
-								{
-									"key": "date_format",
-									"value": "U",
-									"description": "Returns date as unix timestamp in seconds",
-									"disabled": true
-								}
-							]
-						},
-						"description": "Returns link to web page with preview of the flow. The link has an expiry time which is returned in the response. The same link will be returned as long as it's still valid, a new link will be generated when it expires.\n\nTo generate a new link and invalidate the existing link, set\n\n`fields=preview.invalidate(true)`"
-					},
-					"response": [
-						{
-							"name": "Get Preview URL",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{base-url}}/{{flow-id}}?fields=preview.invalidate(false)",
-									"host": [
-										"{{base-url}}"
-									],
-									"path": [
-										"{{flow-id}}"
-									],
-									"query": [
-										{
-											"key": "fields",
-											"value": "preview.invalidate(false)",
-											"description": "Set to true to generate a new preview link and expire old link"
-										},
-										{
-											"key": "date_format",
-											"value": "U",
-											"description": "Returns date as unix timestamp in seconds",
-											"disabled": true
-										}
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [],
-							"cookie": [],
-							"body": "{\n    \"preview\": {\n        \"preview_url\": \"https://business.facebook.com/wa/manage/flows/550.../preview/?token=b9d6....\",\n        \"expires_at\": \"2023-05-21T11:18:09+0000\"\n    },\n    \"id\": \"flow-1\"\n\n}"
 						}
 					]
 				},
@@ -552,7 +552,7 @@
 					]
 				},
 				{
-					"name": "List Assets",
+					"name": "List Assets (Get Flow JSON URL)",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -688,7 +688,7 @@
 			]
 		},
 		{
-			"name": "3. Setup Encryption",
+			"name": "Setup Endpoint Encryption",
 			"item": [
 				{
 					"name": "Set Encryption Public Key",
@@ -811,7 +811,7 @@
 			]
 		},
 		{
-			"name": "4. Send Flow via Cloud API",
+			"name": "Send Flow via Cloud API",
 			"item": [
 				{
 					"name": "Get WABA Phone Numbers",
@@ -857,7 +857,7 @@
 					]
 				},
 				{
-					"name": "Register Number",
+					"name": "Register Phone Number",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -1371,7 +1371,7 @@
 			]
 		},
 		{
-			"name": "Metrics API",
+			"name": "Get Endpoint Metrics",
 			"item": [
 				{
 					"name": "Get Endpoint Request Count Metric",
