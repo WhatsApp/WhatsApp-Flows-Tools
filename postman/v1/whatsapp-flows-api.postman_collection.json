@@ -122,6 +122,93 @@
 					]
 				},
 				{
+					"name": "Migrate Flows",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "source_waba_id",
+									"value": "<SOURCE_WABA_ID>",
+									"description": "The ID of the source WABA from which the flows will be copied",
+									"type": "text"
+								},
+								{
+									"key": "source_flow_names",
+									"value": "[\"appointment\", \"leadgen\"]",
+									"description": "[Optional] The names of the flows that will be copied from the source WABA. If not specified, all flows in the source WABA will be copied",
+									"type": "text"
+								}
+							],
+							"options": {
+								"formdata": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-url}}/{{waba-id}}/migrate_flows",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"{{waba-id}}",
+								"migrate_flows"
+							]
+						},
+						"description": "Creates a copy of existing flows from source WABA to destination WABA with the same names."
+					},
+					"response": [
+						{
+							"name": "Migrate Flows",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "source_waba_id",
+											"value": "<SOURCE_WABA_ID>",
+											"description": "The ID of the source WABA from which the flows will be copied",
+											"type": "text"
+										},
+										{
+											"key": "source_flow_names",
+											"value": "[\"appointment\", \"leadgen\"]",
+											"description": "[Optional] The names of the flows that will be copied from the source WABA. If not specified, all flows in the source WABA will be copied",
+											"type": "text"
+										}
+									],
+									"options": {
+										"formdata": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base-url}}/{{waba-id}}/migrate_flows",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"{{waba-id}}",
+										"migrate_flows"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    \"migrated_flows\": [\n        {\n            \"source_id\": \"source-flow-1\",\n            \"source_name\": \"appointment\",\n            \"migrated_id\": \"dest-flow-1\"\n        }\n    ],\n    \"failed_flows\": [\n        {\n            \"source_name\": \"leadgen\",\n            \"error_code\": \"4233041\",\n            \"error_message\": \"Flows Migration Error: Flow name not found in source WABA.\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
 					"name": "Get Flow",
 					"request": {
 						"method": "GET",
@@ -1700,8 +1787,7 @@
 		},
 		{
 			"key": "flow-name",
-			"value": "<FLOW_NAME>",
-			"type": "string"
+			"value": "<FLOW_NAME>"
 		},
 		{
 			"key": "business-phone-number-id",
