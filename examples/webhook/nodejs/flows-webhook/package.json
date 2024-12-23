@@ -10,8 +10,8 @@
   "author": "WhatsApp Flows Team",
   "license": "MIT",
   "dependencies": {
-    "axios": "^1.7.4",
-    "express": "^4.21.1"
+    "axios": "^1.7.9",
+    "express": "^4.21.2"
   },
   "engines": {
     "node": ">=16.0.0"
