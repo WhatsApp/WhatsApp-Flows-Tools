@@ -1934,6 +1934,133 @@
 							]
 						},
 						{
+							"name": "Upload Audio",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"file\": \"@/local/path/file.ogg;type=audio/ogg\",\n    \"messaging_product\": \"whatsapp\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://graph.facebook.com/{{Version}}/{{Phone-Number-ID}}/media",
+									"protocol": "https",
+									"host": [
+										"graph",
+										"facebook",
+										"com"
+									],
+									"path": [
+										"{{Version}}",
+										"{{Phone-Number-ID}}",
+										"media"
+									]
+								},
+								"description": "This request uploads an audio as .ogg. The parameters are specified as **form-data** in the request **body**."
+							},
+							"response": [
+								{
+									"name": "Upload Audio (form-data)",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "messaging_product",
+													"value": "whatsapp",
+													"type": "text"
+												},
+												{
+													"key": "file",
+													"type": "file",
+													"src": "VTU9ki3ZH/sample-ogg.ogg"
+												}
+											]
+										},
+										"url": {
+											"raw": "https://graph.facebook.com/{{Version}}/{{Phone-Number-ID}}/media",
+											"protocol": "https",
+											"host": [
+												"graph",
+												"facebook",
+												"com"
+											],
+											"path": [
+												"{{Version}}",
+												"{{Phone-Number-ID}}",
+												"media"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [],
+									"cookie": [],
+									"body": "{\n    \"id\": \"<MEDIA_ID>\"\n}"
+								},
+								{
+									"name": "Upload Audio JSON",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer {{User-Access-Token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n \n    \"file\": \"@/local/path/file.ogg;type=ogg\",\n    \"messaging_product\": \"whatsapp\"    \n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://graph.facebook.com/{{Version}}/{{Phone-Number-ID}}/media",
+											"protocol": "https",
+											"host": [
+												"graph",
+												"facebook",
+												"com"
+											],
+											"path": [
+												"{{Version}}",
+												"{{Phone-Number-ID}}",
+												"media"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": \"4490709327384033\"\n}"
+								}
+							]
+						},
+						{
 							"name": "Retrieve Media URL",
 							"request": {
 								"method": "GET",
