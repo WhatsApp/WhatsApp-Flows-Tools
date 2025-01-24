@@ -524,6 +524,9 @@
 								}
 							}
 						},
+						"url": {
+							"raw": ""
+						},
 						"description": "Once participating customers send a message to your business, you get **24 hours of free messages with them** — that window of time is called the customer service window. For testing purposes, we want to enable this window, so you can send as many messages as you want.\n\nFrom a personal WhatsApp iOS/Android app, send a message to the phone number you just registered. Once the message is sent, you should receive an incoming message to your Webhook with a notification in the following format."
 					},
 					"response": []
@@ -755,6 +758,432 @@
 						}
 					],
 					"description": "Use the **`/{{Phone-Number-ID}}/register`** endpoint to migrate your WhatsApp Business Accounts from your current on-premise deployment to the new Cloud-Based API. \n\n#### Reminders\n\n* To use this endpoint, you need to authenticate yourself with a system user access token with the **`whatsapp_business_management`** permission.\n\n* If you need to find your phone number ID, see [Get Phone Number ID](#c72d9c17-554d-4ae1-8f9e-b28a94010b28)."
+				},
+				{
+					"name": "Block Users",
+					"item": [
+						{
+							"name": "Get blocked users",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://graph.facebook.com/{{Version}}/{{Phone-Number-ID}}/block_users",
+									"protocol": "https",
+									"host": [
+										"graph",
+										"facebook",
+										"com"
+									],
+									"path": [
+										"{{Version}}",
+										"{{Phone-Number-ID}}",
+										"block_users"
+									]
+								},
+								"description": "- Guide: [Block Users](https://developers.facebook.com/docs/whatsapp/cloud-api/block-users)\n    \n- Endpoint reference: [GET WhatsApp Buiness Phone Number &gt; block_users](https://developers.facebook.com/docs/graph-api/reference/whats-app-business-account-to-number-current-status/block_users/#Reading)"
+							},
+							"response": [
+								{
+									"name": "Get blocked users",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://graph.facebook.com/{{Version}}/{{Phone-Number-ID}}/block_users",
+											"protocol": "https",
+											"host": [
+												"graph",
+												"facebook",
+												"com"
+											],
+											"path": [
+												"{{Version}}",
+												"{{Phone-Number-ID}}",
+												"block_users"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Encoding",
+											"value": "br"
+										},
+										{
+											"key": "ETag",
+											"value": "\"479d4d6b1605dd222ded4e7fb450229b1d19dbc6\""
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept-Encoding"
+										},
+										{
+											"key": "x-business-use-case-usage",
+											"value": "{\"102290129340398\":[{\"type\":\"whatsapp_business_management\",\"call_count\":1,\"total_cputime\":1,\"total_time\":1,\"estimated_time_to_regain_access\":0},{\"type\":\"whatsapp\",\"call_count\":1,\"total_cputime\":1,\"total_time\":1,\"estimated_time_to_regain_access\":0}]}"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "facebook-api-version",
+											"value": "v22.0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=15552000; preload"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "private, no-cache, no-store, must-revalidate"
+										},
+										{
+											"key": "Expires",
+											"value": "Sat, 01 Jan 2000 00:00:00 GMT"
+										},
+										{
+											"key": "x-fb-request-id",
+											"value": "AGaOBl2yM-g8gdON-dhzl5y"
+										},
+										{
+											"key": "x-fb-trace-id",
+											"value": "E7riEe9OW2e"
+										},
+										{
+											"key": "x-fb-rev",
+											"value": "1019544279"
+										},
+										{
+											"key": "X-FB-Debug",
+											"value": "52zkUgodnaVRhbBE+3RiGz6TnmjmDEGunwYd+vKSc4synE+Xii//dy6twB/7yKgOJiMUuV0OF248UAZ1qL3v0A=="
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 24 Jan 2025 00:48:41 GMT"
+										},
+										{
+											"key": "X-FB-Connection-Quality",
+											"value": "EXCELLENT; q=0.9, rtt=7, rtx=0, c=10, mss=1380, tbw=372, tp=-1, tpl=-1, uplat=527, ullat=0"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=86400"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Content-Length",
+											"value": "155"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"messaging_product\": \"whatsapp\",\n            \"wa_id\": \"16505551234\"\n        }\n    ],\n    \"paging\": {\n        \"cursors\": {\n            \"before\": \"eyJvZAmZAzZAXQiOjAsInZAlcnNpb25JZACI6IjE3Mzc2Nzk2ODgzODM1ODQifQZDZD\",\n            \"after\": \"eyJvZAmZAzZAXQiOjAsInZAlcnNpb25JZACI6IjE3Mzc2Nzk2ODgzODM1ODQifQZDZD\"\n        }\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Block user(s)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"messaging_product\": \"whatsapp\",\n    \"block_users\": [\n        {\n            \"user\": \"{{Recipient-Phone-Number}}\"\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://graph.facebook.com/{{Version}}/{{Phone-Number-ID}}/block_users",
+									"protocol": "https",
+									"host": [
+										"graph",
+										"facebook",
+										"com"
+									],
+									"path": [
+										"{{Version}}",
+										"{{Phone-Number-ID}}",
+										"block_users"
+									]
+								},
+								"description": "- Guide: [Block Users](https://developers.facebook.com/docs/whatsapp/cloud-api/block-users)\n    \n- Endpoint reference: [POST WhatsApp Buiness Phone Number &gt; block_users](https://developers.facebook.com/docs/graph-api/reference/whats-app-business-account-to-number-current-status/block_users/#Creating)"
+							},
+							"response": [
+								{
+									"name": "Block user(s)",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"messaging_product\": \"whatsapp\",\n    \"block_users\": [\n        {\n            \"user\": \"+16505551234\"\n        }\n    ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://graph.facebook.com/{{Version}}/{{Phone-Number-ID}}/block_users",
+											"protocol": "https",
+											"host": [
+												"graph",
+												"facebook",
+												"com"
+											],
+											"path": [
+												"{{Version}}",
+												"{{Phone-Number-ID}}",
+												"block_users"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "x-business-use-case-usage",
+											"value": "{\"102290129340398\":[{\"type\":\"whatsapp\",\"call_count\":1,\"total_cputime\":1,\"total_time\":1,\"estimated_time_to_regain_access\":0}]}"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "facebook-api-version",
+											"value": "v22.0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=15552000; preload"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "private, no-cache, no-store, must-revalidate"
+										},
+										{
+											"key": "Expires",
+											"value": "Sat, 01 Jan 2000 00:00:00 GMT"
+										},
+										{
+											"key": "x-fb-request-id",
+											"value": "Amfmei-TxXlu3XDYNpXGNul"
+										},
+										{
+											"key": "x-fb-trace-id",
+											"value": "EvIR2I6Qlba"
+										},
+										{
+											"key": "x-fb-rev",
+											"value": "1019544279"
+										},
+										{
+											"key": "X-FB-Debug",
+											"value": "obpzTBElj3EHsUSYaQnKGL+48PTbhnEUlBcWCbxZ975gqdmNtykW75syW2urtWZFXbUVgznzAYrP1e9bJNxGZQ=="
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 24 Jan 2025 00:48:08 GMT"
+										},
+										{
+											"key": "X-FB-Connection-Quality",
+											"value": "EXCELLENT; q=0.9, rtt=8, rtx=0, c=10, mss=1380, tbw=3404, tp=-1, tpl=-1, uplat=1235, ullat=0"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=86400"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Content-Length",
+											"value": "111"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"messaging_product\": \"whatsapp\",\n    \"block_users\": {\n        \"added_users\": [\n            {\n                \"input\": \"+16505551234\",\n                \"wa_id\": \"16505551234\"\n            }\n        ]\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Unblock user(s)",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"messaging_product\": \"whatsapp\",\n    \"block_users\": [\n        {\n            \"user\": \"{{Recipient-Phone-Number}}\"\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://graph.facebook.com/{{Version}}/{{Phone-Number-ID}}/block_users",
+									"protocol": "https",
+									"host": [
+										"graph",
+										"facebook",
+										"com"
+									],
+									"path": [
+										"{{Version}}",
+										"{{Phone-Number-ID}}",
+										"block_users"
+									]
+								},
+								"description": "- Guide: [Block Users](https://developers.facebook.com/docs/whatsapp/cloud-api/block-users)\n    \n- Endpoint reference: [DELETE WhatsApp Buiness Phone Number &gt; block_users](https://developers.facebook.com/docs/graph-api/reference/whats-app-business-account-to-number-current-status/block_users/#Deleting)"
+							},
+							"response": [
+								{
+									"name": "Unblock user(s)",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"messaging_product\": \"whatsapp\",\n    \"block_users\": [\n        {\n            \"user\": \"+16505551234\"\n        }\n    ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://graph.facebook.com/{{Version}}/{{Phone-Number-ID}}/block_users",
+											"protocol": "https",
+											"host": [
+												"graph",
+												"facebook",
+												"com"
+											],
+											"path": [
+												"{{Version}}",
+												"{{Phone-Number-ID}}",
+												"block_users"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "x-business-use-case-usage",
+											"value": "{\"102290129340398\":[{\"type\":\"whatsapp\",\"call_count\":1,\"total_cputime\":1,\"total_time\":1,\"estimated_time_to_regain_access\":0}]}"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "facebook-api-version",
+											"value": "v22.0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=15552000; preload"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "private, no-cache, no-store, must-revalidate"
+										},
+										{
+											"key": "Expires",
+											"value": "Sat, 01 Jan 2000 00:00:00 GMT"
+										},
+										{
+											"key": "x-fb-request-id",
+											"value": "A_gHjMbqGboJZKOEcxLKzhy"
+										},
+										{
+											"key": "x-fb-trace-id",
+											"value": "GXXfwd3p1hC"
+										},
+										{
+											"key": "x-fb-rev",
+											"value": "1019544279"
+										},
+										{
+											"key": "X-FB-Debug",
+											"value": "1vpcJ11cxYPapINmC6TBtRjtZ+e1xnlB9Ow5TaPw95PWVWzWpN1c96zrZX2glrzyzf/qIQBWkvUx53Xm/qTOBw=="
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 24 Jan 2025 00:54:14 GMT"
+										},
+										{
+											"key": "X-FB-Connection-Quality",
+											"value": "EXCELLENT; q=0.9, rtt=7, rtx=0, c=10, mss=1380, tbw=372, tp=-1, tpl=-1, uplat=2019, ullat=0"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=86400"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Content-Length",
+											"value": "113"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"messaging_product\": \"whatsapp\",\n    \"block_users\": {\n        \"removed_users\": [\n            {\n                \"input\": \"+16505551234\",\n                \"wa_id\": \"16505551234\"\n            }\n        ]\n    }\n}"
+								}
+							]
+						}
+					],
+					"description": "Guide: [Block Users](https://developers.facebook.com/docs/whatsapp/cloud-api/block-users)"
 				},
 				{
 					"name": "Business Compliance",
@@ -2956,6 +3385,9 @@
 													"language": "json"
 												}
 											}
+										},
+										"url": {
+											"raw": ""
 										}
 									},
 									"status": "OK",
@@ -7655,7 +8087,7 @@
 							},
 							"status": "OK",
 							"code": 200,
-							"_postman_previewlanguage": "",
+							"_postman_previewlanguage": "Text",
 							"header": [
 								{
 									"key": "Content-Type",
@@ -8200,6 +8632,9 @@
 								}
 							}
 						},
+						"url": {
+							"raw": ""
+						},
 						"description": "The following is an example of a text message you received from a customer:"
 					},
 					"response": []
@@ -8217,6 +8652,9 @@
 									"language": "json"
 								}
 							}
+						},
+						"url": {
+							"raw": ""
 						},
 						"description": "The following is an example of a text message you receive from a customer, when you have the **`show_security_notifications`** parameter set to **`true`** in the **application settings**."
 					},
@@ -8278,6 +8716,9 @@
 								}
 							}
 						},
+						"url": {
+							"raw": ""
+						},
 						"description": "When you receive a media message containing a sticker, WhatsApp Business API downloads the sticker and a notification is sent to your Webhook once the sticker is downloaded.\n\nThe Webhook notification contains information that identifies the media object and allows you to find and retrieve the object. [Use the media endpoints to retrieve the media](https://desktop.postman.com/?desktopVersion=9.16.0&userId=14291747&teamId=1367031)."
 					},
 					"response": []
@@ -8295,6 +8736,9 @@
 									"language": "json"
 								}
 							}
+						},
+						"url": {
+							"raw": ""
 						},
 						"description": "The following is an example of a contact message you received from a customer:"
 					},
@@ -8314,6 +8758,9 @@
 								}
 							}
 						},
+						"url": {
+							"raw": ""
+						},
 						"description": "The following is an example of a static location message you received from a customer."
 					},
 					"response": []
@@ -8331,6 +8778,9 @@
 									"language": "json"
 								}
 							}
+						},
+						"url": {
+							"raw": ""
 						}
 					},
 					"response": []
@@ -8348,6 +8798,9 @@
 									"language": "json"
 								}
 							}
+						},
+						"url": {
+							"raw": ""
 						},
 						"description": "It’s possible to receive an unknown message callback notification. The following is an example of a message you received from a customer that is not supported."
 					},
@@ -8367,6 +8820,9 @@
 								}
 							}
 						},
+						"url": {
+							"raw": ""
+						},
 						"description": "The WhatsApp Business API sends notifications to inform you of the status of the messages between you and users. When a message is sent successfully, you receive a notification when the message is sent, delivered, and read. The order of these notifications in your app may not reflect the actual timing of the message status. You can view the timestamp to determine the timing.\n\nThe following is an example of successful message status update Webhooks:"
 					},
 					"response": []
@@ -8384,6 +8840,9 @@
 									"language": "json"
 								}
 							}
+						},
+						"url": {
+							"raw": ""
 						},
 						"description": "When your customer clicks on a quick reply button in an [interactive message template](#eed16be1-5e49-4a48-8710-398820b4b5dd), a response is sent. Below is an example of the callback format."
 					},
@@ -8403,6 +8862,9 @@
 								}
 							}
 						},
+						"url": {
+							"raw": ""
+						},
 						"description": "The following notification is received when a business sends a message as part of a [user-initiated conversation](https://developers.facebook.com/docs/whatsapp/pricing/conversationpricing#how-it-works) (if that conversation did not originate in a free entry point):"
 					},
 					"response": []
@@ -8421,6 +8883,9 @@
 								}
 							}
 						},
+						"url": {
+							"raw": ""
+						},
 						"description": "The following notification is received when a business sends a message as part of a [business-initiated conversation](https://developers.facebook.com/docs/whatsapp/pricing/conversationpricing#how-it-works):"
 					},
 					"response": []
@@ -8438,6 +8903,9 @@
 									"language": "json"
 								}
 							}
+						},
+						"url": {
+							"raw": ""
 						}
 					},
 					"response": []
@@ -8455,6 +8923,9 @@
 									"language": "json"
 								}
 							}
+						},
+						"url": {
+							"raw": ""
 						},
 						"description": "The following notification is received when a business’ message is delivered and that message is part of a [user-initiated conversation](https://developers.facebook.com/docs/whatsapp/pricing/conversationpricing#how-it-works) (if that conversation did not originate in a [free entry point](https://developers.facebook.com/docs/whatsapp/pricing/conversationpricing#free-entry-points)):"
 					},
@@ -8474,6 +8945,9 @@
 								}
 							}
 						},
+						"url": {
+							"raw": ""
+						},
 						"description": "The following notification is received when a business’ message is delivered and that message is part of a [user-initiated conversation](https://developers.facebook.com/docs/whatsapp/pricing/conversationpricing#how-it-works) (if that conversation did not originate in a [free entry point](https://developers.facebook.com/docs/whatsapp/pricing/conversationpricing#free-entry-points)):"
 					},
 					"response": []
@@ -8491,6 +8965,9 @@
 									"language": "json"
 								}
 							}
+						},
+						"url": {
+							"raw": ""
 						},
 						"description": "The following notification is received when a business’ message is delivered and that message is part of a [user-initiated conversation](https://developers.facebook.com/docs/whatsapp/pricing/conversationpricing#how-it-works) originating from a [free entry point](https://developers.facebook.com/docs/whatsapp/pricing/conversationpricing#free-entry-points):"
 					},
@@ -8510,6 +8987,9 @@
 								}
 							}
 						},
+						"url": {
+							"raw": ""
+						},
 						"description": "Currently, the Cloud API does not support webhook status updates for deleted messages. If a user deletes a message, you will receive a webhook with an error code for an unsupported message type:"
 					},
 					"response": []
@@ -8527,6 +9007,9 @@
 									"language": "json"
 								}
 							}
+						},
+						"url": {
+							"raw": ""
 						},
 						"description": "The following notification shows a Webhook with failed status:"
 					},
@@ -8546,6 +9029,9 @@
 								}
 							}
 						},
+						"url": {
+							"raw": ""
+						},
 						"description": "A Product Enquiry Message is received when a user is asking for more information about a specific product. These can be received as in two scenarios:<ol><li>When a customer replies to Single or Multi-Product Messages</li><li>When a customer accesses a business’ catalog through another entry point, navigates to a **Product Details Page**, and clicks **Message Business about this Product**.</li></ol>"
 					},
 					"response": []
@@ -8563,6 +9049,9 @@
 									"language": "json"
 								}
 							}
+						},
+						"url": {
+							"raw": ""
 						}
 					},
 					"response": []
