@@ -9229,7 +9229,10 @@
 			"script": {
 				"type": "text/javascript",
 				"exec": [
-					""
+					"pm.request.headers.add({",
+					"    key: 'User-Agent',",
+					"    value: 'Postman/WhatsAppCloudAPICollection'",
+					"});"
 				]
 			}
 		},
