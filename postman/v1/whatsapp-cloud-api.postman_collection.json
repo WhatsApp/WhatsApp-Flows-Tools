@@ -12,34 +12,6 @@
 			"name": "Overview",
 			"item": [
 				{
-					"name": "On-Premises API vs. Cloud API",
-					"item": [],
-					"description": "Businesses looking to use the WhatsApp Business Platform have two hosting options: On-Premises API and Cloud API. In general, we recommend that the majority of businesses use the Cloud API due to ease of implementation and maintenance. For a full performance comparison, see:\n\n*   [Key Differences](https://developers.facebook.com/docs/whatsapp/cloud-api/overview/on-premises-cloud-api-comparison#key-differences)\n*   [Messaging Features Comparison](https://developers.facebook.com/docs/whatsapp/cloud-api/overview/on-premises-cloud-api-comparison#messaging-features)\n    \n\n<!-- Saved by grahamp 09/02/2021: Back up of Key differences in the case we want to keep Postman complete and not link out to developers.facebook.com. -->\n\n<!-- \n<br>| <b>Feature</b> | <b>On-Premises API (v2.37)</b> | <b>Cloud API/Beta</b> |<br>|--------------------|-----------------------------|--------------------|<br>| Check Contact | ✅ | 🆇 (For Cloud API, this is no longer required to send messages. You can just use the person’s phone number.) |<br>| Text Messages | ✅ | ✅ |<br>| Media Messages | ✅ | ✅ &nbsp; Images and documents are supported in October 2021. Audio and video will be supported starting November 2021.|<br>| Media Provider | ✅ | 🆇 |<br>| Text Message Templates | ✅ | ✅ |<br>| Media Message Templates | ✅ | ✅ |<br>| Interactive Message Templates | ✅ | ✅ |<br>| Contacts send/receive (not in template) | ✅ | ✅ |<br>| Location send/receive (not in template) | ✅ | ✅ |<br>| Stickers | ✅ | 🆇 |<br>| Sticker packs | ✅ | 🆇 |<br>| Conversation-Based Pricing - global rollout | ✅ &nbsp;(Feb, 2022) | ✅ &nbsp;(Feb, 2022) |<br>| List Messages | ✅ &nbsp;(v.2.35) | 🆇 |<br>| Dynamic Reply Buttons | ✅ &nbsp;(v.2.35) | 🆇 |<br>| Product List Messages | ✅ &nbsp;(v.2.37) | 🆇 |<br>| Ads with Content | ✅ | 🆇 | \n-->",
-					"auth": {
-						"type": "noauth"
-					},
-					"event": [
-						{
-							"listen": "prerequest",
-							"script": {
-								"type": "text/javascript",
-								"exec": [
-									""
-								]
-							}
-						},
-						{
-							"listen": "test",
-							"script": {
-								"type": "text/javascript",
-								"exec": [
-									""
-								]
-							}
-						}
-					]
-				},
-				{
 					"name": "Cloud API Overview",
 					"item": [],
 					"description": "To use the Cloud API, businesses make calls to Meta’s [Graph API](https://developers.facebook.com/docs/graph-api/) to send messages and Webhooks to receive events, such as messages and status updates. The Graph API is a form of Remote Procedure Call expressed over HTTP, where operations and their parameters are expressed using a combination of URL parameters, headers, and request body.\n\nA call to the Graph API from UNIX-based command lines looks like this:\n\n``` shell\ncurl -X POST \\\nhttps://graph.facebook.com/{{Version}}/{{Recipient-Phone-Number}}/messages \\\n  -H \"Authorization: {{User-Access-Token}}\" \\\n  -d '{\n    \"messaging_product\": \"whatsapp\",\n    \"to\": \"1650XXXXXXX\",\n    \"text\": {\"body\" : \"hi\"}\n }'\n\n```\n\nCompared to the On-Premises implementation, a Graph API integration relies on a different authentication mechanism (see [User Access Token](#3dd2844f-10f4-4e52-8c59-b6f4f4f92b4b)), a different Webhook setup process (see [Setup Webhooks](#41946d3c-6460-4bc2-963f-d5732e48e84e)), and has different latencies and error rates. For more information on how to use the Graph API, see the [Graph API Developer Documentation](https://developers.facebook.com/docs/graph-api/).",
@@ -93,22 +65,6 @@
 						}
 					],
 					"description": "For in depth information relating to Data Privacy and Security, see [Data Privacy and Security FAQs](#5b46e4da-04db-4eb1-9898-0e01295048c7).",
-					"auth": {
-						"type": "noauth"
-					}
-				},
-				{
-					"name": "Migration",
-					"item": [],
-					"description": "**Migrate From On-Premises to Cloud**\n\nFor information on how to migrate from On-Premises to WhatsApp Cloud API, see [Migrate from On-Premises API to Cloud API](https://developers.facebook.com/docs/whatsapp/cloud-api/guides/migrate-between-on-premises-and-cloud-api#on-premises-to-cloud).\n\n**Migrate From Cloud to On-Premises**\n\nFor information on how to migrate from WhatsApp Cloud API to On-Premises, see [Migrate from Cloud API to On-Premises API](hhttps://developers.facebook.com/docs/whatsapp/cloud-api/guides/migrate-between-on-premises-and-cloud-api#cloud-to-on-premises).\n\n**Migrate Phone Number to a Different WABA**\n\nFor information on how to migrate a registered phone number from one WhatsApp Business Account to another, see [Migrate Phone Number to a Different WABA](https://developers.facebook.com/docs/whatsapp/business-management-api/guides/migrate-phone-to-different-waba).",
-					"auth": {
-						"type": "noauth"
-					}
-				},
-				{
-					"name": "Constraints",
-					"item": [],
-					"description": "**A single phone number can only be used on one platform at a time. One phone number for Cloud API and another number for On-Premise.** This means that you cannot use a production phone number with both the On-Premises and Cloud APIs. We recommend doing any testing with a test number (either an existing test number or a new one) and then moving your production phone number to the Cloud API when you’re confident you’re ready for production use.",
 					"auth": {
 						"type": "noauth"
 					}
@@ -229,7 +185,7 @@
 									"status": "OK",
 									"code": 200,
 									"_postman_previewlanguage": "json",
-									"header": null,
+									"header": [],
 									"cookie": [],
 									"body": "{\n    \"messaging_product\": \"whatsapp\",\n    \"contacts\": [\n        {\n            \"input\": \"48XXXXXXXXX\",\n            \"wa_id\": \"48XXXXXXXXX \"\n        }\n    ],\n    \"messages\": [\n        {\n            \"id\": \"wamid.gBGGSFcCNEOPAgkO_KJ55r4w_ww\"\n        }\n    ]\n}"
 								}
@@ -636,11 +592,6 @@
 							"name": "On-Premise to Cloud API",
 							"item": [],
 							"description": "To migrate from On-Premises to Cloud API, follow these steps:\n\n**Optional Step 0: Verify Phone Numbers**\n\n*(This step is only relevant if you don’t have access to Embedded Signup to verify phone numbers. If that doesn’t apply to you, move to Step 1.)*\n\nThe verification status of a phone number doesn't impact the migration between On-Premises and Cloud API. If you don't have access to Embedded Signup to verify phone numbers, we recommend verifying the phone numbers using the On-Premises solution, and then migrating those numbers to the Cloud API.\n\n**Step 1: Select Best Time for Migration**\n\nWe recommend performing migration during a maintenance window while traffic to the On-Premises deployment is low/turned off. Downtime is typically less than 5 minutes, and no re-verification of the phone number is required.\n\n**Step 2: Backup On-Premises Content**\n\nWe don’t provide full database migration, so you must back up your data before moving a phone number from On-Premises to Cloud API. Before starting the backup, make sure you are in single instance mode and not multi-connect.\n\nOnce you are ready, use the On-Premises [Backup API](https://developers.facebook.com/docs/whatsapp/api/settings/backup-and-restore/):\n\n``` json\nPOST /v1/settings/backup  \n{  \n    \"password\": \"your-password\"  \n}\n\n```\n\nA successful response looks like this:\n\n``` json\n{  \n    \"settings\": \n    {  \n      \"data\": \"encrypted-backup-data\"  \n    }  \n}\n\n```\n\nSave the data for the next step.\n\n**Step 3: Call /register to Start Migration**\n\nTo migrate your account, make a **POST** call to the **`PHONE_NUMBER_ID/register`** endpoint. Inside the backup object, include the backup data obtained during the previous step:\n\n``` bash\n`curl -X POST \\ 'https://graph.facebook.com/{{Version}}/FROM_PHONE_NUMBER_ID/register' \\\n-H 'Authorization: Bearer SYSTEM_USER_ACCESS_TOKEN' \\   \n-d '{   \n    \"messaging_product\": \"whatsapp\",\n    \"pin\": \"6_DIGIT_PIN\",\n    \"backup\": \n    {   \n        \"password\": \"PASSWORD\",   \n        \"data\": \"BACKUP_DATA\"   \n    }   \n}'\n\n```\n\nA successful response looks like this:\n\n``` json\n{  \n  \"success\": \"true\"  \n}\n\n```\n\nSee all available fields for this endpoint [here](https://developers.facebook.com/docs/whatsapp/cloud-api/reference/account-migration#parameters).\n\n**Step 4: Prepare to Send Messages**\n\nYou have been migrated to the Cloud API. But, before sending messages, you should perform necessary operations, like [re-uploading media files](https://developers.facebook.com/docs/whatsapp/cloud-api/reference/media) you want to send. Be aware that data (messages, media, etc.) received on the On-Premises API deployment before migration won’t be available in the Cloud API after migration.\n\n**Step 5: Start Sending Messages**\n\nYou are ready to send messages to your customers. See the [/messages endpoint documentation](https://developers.facebook.com/docs/whatsapp/cloud-api/reference/messages) for guidance."
-						},
-						{
-							"name": "Cloud API to On-Premise",
-							"item": [],
-							"description": "To migrate from Cloud API to On-Premises API, follow these steps:\n\n**Step 1: Prepare for Migration**\n\nWe suggest that you stop sending messages while you complete the migration.\n\nThe WhatsApp Business API On-Premises client has certain network requirements for connecting to the WhatsApp servers. To make sure you are ready, check [Set Up and Debug Your Network](https://developers.facebook.com/docs/whatsapp/guides/network-requirements).\n\n**Step 2: Register API Client**\n\nTo move from Cloud API to On-Premises you need to register your WhatsApp Business API client. To do that, call the [**`/account`**](https://developers.facebook.com/docs/whatsapp/api/account) endpoint:\n\n``` json\nPOST /v1/account  \n{  \n    \"cc\": \"<your-country-code>\",  \n    \"phone_number\": \"<your-phone-number-without-country-code>\",  \n    \"method\": \"<sms-or-voice>\",  \n    \"cert\": \"<your-verified-name-cert-in-base64>\",  \n    \"pin\": \"<your-existing-6-digit-pin>\"\n}\n\n```\n\nDepending on the response received, the registration procedure can be considered complete or require another step to complete. If successful, you receive one of the following HTTP status codes. Follow the instructions that match the response you received:\n\n*   **201 Created** — The account already exists. You are already registered, so you do not need to do anything else.\n*   **202 Accepted** — The account does not exist. Depending on the method selected in the request, check your SMS or voice number for the registration code. This response will include a returned payload that contains the **`vname`** decoded from the cert parameter for you to confirm the right display name is being set. If correct, proceed to [Completing Your Account Registration](https://developers.facebook.com/docs/whatsapp/api/account/verify) to complete registration.\n    \n\nSee all available fields for this endpoint [here](https://developers.facebook.com/docs/whatsapp/api/account#parameters).\n\n**Step 3: Set Shards**\n\nOnce your client is registered, you can [set shards](https://developers.facebook.com/docs/whatsapp/multiconnect_mc), if needed.\n\n**Step 4: Start Sending Messages**\n\nYou are ready to send messages to your customers. For more information, see [**`/messages`**](https://developers.facebook.com/docs/whatsapp/guides/messages) endpoint documentation."
 						}
 					],
 					"description": "This guide walks you through the process of migrating between On-Premises and Cloud API.\n\n*   [Migrate from On-Premises API to Cloud API](#c2070ecb-9bf6-41c8-8452-7209c7820254)\n*   [Migrate from Cloud API to On-Premises API](#46bb6f38-12f5-417f-af0b-729c08c027fe)",
@@ -1668,7 +1619,7 @@
 									"status": "OK",
 									"code": 200,
 									"_postman_previewlanguage": "json",
-									"header": null,
+									"header": [],
 									"cookie": [],
 									"body": "{\n    \"h\":\"2:c2FtcGxlLm1wNA==:image/jpeg:GKAj0gAUCZmJ1voFADip2iIAAAAAbugbAAAA:e:1472075513:ARZ_3ybzrQqEaluMUdI\"\n}"
 								}
@@ -1739,7 +1690,7 @@
 									"status": "OK",
 									"code": 200,
 									"_postman_previewlanguage": "json",
-									"header": null,
+									"header": [],
 									"cookie": [],
 									"body": "{ \n    \"id\": \"upload:MTphdHRhY2htZW50Ojlk2mJiZxUwLWV6MDUtNDIwMy05yTA3LWQ4ZDPmZGFkNTM0NT8=?sig=ARZqkGCA_uQMxC8nHKI\", \n    \"file_offset\": 0 \n}"
 								}
@@ -2165,7 +2116,7 @@
 										}
 									},
 									"_postman_previewlanguage": "json",
-									"header": null,
+									"header": [],
 									"cookie": [],
 									"body": "{\n    \"id\": \"<MEDIA_ID>\"\n}"
 								},
@@ -2301,7 +2252,7 @@
 									"status": "OK",
 									"code": 200,
 									"_postman_previewlanguage": "json",
-									"header": null,
+									"header": [],
 									"cookie": [],
 									"body": "{\n    \"id\": \"<MEDIA_ID>\"\n}"
 								},
@@ -9160,11 +9111,6 @@
 						}
 					],
 					"description": "This section contains information relating to error messages. This includes a list of all error codes and an [example error message response in JSON](#ab9e0327-0c81-4f6a-b068-0e6102363f23).\n\nIf an error is blocking you and you cannot fix it, contact us with both the request payload and error response so we can investigate and provide support.\n\n[Click here to see a list of all error codes](https://developers.facebook.com/docs/whatsapp/cloud-api/support/error-codes#error-codes)."
-				},
-				{
-					"name": "General FAQs",
-					"item": [],
-					"description": "**Q: Will all features from the On-Premises API be available on the Cloud API?**\n\nA: We aim to have parity between the on-premises and Cloud APIs starting in 2022. At the beginning of the beta in October 2021, we will have parity with on-premises version 2.33 with the exception of audio, video, List Messages & Stickers. Audio and video messages will become available in November 2021, and List Messages & Stickers will not be available for the beta.\n\n* * *\n\n**Q: Which company will be providing Cloud API?**\n\nA: The Cloud API will be operated by Meta which provides the [Graph API](https://developers.facebook.com/docs/graph-api/), though which developers will access the WhatsApp Business API. WhatsApp will continue to provide the underlying business messaging routing service that it provides for the On-Premise solution.\n\n* * *\n\n**Q: How will Meta use the WhatsApp messages that are shared with it by a business?**\n\nA: Meta will not use the messages to inform the ads that a person sees. However, as is always the case, businesses can use chats they receive for their own marketing purposes, which may include advertising on Meta or other channels, like email or TV.\n\n* * *\n\n**Q: Does introduction of a cloud-Cloud API mean WhatsApp is deprecating the existing On-Premise API?**\n\nA: No, we will continue to provide the On-Premise API for now.\n\n* * *\n\n**Q: Are there any additional costs for the Cloud API?**\n\nA: No, there is no difference in prices between the Cloud API and the On-Premise API. We expect the Cloud API to generate cost savings for developers. The two types of cost savings for the Cloud API are:\n\n1.  Set up cost (including servers or AWS cost)\n2.  Ongoing cost of maintenance (including engineering time for API upgrades).\n    \n\n* * *\n\n**Q: How can a Business Solutions Provider decide whether a given client should use the On-Premise or Cloud API? Do clients get a choice?**\n\nA: A Business Solutions Provider can select which setup a given client should use. We recommend that the majority of clients use the Cloud API for ease of implementation and maintenance.\n\n* * *\n\n**Q: Will consumers know whether a business is using the Cloud API or the On-Premise API?**\n\nA: Across all our services, WhatsApp makes the end-to-end encryption status of a chat clear. To ensure people know how a business chooses to store and manage their messages with customers, we plan to indicate in our in-app system messages whether businesses have chosen Meta or another company to help store and manage their chats. This will be true for both businesses using the Cloud API, and those working with a BSP using the on-premise API. Conversations in end-to-end encrypted chats will continue to be clearly labeled with a gold system message."
 				},
 				{
 					"name": "Technical Implementation FAQs",
