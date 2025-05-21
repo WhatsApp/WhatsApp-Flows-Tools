@@ -7783,9 +7783,157 @@
 						}
 					],
 					"description": "**These APIs are in beta. Please reach out to Meta Business Engineering teams with your WABA ID to gain access.**\n\nGuide: [Payments API - IN](https://developers.facebook.com/docs/whatsapp/cloud-api/payments-api/payments-in)"
+				},
+				{
+					"name": "Typing indicators",
+					"item": [
+						{
+							"name": "Send typing indicator and read receipt",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"messaging_product\": \"whatsapp\",\n    \"status\": \"read\",\n    \"message_id\": \"<WHATSAPP_MESSAGE_ID>\",\n    \"typing_indicator\": {\n        \"type\": \"text\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://graph.facebook.com/{{Version}}/{{Phone-Number-ID}}/messages",
+									"protocol": "https",
+									"host": [
+										"graph",
+										"facebook",
+										"com"
+									],
+									"path": [
+										"{{Version}}",
+										"{{Phone-Number-ID}}",
+										"messages"
+									]
+								},
+								"description": "- Guide: [Typing indicators](https://developers.facebook.com/docs/whatsapp/cloud-api/typing-indicators)\n    \n- Endpoint reference: [WhatsApp Business Phone Number &gt; Messages](https://developers.facebook.com/docs/graph-api/reference/whats-app-business-account-to-number-current-status/messages/#Creating)"
+							},
+							"response": [
+								{
+									"name": "Send typing indicator and read receipt",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"messaging_product\": \"whatsapp\",\n    \"status\": \"read\",\n    \"message_id\": \"wamid.HBgLMTY1MDM4Nzk0MzkVAgASGBQzQUYzMjEzNDM2RTZGQ0MzMDJBRgA=\",\n    \"typing_indicator\": {\n        \"type\": \"text\"\n    }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://graph.facebook.com/{{Version}}/{{Phone-Number-ID}}/messages",
+											"protocol": "https",
+											"host": [
+												"graph",
+												"facebook",
+												"com"
+											],
+											"path": [
+												"{{Version}}",
+												"{{Phone-Number-ID}}",
+												"messages"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "x-business-use-case-usage",
+											"value": "{\"102290129340398\":[{\"type\":\"whatsapp\",\"call_count\":0,\"total_cputime\":0,\"total_time\":0,\"estimated_time_to_regain_access\":0}]}"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "facebook-api-version",
+											"value": "v22.0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=15552000; preload"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "private, no-cache, no-store, must-revalidate"
+										},
+										{
+											"key": "Expires",
+											"value": "Sat, 01 Jan 2000 00:00:00 GMT"
+										},
+										{
+											"key": "x-fb-request-id",
+											"value": "A_xHw226CwK1JmTNs0vg6H7"
+										},
+										{
+											"key": "x-fb-trace-id",
+											"value": "HI+8wJKxeVw"
+										},
+										{
+											"key": "x-fb-rev",
+											"value": "1023054691"
+										},
+										{
+											"key": "X-FB-Debug",
+											"value": "lv4tuvFRJpqMrYs/DgGn3j5JDX8U1npjw9IK3Wq4ZK9SBhiBtL99ztZj5d/YLhsgoaBRNR0/FKJ1swL3oLYvMg=="
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 21 May 2025 17:38:00 GMT"
+										},
+										{
+											"key": "X-FB-Connection-Quality",
+											"value": "EXCELLENT; q=0.9, rtt=7, rtx=0, c=10, mss=1380, tbw=3403, tp=-1, tpl=-1, uplat=552, ullat=0"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=86400"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Content-Length",
+											"value": "16"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true\n}"
+								}
+							]
+						}
+					],
+					"description": "Guide: [Typing indicators](https://developers.facebook.com/docs/whatsapp/cloud-api/typing-indicators)"
 				}
 			],
-			"description": "This section explores the full list of WhatsApp Business Cloud API reference. *At this time, this API is only available to Business Solution Providers (BSPs) and existing direct developers.*\n\nThis is a list of root nodes and edges available for the WhatsApp Business API. See [Using the Graph API:Nodes](https://developers.facebook.com/docs/graph-api/overview#nodes) for more information on how the API is structured.\n\n## Main Root Nodes\n\n| Node | Description |\n| --- | --- |\n| **`/PHONE_NUMBER_ID`** | Represents a specific phone number. This endpoint is used to [set up two-factor authentication](#fc57a30c-97e0-4e06-b74b-89fd7fc5f783). |\n| **`/MEDIA_ID`** | Represents a specific media object. Use this endpoint to get and delete media objects. |\n| **`/MEDIA_URL`** | Represents a specific media URL. Use this endpoint to download media from a URL. |\n\n## Phone Number ID\n\nThe **`/PHONE_NUMBER_ID`** endpoint has the following edges:\n\n| Edge | Description |\n| --- | --- |\n| **`/PHONE_NUMBER_ID/register`** | Used to [register a phone number](#149d8034-dca8-4bce-827e-06244127b4b7) or to migrate WhatsApp Business Accounts from a current On-Premises deployment to the new Cloud-Based API. |\n| **`/PHONE_NUMBER_ID/deregister`** | Used to [deregister a phone number](#8f0c509c-ec45-44fb-bfcc-38417ce88e97). |\n| **`/PHONE_NUMBER_ID/whatsapp_business_profile`** | Used to [get and update a business' profile](#9bfce27c-ed1f-44b5-82df-b0508210e6be). |\n| **`/PHONE_NUMBER_ID/media`** | Used to [upload media](#39a02bc0-ede1-4848-b24e-4ac3d501aaea). |\n| **`/PHONE_NUMBER_ID/messages`** | Used to [send messages](#1f4f7644-cc97-40b5-b8e4-c19da268fff1). |\n| **`/PHONE_NUMBER_ID/request_code`** | Used to [request a code to verify a phone](#6d413167-648e-40d0-823a-479ec98a2e33) number's ownership. |\n| **`/PHONE_NUMBER_ID/verify_code`** | Used to [verify a phone number's ownership](#1426eb2d-3ff2-4cc7-9021-c8782672e151). |"
+			"description": "This is a list of root nodes and edges available for the WhatsApp Cloud API. See [Using the Graph API:Nodes](https://developers.facebook.com/docs/graph-api/overview#nodes) for more information on how the API is structured.\n\n## Main Root Nodes\n\n| Node | Description |\n| --- | --- |\n| **`/PHONE_NUMBER_ID`** | Represents a specific phone number. This endpoint is used to [set up two-factor authentication](#fc57a30c-97e0-4e06-b74b-89fd7fc5f783). |\n| **`/MEDIA_ID`** | Represents a specific media object. Use this endpoint to get and delete media objects. |\n| **`/MEDIA_URL`** | Represents a specific media URL. Use this endpoint to download media from a URL. |\n\n## Phone Number ID\n\nThe **`/PHONE_NUMBER_ID`** endpoint has the following edges:\n\n| Edge | Description |\n| --- | --- |\n| **`/PHONE_NUMBER_ID/register`** | Used to [register a phone number](#149d8034-dca8-4bce-827e-06244127b4b7) or to migrate WhatsApp Business Accounts from a current On-Premises deployment to the new Cloud-Based API. |\n| **`/PHONE_NUMBER_ID/deregister`** | Used to [deregister a phone number](#8f0c509c-ec45-44fb-bfcc-38417ce88e97). |\n| **`/PHONE_NUMBER_ID/whatsapp_business_profile`** | Used to [get and update a business' profile](#9bfce27c-ed1f-44b5-82df-b0508210e6be). |\n| **`/PHONE_NUMBER_ID/media`** | Used to [upload media](#39a02bc0-ede1-4848-b24e-4ac3d501aaea). |\n| **`/PHONE_NUMBER_ID/messages`** | Used to [send messages](#1f4f7644-cc97-40b5-b8e4-c19da268fff1). |\n| **`/PHONE_NUMBER_ID/request_code`** | Used to [request a code to verify a phone](#6d413167-648e-40d0-823a-479ec98a2e33) number's ownership. |\n| **`/PHONE_NUMBER_ID/verify_code`** | Used to [verify a phone number's ownership](#1426eb2d-3ff2-4cc7-9021-c8782672e151). |"
 		},
 		{
 			"name": "Examples",
