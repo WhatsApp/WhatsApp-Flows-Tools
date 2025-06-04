@@ -9,85 +9,6 @@
 	},
 	"item": [
 		{
-			"name": "Overview",
-			"item": [
-				{
-					"name": "Message Throughput",
-					"item": [],
-					"description": "Cloud API supports up to 80 messages per second (mps) combined sending and receiving of text and media messages by default, and up to 1000 mps automatic upgrade.\n\nFor more information, see [Throughput](https://developers.facebook.com/docs/whatsapp/cloud-api/overview#throughput)."
-				},
-				{
-					"name": "Rate Limits",
-					"item": [],
-					"description": "Cloud API follows [Business Use Case Rate Limits](https://developers.facebook.com/docs/graph-api/overview/rate-limiting/#buc-rate-limits). Each WhatsApp Business Account (WABA) has a call count rate limit and each call made by your app counts toward the limit. An app’s call count for a WABA is the number of calls it can make to business accounts under this WABA during a rolling one hour window and is calculated as follows:\n\n```Calls within one hour for a WABA = 1800000 * Number of Registered Numbers under this WABA```\n\nYou will receive an **`80007`** error code when you hit call limits.\n\nBesides platform rate limits, we have the following rate limits applicable to Cloud API accounts:\n\n* [Test message rate limit](https://www.facebook.com/business/help/2640149499569241): apply to unverified WhatsApp business accounts.\n* [Quality rating and messaging limits](https://developers.facebook.com/docs/whatsapp/api/rate-limits#quality-rating-and-messaging-limits): apply to verified WhatsApp business accounts \n* [Capacity rate limit](https://developers.facebook.com/docs/whatsapp/api/rate-limits#capacity): apply to all accounts.\n* [Business phone rate limit](https://developers.facebook.com/docs/whatsapp/messaging-limits#capacity): Applies to all accounts and limits the throughput per business phone number.",
-					"auth": {
-						"type": "noauth"
-					}
-				},
-				{
-					"name": "Available Metrics",
-					"item": [],
-					"description": "Cloud API users can see the number of messages sent and delivered, as well as other metrics. Fore more information, see [Get Account Metrics](https://developers.facebook.com/docs/whatsapp/business-management-api/analytics)."
-				},
-				{
-					"name": "Scaling",
-					"item": [],
-					"description": "Within Meta infrastructure, the Cloud API automatically scales and adjusts to handle your workload, within your rate limit (messaging volume and number of WhatsApp business accounts).",
-					"auth": {
-						"type": "noauth"
-					}
-				},
-				{
-					"name": "Data Privacy & Security",
-					"item": [
-						{
-							"name": "Message Flows",
-							"item": [],
-							"description": "When a user sends a message to one of these businesses, the message travels end-to-end encrypted between the user and the Cloud API. As per the Signal protocol, the user and the Cloud API, on behalf of the business, negotiate encryption keys and establish a secure communication channel. WhatsApp cannot access any message content exchanged between users and businesses.\n\nOnce a message is received by the Cloud API, it gets decrypted and forwarded to the Business. Messages are only temporarily stored by the Cloud API as required to provide the base API functionality.\n\nMessages from a business to a user flow on the reverse path. Businesses send messages to Cloud API. The Cloud API service stores the messages temporarily and takes on the task to send the message to the WhatsApp platform. Messages are stored for any necessary retransmissions.\n\nAll messages are encrypted by the Cloud API before being sent to WhatsApp using the Signal protocol with keys negotiated with the user (recipient).\n\nWhatsApp acts as the transport service. It provides the message forwarding software; both client and server. It has no visibility into the messages being sent. It protects the users data by detecting unusual messaging patterns (like a business trying to message all users) or collecting spam reports from users.\n\nCloud API, operated by Meta, acts as the intermediary between WhatsApp and the Cloud API businesses. In other words, those businesses have given Cloud API the power to operate on their behalf. Because of this, WhatsApp forwards all message traffic destined for those businesses to Cloud API. WhatsApp also expects to receive from Cloud API all message traffic from those businesses. This is the same client behavior that the On-Premise client has.\n\nWhatsApp gives Cloud API metering and billing information for the Cloud API businesses. It does not share any other messaging information.\n\nMeta, in providing the WhatsApp Cloud API service, acts as a Data Processor on behalf of the business. In other words, the businesses have requested Meta to provide programmatic access to the WhatsApp platform.\n\nCloud API receives from WhatsApp the messages destined for the businesses that use Cloud API. Cloud API also sends to WhatsApp the messages sent by those businesses.  \nOther parts of Meta (other than Cloud API) do not have access to the Cloud API business communications, including message content and metadata. Meta does not use any Cloud API data for advertising."
-						},
-						{
-							"name": "Stored and Collected Data",
-							"item": [],
-							"description": "All data collected, stored and accessed by Cloud API is controlled and monitored to ensure proper usage and maintain the high level of privacy expected from a WhatsApp client.\n\nInformation about the businesses, including their phone numbers, business address, contacts, type, etc. is maintained by Meta and the Business Manager product and complies with the terms of service set by Meta. Cloud API relies on Business Manager and other Meta systems to identify any access to Cloud API on behalf of the business.\n\nMessages sent or received through Cloud API are only accessed by Cloud API, no other part of Meta can use this information. Messages have a maximum retention period of 30 days in order to provide the base features and functionality of the Cloud API service; for example, retransmissions. After 30 days, these features and functionality are no longer available.\n\nCloud API does not rely on any information about the user (customer/consumer) the business is communicating with other than the phone number used to identify the account. This information is used to deliver the messages through the WhatsApp client code. User phone numbers are used as sources or destinations for individual messages; as such they are deleted when messages are deleted. No other part of Meta has access to this information.\n\nLike the On-Premise client, the WhatsApp client code used by Cloud API collects messaging information about the business as required by WhatsApp. This is information used by WhatsApp to detect malicious activity. No message content is shared or sent to WhatsApp at any time and no WhatsApp employee has access to any message content.\n\n| Cloud API Data | System | Available to rest of Meta | Available to WhatsApp |\n| --- | --- | --- | --- |\n| Message content | Cloud API | No | No |\n| Consumer phone number | Cloud API | No | Yes |\n| Non-identifiable statistics | Cloud API | Yes | Yes |\n| Integrity signals - per business | WhatsApp Client | No | Yes |\n| Business Information | Business Manager | Yes | Yes |\n| Billing - per business | WhatsApp | Yes | Yes |"
-						},
-						{
-							"name": "Encryption",
-							"item": [],
-							"description": "With the Cloud API, every WhatsApp message continues to be protected by Signal protocol encryption that secures messages before they leave the device. This means messages with a WhatsApp business account are securely delivered to the destination chosen by each business.  \n<!--\nWhatsApp determines the end-to-end encryption status based on the business’s choice of who operates its API endpoint:\n\n*   Messages with businesses that choose a third-party Business Solution Provider to operate the WhatsApp Business API on their behalf are not considered end-to-end encrypted as these businesses have chosen to give an intermediary access to these messages. This applies to both the Cloud API and the on-premise API when working with a BSP.\n*   Messages with businesses that use the WhatsApp Business app or directly integrate the Business API on-premise are considered end-to-end encrypted as these messages are delivered directly to the business.\n-->    \n\nFor additional details, see [Encryption Overview Whitepaper](https://scontent.whatsapp.net/v/t39.8562-34/122249142_469857720642275_2152527586907531259_n.pdf/WA_Security_WhitePaper.pdf?ccb=1-5&_nc_sid=2fbf2a&_nc_ohc=-gqGulAzS8kAX-qgWRK&_nc_ht=scontent.whatsapp.net&oh=040d462095ff61f2f89f06a3f4ff1e90&oe=6131E1D9).\n\nThe Cloud API uses industry standard encryption techniques to protect data in transit and at rest. The API uses Graph API for sending messages and Webhooks for receiving events, and both operate over industry standard HTTPS, protected by TLS."
-						}
-					],
-					"description": "For in depth information relating to Data Privacy and Security, see [Data Privacy and Security FAQs](#5b46e4da-04db-4eb1-9898-0e01295048c7).",
-					"auth": {
-						"type": "noauth"
-					}
-				}
-			],
-			"description": "The WhatsApp Business Platform Cloud API allows businesses to communicate with their customers at scale. Using the API, developers and businesses can build systems that connect thousands of customers with agents or bots, enabling both programmatic and manual communication. Additionally, you can integrate the API with numerous backend systems, such as CRM and marketing platforms.",
-			"auth": {
-				"type": "noauth"
-			},
-			"event": [
-				{
-					"listen": "prerequest",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
-				},
-				{
-					"listen": "test",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
-				}
-			]
-		},
-		{
 			"name": "Get Started",
 			"item": [
 				{
@@ -397,22 +318,6 @@
 					]
 				}
 			]
-		},
-		{
-			"name": "Guides",
-			"item": [
-				{
-					"name": "Mark Messages as Read",
-					"item": [],
-					"description": "When you receive an incoming message from Webhooks, you can use the `/messages` endpoint to change the status of it to read. We recommend marking incoming messages as read within 30 days of receipt.\n\nYou cannot mark outgoing messages you sent as read.\n\n## Step 1: Obtain `message_id` of incoming message\n\nFirst, find the `message_id` for the message you want to mark as `read`. You can find this ID in the webhooks notification you get when you receive a message. See [Webhooks](https://developers.facebook.com/docs/whatsapp/cloud-api/webhooks) for information.\n\n## Step 2: Make API call to update message status\n\nCall the `/PHONE_NUMBER_ID/messages` endpoint and include your `message_id`. Set the `status` field to `read`:\n\n``` json\ncurl -X  POST \\\n 'https://graph.facebook.com/{{Version}}/FROM_PHONE_NUMBER_ID/messages' \\\n -H 'Authorization: Bearer SYSTEM_USER_ACCESS_TOKEN' \\\n -d '{\n  \"messaging_product\": \"whatsapp\",\n  \"status\": \"read\",\n  \"message_id\": \"MESSAGE_ID\"\n  }\n}'    \n\n```\n\nA successful response looks like this:\n\n``` json\n{\n  \"success\": true\n}\n\n```\n\nFor more information on marking messages as read, see [Mark Messages as Read](https://documenter.getpostman.com/view/13382743/UVC5FTHT#b481139d-c887-40ec-8c07-732d1b69d468) in the Cloud API reference."
-				},
-				{
-					"name": "Sell Products and Services",
-					"item": [],
-					"description": "Businesses using the WhatsApp Business API can showcase and share their products and services with customers for them to browse items and add to a cart without leaving the chat. To learn more about products and services, see [Sell Products & Services](https://developers.facebook.com/docs/whatsapp/cloud-api/guides/sell-products-and-services)."
-				}
-			],
-			"description": "These guides walk through various tasks you can accomplish with the WhatsApp Business Cloud API."
 		},
 		{
 			"name": "API Reference",
