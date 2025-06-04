@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "84d01ff8-4253-4720-b454-af661f36acc2",
 		"name": "WhatsApp Cloud API",
-		"description": "[WhatsApp Cloud API](https://developers.facebook.com/docs/whatsapp/cloud-api), hosted by Meta, is the official WhatsApp Business Platform API used for business messaging. This collection contains common queries, sample responses, and links to supporting documentation that can help you quickly get started with the API.\n\n## Requirements\n\nTo use the API and this collection you must have a Meta business portfolio, a WhatsApp Business Account, and a business phone number. If you complete the steps in the Cloud API [Get Started](https://developers.facebook.com/docs/whatsapp/cloud-api/get-started) guide, these assets will be created for you.\n\n## Migrating from On-Premises API to Cloud API\n\n[This guide explains how to migrate](https://developers.facebook.com/docs/whatsapp/cloud-api/guides/migrating-from-onprem-to-cloud) business phone numbers from On-Premises API to Cloud API.\n\n## Environment\n\nThis collection has a corresponding WhatsApp Cloud API Postman [environment](https://learning.postman.com/docs/sending-requests/managing-environments/) which you must select when using the collection. Set **current values** for the variables defined in this environment if you wish to use the collection to perform queries.\n\nYou can find most of these values in the [WhatsApp Manager](https://business.facebook.com/wa/manage/home/) or the **WhatsApp** > **Getting Started** panel in the [app dashboard](https://developers.facebook.com/apps). However, if you have an access token and your business portfolio ID, you can use queries in the collection to get the remaining values.\n\n## Access tokens\n\nThe API supports both user and system user access tokens. You can get a user access token by loading your app in the [app dashboard](https://developers.facebook.com/apps) and navigating to the WhatsApp > Getting Started panel. Alternatively you can use the [Graph API Explorer](https://developers.facebook.com/tools/explorer/) to generate one.\n\nSince user access tokens expire after 24 hours, you'll likely want to generate a system user access token, which lasts up to 60 days (or permanently, if you wish). See [Access Tokens](https://developers.facebook.com/docs/whatsapp/business-management-api/get-started#access-tokens) to learn how to create a system user and system user access token.\n\nOnce you have your token, save it as a **current value** in the environment.\n\n## Business portfolio ID\n\nYou can get your business portfolio ID by signing into the [Meta Business Suite](https://business.facebook.com). The ID appears in the URL as the `business_id` query string parameter value. Once you save this as a **current value** in the environment, go to the WhatsApp Business Account (WABA) folder and run the **Get all owned WABAs** query. This will return your WABA ID, which you can save to your environment and then use to determine your business phone number ID.\n\n## Permissions\n\nThe API only relies on two permissions:\n\n- whatsapp_business_management\n    \n- whatsapp_business_messaging\n    \n\nNote that if you get a user access token from the app dashboard, your app will automatically be granted these permissions (by you, on your behalf), so you can use the token to test right away.\n\nQueries that target your business portfolio require the business_management permission, which you may also need based on your business use case. Most developers do not need this permission, however, as accessing your business portfolio is uncommon, and the Meta Business Suite provides nearly all of this functionality anyway.\n\n## Access token debugger\n\nYou can paste any token you generate into the [access token debugger](https://developers.facebook.com/tools/debug/accesstoken/) to see what type of token it is and what permission you have granted to your app.\n\n## Pagination\n\nEndpoints that return lists/collections may [paginate results](https://developers.facebook.com/docs/graph-api/results) (you'll see previous and next properties in the response). Use the URLs from these properties to get the previous or next set of results. Note that if you click one of these links in Postman, it will open a new query in a new tab which you must save before running (otherwise it can't read your environment variables), so you may wish to cut and paste the URL and run the query in the same tab in which it was returned.",
+		"description": "[WhatsApp Cloud API](https://developers.facebook.com/docs/whatsapp/cloud-api), hosted by Meta, is the official WhatsApp Business Platform API used for business messaging. This collection contains common queries, sample responses, and links to supporting documentation that can help you quickly get started with the API.\n\n## **Cloud API Overview**\n\nCloud API allows medium and large businesses to communicate with customers at scale. Using the API, businesses can build systems that connect thousands of customers with agents or bots, enabling both programmatic and manual communication. Additionally, businesses can integrate the API with numerous backend systems, such as CRM and marketing platforms.\n\n[https://developers.facebook.com/docs/whatsapp/cloud-api/overview](https://developers.facebook.com/docs/whatsapp/cloud-api/overview)\n\n## Getting Started with Cloud API\n\nTo use the API and this collection you must have a Meta business portfolio, a WhatsApp Business Account, and a business phone number. If you complete the steps in the Cloud API [Get Started](https://developers.facebook.com/docs/whatsapp/cloud-api/get-started) guide, these assets will be created for you.\n\n## Get Started as a Solution Partner\n\n[This guide](https://developers.facebook.com/docs/whatsapp/solution-providers/get-started-for-solution-partners) goes over the steps Solution Partners need to take in order to offer the Cloud API to their customers.\n\n## Migrating from On-Premises API to Cloud API\n\n[This guide explains how to migrate](https://developers.facebook.com/docs/whatsapp/cloud-api/guides/migrating-from-onprem-to-cloud) business phone numbers from On-Premises API to Cloud API.\n\n## Environment\n\nThis collection has a corresponding WhatsApp Cloud API Postman [environment](https://learning.postman.com/docs/sending-requests/managing-environments/) which you must select when using the collection. Set **current values** for the variables defined in this environment if you wish to use the collection to perform queries.\n\nYou can find most of these values in the [WhatsApp Manager](https://business.facebook.com/wa/manage/home/) or the **WhatsApp** > **Getting Started** panel in the [app dashboard](https://developers.facebook.com/apps). However, if you have an access token and your business portfolio ID, you can use queries in the collection to get the remaining values.\n\n## Access tokens\n\nThe API supports both user and system user access tokens. You can get a user access token by loading your app in the [app dashboard](https://developers.facebook.com/apps) and navigating to the WhatsApp > Getting Started panel. Alternatively you can use the [Graph API Explorer](https://developers.facebook.com/tools/explorer/) to generate one.\n\nSince user access tokens expire after 24 hours, you'll likely want to generate a system user access token, which lasts up to 60 days (or permanently, if you wish). See [Access Tokens](https://developers.facebook.com/docs/whatsapp/business-management-api/get-started#access-tokens) to learn how to create a system user and system user access token.\n\nOnce you have your token, save it as a **current value** in the environment.\n\n## Business portfolio ID\n\nYou can get your business portfolio ID by signing into the [Meta Business Suite](https://business.facebook.com). The ID appears in the URL as the `business_id` query string parameter value. Once you save this as a **current value** in the environment, go to the WhatsApp Business Account (WABA) folder and run the **Get all owned WABAs** query. This will return your WABA ID, which you can save to your environment and then use to determine your business phone number ID.\n\n## Permissions\n\nThe API only relies on two permissions:\n\n- whatsapp_business_management\n    \n- whatsapp_business_messaging\n    \n\nNote that if you get a user access token from the app dashboard, your app will automatically be granted these permissions (by you, on your behalf), so you can use the token to test right away.\n\nQueries that target your business portfolio require the business_management permission, which you may also need based on your business use case. Most developers do not need this permission, however, as accessing your business portfolio is uncommon, and the Meta Business Suite provides nearly all of this functionality anyway.\n\n## Access token debugger\n\nYou can paste any token you generate into the [access token debugger](https://developers.facebook.com/tools/debug/accesstoken/) to see what type of token it is and what permission you have granted to your app.\n\n## Pagination\n\nEndpoints that return lists/collections may [paginate results](https://developers.facebook.com/docs/graph-api/results) (you'll see previous and next properties in the response). Use the URLs from these properties to get the previous or next set of results. Note that if you click one of these links in Postman, it will open a new query in a new tab which you must save before running (otherwise it can't read your environment variables), so you may wish to cut and paste the URL and run the query in the same tab in which it was returned.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "29882223",
 		"_collection_link": "https://www.postman.com/meta/whatsapp-business-platform/collection/wlk6lh4/whatsapp-cloud-api?action=share&source=collection_link&creator=29882223"
@@ -11,14 +11,6 @@
 		{
 			"name": "Overview",
 			"item": [
-				{
-					"name": "Cloud API Overview",
-					"item": [],
-					"description": "To use the Cloud API, businesses make calls to Meta’s [Graph API](https://developers.facebook.com/docs/graph-api/) to send messages and Webhooks to receive events, such as messages and status updates. The Graph API is a form of Remote Procedure Call expressed over HTTP, where operations and their parameters are expressed using a combination of URL parameters, headers, and request body.\n\nA call to the Graph API from UNIX-based command lines looks like this:\n\n``` shell\ncurl -X POST \\\nhttps://graph.facebook.com/{{Version}}/{{Recipient-Phone-Number}}/messages \\\n  -H \"Authorization: {{User-Access-Token}}\" \\\n  -d '{\n    \"messaging_product\": \"whatsapp\",\n    \"to\": \"1650XXXXXXX\",\n    \"text\": {\"body\" : \"hi\"}\n }'\n\n```\n\nCompared to the On-Premises implementation, a Graph API integration relies on a different authentication mechanism (see [User Access Token](#3dd2844f-10f4-4e52-8c59-b6f4f4f92b4b)), a different Webhook setup process (see [Setup Webhooks](#41946d3c-6460-4bc2-963f-d5732e48e84e)), and has different latencies and error rates. For more information on how to use the Graph API, see the [Graph API Developer Documentation](https://developers.facebook.com/docs/graph-api/).",
-					"auth": {
-						"type": "noauth"
-					}
-				},
 				{
 					"name": "Message Throughput",
 					"item": [],
@@ -105,15 +97,73 @@
 				},
 				{
 					"name": "Step 2: Send a Test Message",
-					"item": [
+					"item": [],
+					"description": "In the Getting Started tab:\n\n1.  Select your test phone number in the From field. (Unless you have registered other phone numbers, this will be the only phone number in From.)\n2.  Enter the phone number you would like to message in the To field. Ensure the number is correct, and that you want to add it to your list of 5 possible message recipients —as you add phone numbers, follow the prompts on the screen to verify you have access to them. Once this number has been added, it cannot be removed from your list. Note: This limitation is only for WhatsApp-provided test phone numbers. Real phone numbers that you register do not have a limit on the number of recipients.\n3.  Once you enter a recipient phone number, the code sample on the page will be updated to demonstrate an API call that sends a test message to that number. The code sample will look like this:\n    \n\n```\ncurl -i -X POST \\\nhttps://graph.facebook.com/{{Version}}/FROM_PHONE_NUMBER_ID/messages \\\n-H 'Authorization: Bearer ACCESS_TOKEN' \\\n-H 'Content-Type: application/json' \\\n-d '{ \"messaging_product\": \"whatsapp\", \"to\": \"TO_PHONE_NUMBER\", \"type\": \"template\", \"template\": { \"name\": \"hello_world\", \"language\": { \"code\": \"en_US\" } } }'Copy Code\n\n```\n\n4\\. Click **Send message** to send the first message. As an alternative, you can copy the code sample provided and execute it in your Terminal or in Postman. You have just sent a test message!\n\nThe code sample on the page is formatted for use in Unix-style terminal shells, and is expected to work on MacOS and distributions of Gnu/Linux. If you use Windows, we suggest you perform your first API call using Postman, to avoid platform-related cURL formatting concerns. If you are a Windows 10 user, cURL is available, but requires a different syntax than the one shown in the Getting Started tab to execute in PowerShell or cmd.exe. For more information, see [cURL Comes to Windows](https://devblogs.microsoft.com/commandline/tar-and-curl-come-to-windows/) or [cURL for Windows](https://curl.se/windows/). If you have access to the [Windows Subsystem for Linux (WSL)](https://docs.microsoft.com/en-us/windows/wsl/about), you can also consider launching a Linux distribution and using its terminal."
+				},
+				{
+					"name": "Step 3: Configure a Webhook",
+					"item": [],
+					"description": "To get alerted when you receive a message or when a message’s status has changed, you need to set up a Webhooks endpoint for your app. Setting up Webhooks doesn’t affect the status of your phone number and does interfere with you sending or receiving messages.\n\nTo get started, first you need to create the endpoint. You can create a custom Webhook URL running on a web server, or use services that help you set up an endpoint, such as Glitch. See [Create a Sample App Endpoint for Webhooks Testing](https://developers.facebook.com/docs/whatsapp/sample-app-endpoints#cloud-api-sample-app-endpoint) for help.\n\nOnce your endpoint is ready, go to your App Dashboard.\n\nIn your App Dashboard, find the WhatsApp product and click **Configuration**. Then, find the Webhooks section and click **Configure a webhook**. After the click, a dialog appears on your screen and asks you for two items:\n\n*   Callback URL: This is the URL Meta will be sending the events. See the [Webhooks, Getting Started](https://developers.facebook.com/docs/graph-api/webhooks/getting-started) guide for information on creating the URL.\n*   Verify Token: This string is set up by you, when you create your Webhook endpoint.\n    \n\nAfter adding the information, click **Verify and Save**.\n\nBack in the App Dashboard, click **WhatsApp** > **Configuration** in the left-side panel. Under Webhooks, click **Manage**. A dialog box will open with all the objects you can get notified about. To receive messages from your users, click **Subscribe** for **messages**."
+				},
+				{
+					"name": "Step 4: Receive a Test Message",
+					"item": [],
+					"description": "Now that your Webhook is set up, send a message to the test number you have used. You should immediately get a Webhooks notification with the content of your message."
+				},
+				{
+					"name": "Next Steps",
+					"item": [],
+					"description": "### Phone Number\n\nWhen you’re ready to use your app for a production use case, you need to use your own phone number to send messages to your users. When choosing a phone number, consider the following:\n\n*   If you want to use a number that is already being used in the WhatsApp customer or business app, you will have to fully migrate that number to the business platform. Once the number is migrated, you will lose access to the WhatsApp customer or business app. See for information.\n*   We have a set of rules regarding numbers that can be used in the platform. .\n*   Once you have chosen your phone number, you have to add it to your WhatsApp Business Account. See [How to Connect Your Phone Number to Your WhatsApp Business Account](https://www.facebook.com/business/help/456220311516626?id=2129163877102343).\n\n### Opt-In\n\nYou are required to obtain user opt-in before sending proactive business-initiated messages. See [Get Opt-In for WhatsApp](https://developers.facebook.com/docs/whatsapp/overview/getting-opt-in) for more information.\n\n### Pricing & Payment Methods\n\nBusinesses are charged per conversation, which includes all messages delivered in a 24 hour session. The first 1,000 conversations each month are free. If you want to send more than 1,000 conversations, you need to add a credit card to your account.\n\nFor more information see [Pricing and Payment Methods](https://developers.facebook.com/docs/whatsapp/getting-started/signing-up#pricing---payment-methods).\n\n### Send More Messages\n\nTo send more business-initiated messages, you need to use message templates. WhatsApp message templates are specific message formats that businesses use to send out notifications or customer care messages to people that have opted in to notifications.\n\nBefore sending a message template, you [need to create one](https://www.facebook.com/business/help/2055875911147364) or you can [use one of our pre-approved templates](https://www.facebook.com/business/help/722393685250070). Check [this guide](https://developers.facebook.com/docs/whatsapp/cloud-api/guides/send-message-templates) to learn how to send message templates.\n\nIncoming messages are unlimited, but there are limits for outgoing messages. See [Messaging Limits](https://developers.facebook.com/docs/whatsapp/api/rate-limits/#messaging) for more information on messaging tiers."
+				},
+				{
+					"name": "Send Test Message",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"messaging_product\": \"whatsapp\",\n    \"to\": \"{{Recipient-Phone-Number}}\",\n    \"type\": \"template\",\n    \"template\": {\n        \"name\": \"hello_world\",\n        \"language\": {\n            \"code\": \"en_US\"\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://graph.facebook.com/{{Version}}/{{Phone-Number-ID}}/messages",
+							"protocol": "https",
+							"host": [
+								"graph",
+								"facebook",
+								"com"
+							],
+							"path": [
+								"{{Version}}",
+								"{{Phone-Number-ID}}",
+								"messages"
+							]
+						}
+					},
+					"response": [
 						{
 							"name": "Send Test Message",
-							"request": {
+							"originalRequest": {
 								"method": "POST",
 								"header": [
 									{
 										"key": "Content-Type",
 										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{User-Access-Token}}",
 										"type": "text"
 									}
 								],
@@ -141,73 +191,14 @@
 									]
 								}
 							},
-							"response": [
-								{
-									"name": "Send Test Message",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json",
-												"type": "text"
-											},
-											{
-												"key": "Authorization",
-												"value": "Bearer {{User-Access-Token}}",
-												"type": "text"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n    \"messaging_product\": \"whatsapp\",\n    \"to\": \"{{Recipient-Phone-Number}}\",\n    \"type\": \"template\",\n    \"template\": {\n        \"name\": \"hello_world\",\n        \"language\": {\n            \"code\": \"en_US\"\n        }\n    }\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "https://graph.facebook.com/{{Version}}/{{Phone-Number-ID}}/messages",
-											"protocol": "https",
-											"host": [
-												"graph",
-												"facebook",
-												"com"
-											],
-											"path": [
-												"{{Version}}",
-												"{{Phone-Number-ID}}",
-												"messages"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [],
-									"cookie": [],
-									"body": "{\n    \"messaging_product\": \"whatsapp\",\n    \"contacts\": [\n        {\n            \"input\": \"48XXXXXXXXX\",\n            \"wa_id\": \"48XXXXXXXXX \"\n        }\n    ],\n    \"messages\": [\n        {\n            \"id\": \"wamid.gBGGSFcCNEOPAgkO_KJ55r4w_ww\"\n        }\n    ]\n}"
-								}
-							]
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    \"messaging_product\": \"whatsapp\",\n    \"contacts\": [\n        {\n            \"input\": \"48XXXXXXXXX\",\n            \"wa_id\": \"48XXXXXXXXX \"\n        }\n    ],\n    \"messages\": [\n        {\n            \"id\": \"wamid.gBGGSFcCNEOPAgkO_KJ55r4w_ww\"\n        }\n    ]\n}"
 						}
-					],
-					"description": "In the Getting Started tab:\n\n1.  Select your test phone number in the From field. (Unless you have registered other phone numbers, this will be the only phone number in From.)\n2.  Enter the phone number you would like to message in the To field. Ensure the number is correct, and that you want to add it to your list of 5 possible message recipients —as you add phone numbers, follow the prompts on the screen to verify you have access to them. Once this number has been added, it cannot be removed from your list. Note: This limitation is only for WhatsApp-provided test phone numbers. Real phone numbers that you register do not have a limit on the number of recipients.\n3.  Once you enter a recipient phone number, the code sample on the page will be updated to demonstrate an API call that sends a test message to that number. The code sample will look like this:\n    \n\n```\ncurl -i -X POST \\\nhttps://graph.facebook.com/{{Version}}/FROM_PHONE_NUMBER_ID/messages \\\n-H 'Authorization: Bearer ACCESS_TOKEN' \\\n-H 'Content-Type: application/json' \\\n-d '{ \"messaging_product\": \"whatsapp\", \"to\": \"TO_PHONE_NUMBER\", \"type\": \"template\", \"template\": { \"name\": \"hello_world\", \"language\": { \"code\": \"en_US\" } } }'Copy Code\n\n```\n\n4\\. Click **Send message** to send the first message. As an alternative, you can copy the code sample provided and execute it in your Terminal or in Postman. You have just sent a test message!\n\nThe code sample on the page is formatted for use in Unix-style terminal shells, and is expected to work on MacOS and distributions of Gnu/Linux. If you use Windows, we suggest you perform your first API call using Postman, to avoid platform-related cURL formatting concerns. If you are a Windows 10 user, cURL is available, but requires a different syntax than the one shown in the Getting Started tab to execute in PowerShell or cmd.exe. For more information, see [cURL Comes to Windows](https://devblogs.microsoft.com/commandline/tar-and-curl-come-to-windows/) or [cURL for Windows](https://curl.se/windows/). If you have access to the [Windows Subsystem for Linux (WSL)](https://docs.microsoft.com/en-us/windows/wsl/about), you can also consider launching a Linux distribution and using its terminal."
-				},
-				{
-					"name": "Step 3: Configure a Webhook",
-					"item": [],
-					"description": "To get alerted when you receive a message or when a message’s status has changed, you need to set up a Webhooks endpoint for your app. Setting up Webhooks doesn’t affect the status of your phone number and does interfere with you sending or receiving messages.\n\nTo get started, first you need to create the endpoint. You can create a custom Webhook URL running on a web server, or use services that help you set up an endpoint, such as Glitch. See [Create a Sample App Endpoint for Webhooks Testing](https://developers.facebook.com/docs/whatsapp/sample-app-endpoints#cloud-api-sample-app-endpoint) for help.\n\nOnce your endpoint is ready, go to your App Dashboard.\n\nIn your App Dashboard, find the WhatsApp product and click **Configuration**. Then, find the Webhooks section and click **Configure a webhook**. After the click, a dialog appears on your screen and asks you for two items:\n\n*   Callback URL: This is the URL Meta will be sending the events. See the [Webhooks, Getting Started](https://developers.facebook.com/docs/graph-api/webhooks/getting-started) guide for information on creating the URL.\n*   Verify Token: This string is set up by you, when you create your Webhook endpoint.\n    \n\nAfter adding the information, click **Verify and Save**.\n\nBack in the App Dashboard, click **WhatsApp** > **Configuration** in the left-side panel. Under Webhooks, click **Manage**. A dialog box will open with all the objects you can get notified about. To receive messages from your users, click **Subscribe** for **messages**."
-				},
-				{
-					"name": "Step 4: Receive a Test Message",
-					"item": [],
-					"description": "Now that your Webhook is set up, send a message to the test number you have used. You should immediately get a Webhooks notification with the content of your message."
-				},
-				{
-					"name": "Next Steps",
-					"item": [],
-					"description": "### Phone Number\n\nWhen you’re ready to use your app for a production use case, you need to use your own phone number to send messages to your users. When choosing a phone number, consider the following:\n\n*   If you want to use a number that is already being used in the WhatsApp customer or business app, you will have to fully migrate that number to the business platform. Once the number is migrated, you will lose access to the WhatsApp customer or business app. See for information.\n*   We have a set of rules regarding numbers that can be used in the platform. .\n*   Once you have chosen your phone number, you have to add it to your WhatsApp Business Account. See [How to Connect Your Phone Number to Your WhatsApp Business Account](https://www.facebook.com/business/help/456220311516626?id=2129163877102343).\n\n### Opt-In\n\nYou are required to obtain user opt-in before sending proactive business-initiated messages. See [Get Opt-In for WhatsApp](https://developers.facebook.com/docs/whatsapp/overview/getting-opt-in) for more information.\n\n### Pricing & Payment Methods\n\nBusinesses are charged per conversation, which includes all messages delivered in a 24 hour session. The first 1,000 conversations each month are free. If you want to send more than 1,000 conversations, you need to add a credit card to your account.\n\nFor more information see [Pricing and Payment Methods](https://developers.facebook.com/docs/whatsapp/getting-started/signing-up#pricing---payment-methods).\n\n### Send More Messages\n\nTo send more business-initiated messages, you need to use message templates. WhatsApp message templates are specific message formats that businesses use to send out notifications or customer care messages to people that have opted in to notifications.\n\nBefore sending a message template, you [need to create one](https://www.facebook.com/business/help/2055875911147364) or you can [use one of our pre-approved templates](https://www.facebook.com/business/help/722393685250070). Check [this guide](https://developers.facebook.com/docs/whatsapp/cloud-api/guides/send-message-templates) to learn how to send message templates.\n\nIncoming messages are unlimited, but there are limits for outgoing messages. See [Messaging Limits](https://developers.facebook.com/docs/whatsapp/api/rate-limits/#messaging) for more information on messaging tiers."
+					]
 				}
 			],
 			"description": "This guide helps you get started with the WhatsApp Business Platform, and is intended for people developing for themselves or their organization, not on behalf of a client. At this time, the platform is not open to those developing on behalf of clients.\n\n**NOTE**: All developers must follow [WhatsApp’s Commerce Policy](https://www.whatsapp.com/legal/commerce-policy). \n\nTo send and receive a first message using a test number, complete the following steps:"
