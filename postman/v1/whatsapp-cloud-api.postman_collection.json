@@ -7913,18 +7913,8 @@
 			]
 		},
 		{
-			"name": "Webhooks",
+			"name": "Webhook Payload Reference",
 			"item": [
-				{
-					"name": "Understanding Webhooks",
-					"item": [],
-					"description": "Whenever a trigger event occurs, the WhatsApp Business API sees the event and sends a notification to a Webhook URL you have previously specified. You can get two types of notifications:\n\n<ul><li><p>Received messages: This alert lets you know when you have received a message. These can also be called <code>\"inbound notifications\"</code> throughout the documentation.</p></li><li><p>Message status and pricing notifications: This alert lets you know when the status of a message has changed. For example, the message has been read or delivered. These can also be called <code>\"outbound notifications\"</code> throughout the documentation.</p></li></ul>\n\nAll Webhooks have the following generic JSON format:\n\n``` json\n{\n  \"object\": \"whatsapp_business_account\",\n  \"entry\": [\n    {\n      \"id\": \"WHATSAPP_BUSINESS_ACCOUNT_ID\",\n      \"changes\": [\n        {\n          \"value\": {\n              \"messaging_product\": \"whatsapp\",\n              \"metadata\": {\n                  \"display_phone_number\": \"PHONE_NUMBER\",\n                  \"phone_number_id\": \"PHONE_NUMBER_ID\"\n              },\n              # specific Webhooks payload            \n          },\n          \"field\": \"messages\"\n        }\n      ]\n    }\n  ]\n}\n\n```\n\nSee [Components](#cefb0b2a-5fc8-43c3-aea6-865ba98f6061) for information on each field.  \nIf you receive a message that is not supported for the Cloud API beta release, you will get an [unknown message Webhook](https://developers.facebook.com/docs/whatsapp/cloud-api/webhooks#received-unknown-messages).\n\n### Limitations\n\nAt any time, each Meta App can have only one endpoint configured. If you need to send your webhook updates to multiple endpoints, you need multiple Meta Apps."
-				},
-				{
-					"name": "Generate Endpoint for Webhook Testing",
-					"item": [],
-					"description": "If you want to test your Webhooks, see [Generate Endpoint for Webhooks Testing](https://developers.facebook.com/docs/whatsapp/api/webhooks/generate-endpoint) for more information."
-				},
 				{
 					"name": "Components",
 					"item": [
@@ -8402,34 +8392,6 @@
 					"description": "The top level Webhooks array contains the following two fields:\n\n| Field                   | Description                      |\n|--------------------|----------------------------------|\n| **`object`**       | All Webhook events for WhatsApp Cloud API belong under the **`whatsapp_business_account`** object. |\n| **`entry`**        | An array of [entry objects](#818e8a3e-37b1-4bb6-8441-3291c02c0258). |"
 				},
 				{
-					"name": "Message Status Types",
-					"item": [],
-					"description": "This table lists all possible options for the status of a message.\n\n| Status | Description | WhatsApp Mobile Equivalent |\n| --- | --- | --- |\n| **`sent`** | Message received by WhatsApp server. | One checkmark |\n| **`delivered`** | Message delivered to the recipient. | Two checkmarks |\n| **`read`** | Message read by recipient. | Two blue checkmarks |\n| **`failed`** | Message failed to send. | Red error triangle |\n| **`deleted`** | Message deleted by the user. | Message is replaced in WhatsApp mobile with the note `\"This message was deleted\"`. |",
-					"auth": {
-						"type": "noauth"
-					},
-					"event": [
-						{
-							"listen": "prerequest",
-							"script": {
-								"type": "text/javascript",
-								"exec": [
-									""
-								]
-							}
-						},
-						{
-							"listen": "test",
-							"script": {
-								"type": "text/javascript",
-								"exec": [
-									""
-								]
-							}
-						}
-					]
-				},
-				{
 					"name": "Received Text Message",
 					"request": {
 						"method": "VIEW",
@@ -8889,7 +8851,7 @@
 					"response": []
 				}
 			],
-			"description": "Webhooks are user-defined HTTP callbacks that are triggered by specific events. Whenever that trigger event occurs, the WhatsApp Business API client captures the event, collects the data, and immediately sends a notification (HTTPs request) to the Webhook URL configured in the Webhooks setup step.\n\nFor the purposes of this use case, your Webhooks server must be reachable from facebook and have HTTPs support and a valid SSL certificate. See [Webhooks, Getting Started](https://developers.facebook.com/docs/graph-api/webhooks/getting-started) for requirements on creating a Webhooks endpoint and configuring the Webhooks product.\n\nTo get Webhooks notifications, your application must subscribe to the WABA you want to receive alerts for. For a full guide, see [Webhooks for WhatsApp Business Accounts](https://developers.facebook.com/docs/graph-api/webhooks/getting-started/webhooks-for-whatsapp).",
+			"description": "Webhooks are user-defined HTTP callbacks that are triggered by specific events. Whenever that trigger event occurs, the WhatsApp Business API client captures the event, collects the data, and immediately sends a notification (HTTPs request) to the Webhook URL configured in the Webhooks setup step.\n\nFor the purposes of this use case, your Webhooks server must be reachable from facebook and have HTTPs support and a valid SSL certificate. See [Webhooks, Getting Started](https://developers.facebook.com/docs/graph-api/webhooks/getting-started) for requirements on creating a Webhooks endpoint and configuring the Webhooks product.\n\nTo get Webhooks notifications, your application must subscribe to the WABA you want to receive alerts for. For a full guide, see [Webhooks for WhatsApp Business Accounts](https://developers.facebook.com/docs/graph-api/webhooks/getting-started/webhooks-for-whatsapp).\n\n  \nThe structure of the webhook payload is explained in the [Webhooks Notification Payload Reference. ](https://developers.facebook.com/docs/whatsapp/cloud-api/webhooks/components/) All Webhooks have the following generic JSON format:\n\n``` json\n{\n  \"object\": \"whatsapp_business_account\",\n  \"entry\": [\n    {\n      \"id\": \"WHATSAPP_BUSINESS_ACCOUNT_ID\",\n      \"changes\": [\n        {\n          \"value\": {\n              \"messaging_product\": \"whatsapp\",\n              \"metadata\": {\n                  \"display_phone_number\": \"PHONE_NUMBER\",\n                  \"phone_number_id\": \"PHONE_NUMBER_ID\"\n              },\n              # specific Webhooks payload            \n          },\n          \"field\": \"messages\"\n        }\n      ]\n    }\n  ]\n}\n\n ```\n\n  \nIf you receive a message that is not supported for the Cloud API beta release, you will get an [unknown message Webhook](https://developers.facebook.com/docs/whatsapp/cloud-api/webhooks#received-unknown-messages).\n\n**This table lists all possible options for the status of a message.**\n\n| Status | Description | WhatsApp Mobile Equivalent |\n| --- | --- | --- |\n| **`sent`** | Message received by WhatsApp server. | One checkmark |\n| **`delivered`** | Message delivered to the recipient. | Two checkmarks |\n| **`read`** | Message read by recipient. | Two blue checkmarks |\n| **`failed`** | Message failed to send. | Red error triangle |\n| **`deleted`** | Message deleted by the user. | Message is replaced in WhatsApp mobile with the note `\"This message was deleted\"`. |",
 			"auth": {
 				"type": "noauth"
 			},
