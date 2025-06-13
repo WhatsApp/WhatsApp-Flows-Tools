@@ -1074,70 +1074,7 @@
                     ]
                 },
                 {
-                    "name": "Get all business phone numbers",
-                    "request": {
-                        "method": "GET",
-                        "header": [],
-                        "url": {
-                            "raw": "https://graph.facebook.com/{{Version}}/{{WABA-ID}}/phone_numbers",
-                            "protocol": "https",
-                            "host": [
-                                "graph",
-                                "facebook",
-                                "com"
-                            ],
-                            "path": [
-                                "{{Version}}",
-                                "{{WABA-ID}}",
-                                "phone_numbers"
-                            ]
-                        },
-                        "description": "- Guide: [Phone Numbers](https://developers.facebook.com/docs/whatsapp/phone-numbers)\n- Guide: [Retrieve Phone Numbers](https://developers.facebook.com/docs/whatsapp/business-management-api/manage-phone-numbers)\n- Endpoint reference: [WhatsApp Business Account > Phone Numbers](https://developers.facebook.com/docs/graph-api/reference/whats-app-business-account/phone_numbers/)"
-                    },
-                    "response": [
-                        {
-                            "name": "Example response",
-                            "originalRequest": {
-                                "method": "GET",
-                                "header": [
-                                    {
-                                        "key": "Authorization",
-                                        "value": "Bearer {{User-Access-Token}}"
-                                    }
-                                ],
-                                "url": {
-                                    "raw": "https://graph.facebook.com/{{Version}}/{{WABA-ID}}/phone_numbers",
-                                    "protocol": "https",
-                                    "host": [
-                                        "graph",
-                                        "facebook",
-                                        "com"
-                                    ],
-                                    "path": [
-                                        "{{Version}}",
-                                        "{{WABA-ID}}",
-                                        "phone_numbers"
-                                    ]
-                                }
-                            },
-                            "status": "OK",
-                            "code": 200,
-                            "_postman_previewlanguage": "Text",
-                            "header": [
-                                {
-                                    "key": "Content-Type",
-                                    "value": "application/json",
-                                    "description": "",
-                                    "type": "text"
-                                }
-                            ],
-                            "cookie": [],
-                            "body": "[\n    {\n        \"verified_name\": \"Lucky Shrub\",\n        \"display_phone_number\": \"15550783881\",\n        \"id\": \"1906385232743451\",\n        \"quality_rating\": \"GREEN\"\n    },\n    {\n        \"verified_name\": \"Lucky Shrub Support\",\n        \"display_phone_number\": \"15550785556\",\n        \"id\": \"1913623884432103\",\n        \"quality_rating\": \"GREEN\"\n    }\n]"
-                        }
-                    ]
-                },
-                {
-                    "name": "Get all business phone numbers w/ filtering (beta)",
+                    "name": "Get Phone Numbers with Filtering (beta)",
                     "request": {
                         "method": "GET",
                         "header": [],
@@ -12550,10 +12487,10 @@
             ]
         },
         {
-            "name": "Business accounts",
+            "name": "Business Portfolio",
             "item": [
                 {
-                    "name": "Get business account (specific fields)",
+                    "name": "Get Business Portfolio (Specific Fields)",
                     "request": {
                         "method": "GET",
                         "header": [],
