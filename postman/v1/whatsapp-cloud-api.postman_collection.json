@@ -7711,6 +7711,1816 @@
             "description": "- Guide: [Message Templates](https://developers.facebook.com/docs/whatsapp/business-management-api/message-templates)\n- Guide: [How To Monitor Quality Signals](https://developers.facebook.com/docs/whatsapp/guides/how-to-monitor-quality-signals)"
         },
         {
+            "name": "Flows",
+            "item": [
+                {
+                    "name": "Create Flow",
+                    "item": [
+                        {
+                            "name": "Create Flow",
+                            "request": {
+                                "method": "POST",
+                                "header": [],
+                                "body": {
+                                    "mode": "formdata",
+                                    "formdata": [
+                                        {
+                                            "key": "name",
+                                            "value": "<FLOW_NAME>",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "categories",
+                                            "value": "[\"OTHER\"]",
+                                            "description": "A list of Flow categories. Multiple values are possible, but at least one is required. Choose the values which represent your business use case. \n\nPossible values: \"SIGN_UP\", \"SIGN_IN\", \"APPOINTMENT_BOOKING\", \"LEAD_GENERATION\", \"CONTACT_US\", \"CUSTOMER_SUPPORT\", \"SURVEY\", \"OTHER\"",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "clone_flow_id",
+                                            "value": "<EXISTING_FLOW_ID>",
+                                            "description": "Creates a copy of the existing flow specified",
+                                            "type": "text",
+                                            "disabled": true
+                                        },
+                                        {
+                                            "key": "endpoint_uri",
+                                            "value": "https://example.com",
+                                            "description": "Endpoint URI for the Flow",
+                                            "type": "text",
+                                            "disabled": true
+                                        }
+                                    ],
+                                    "options": {
+                                        "formdata": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "https://graph.facebook.com/{{Version}}/{{WABA-ID}}/flows",
+                                    "protocol": "https",
+                                    "host": [
+                                        "graph",
+                                        "facebook",
+                                        "com"
+                                    ],
+                                    "path": [
+                                        "{{Version}}",
+                                        "{{WABA-ID}}",
+                                        "flows"
+                                    ]
+                                },
+                                "description": "Creates a new flow. To clone an existing flow you can add the parameter\n\n`\"clone_flow_id\": \"original-flow-id\"`"
+                            },
+                            "response": [
+                                {
+                                    "name": "Create Flow",
+                                    "originalRequest": {
+                                        "method": "POST",
+                                        "header": [],
+                                        "body": {
+                                            "mode": "formdata",
+                                            "formdata": [
+                                                {
+                                                    "key": "name",
+                                                    "value": "<FLOW_NAME>",
+                                                    "type": "text"
+                                                },
+                                                {
+                                                    "key": "categories",
+                                                    "value": "[\"OTHER\"]",
+                                                    "type": "text"
+                                                },
+                                                {
+                                                    "key": "clone_flow_id",
+                                                    "value": "<EXISTING_FLOW_ID>",
+                                                    "type": "text",
+                                                    "disabled": true
+                                                },
+                                                {
+                                                    "key": "endpoint_uri",
+                                                    "value": "https://example.com",
+                                                    "type": "text",
+                                                    "disabled": true
+                                                }
+                                            ],
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "https://graph.facebook.com/{{Version}}/{{WABA-ID}}/flows",
+                                            "protocol": "https",
+                                            "host": [
+                                                "graph",
+                                                "facebook",
+                                                "com"
+                                            ],
+                                            "path": [
+                                                "{{Version}}",
+                                                "{{WABA-ID}}",
+                                                "flows"
+                                            ]
+                                        }
+                                    },
+                                    "status": "OK",
+                                    "code": 200,
+                                    "_postman_previewlanguage": "json",
+                                    "header": [],
+                                    "cookie": [],
+                                    "body": "{\n    \"id\": \"flow-1\"\n}"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Migrate Flows",
+                            "request": {
+                                "method": "POST",
+                                "header": [],
+                                "body": {
+                                    "mode": "formdata",
+                                    "formdata": [
+                                        {
+                                            "key": "source_waba_id",
+                                            "value": "<SOURCE_WABA_ID>",
+                                            "description": "The ID of the source WABA from which the flows will be copied",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "source_flow_names",
+                                            "value": "[\"appointment\", \"leadgen\"]",
+                                            "description": "[Optional] The names of the flows that will be copied from the source WABA. If not specified, all flows in the source WABA will be copied",
+                                            "type": "text"
+                                        }
+                                    ],
+                                    "options": {
+                                        "formdata": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "https://graph.facebook.com/{{Version}}/{{WABA-ID}}/migrate_flows",
+                                    "protocol": "https",
+                                    "host": [
+                                        "graph",
+                                        "facebook",
+                                        "com"
+                                    ],
+                                    "path": [
+                                        "{{Version}}",
+                                        "{{WABA-ID}}",
+                                        "migrate_flows"
+                                    ]
+                                },
+                                "description": "Creates a copy of existing flows from source WABA to destination WABA with the same names."
+                            },
+                            "response": [
+                                {
+                                    "name": "Migrate Flows",
+                                    "originalRequest": {
+                                        "method": "POST",
+                                        "header": [],
+                                        "body": {
+                                            "mode": "formdata",
+                                            "formdata": [
+                                                {
+                                                    "key": "source_waba_id",
+                                                    "value": "<SOURCE_WABA_ID>",
+                                                    "description": "The ID of the source WABA from which the flows will be copied",
+                                                    "type": "text"
+                                                },
+                                                {
+                                                    "key": "source_flow_names",
+                                                    "value": "[\"appointment\", \"leadgen\"]",
+                                                    "description": "[Optional] The names of the flows that will be copied from the source WABA. If not specified, all flows in the source WABA will be copied",
+                                                    "type": "text"
+                                                }
+                                            ],
+                                            "options": {
+                                                "formdata": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "https://graph.facebook.com/{{Version}}/{{WABA-ID}}/migrate_flows",
+                                            "protocol": "https",
+                                            "host": [
+                                                "graph",
+                                                "facebook",
+                                                "com"
+                                            ],
+                                            "path": [
+                                                "{{Version}}",
+                                                "{{WABA-ID}}",
+                                                "migrate_flows"
+                                            ]
+                                        }
+                                    },
+                                    "status": "OK",
+                                    "code": 200,
+                                    "_postman_previewlanguage": "json",
+                                    "header": [],
+                                    "cookie": [],
+                                    "body": "{\n    \"migrated_flows\": [\n        {\n            \"source_id\": \"source-flow-1\",\n            \"source_name\": \"appointment\",\n            \"migrated_id\": \"dest-flow-1\"\n        }\n    ],\n    \"failed_flows\": [\n        {\n            \"source_name\": \"leadgen\",\n            \"error_code\": \"4233041\",\n            \"error_message\": \"Flows Migration Error: Flow name not found in source WABA.\"\n        }\n    ]\n}"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Get Flow",
+                            "request": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "https://graph.facebook.com/{{Version}}/{{Flow-ID}}?fields=id,name,categories,preview,status,validation_errors,json_version,data_api_version,data_channel_uri,health_status,whatsapp_business_account,application",
+                                    "protocol": "https",
+                                    "host": [
+                                        "graph",
+                                        "facebook",
+                                        "com"
+                                    ],
+                                    "path": [
+                                        "{{Version}}",
+                                        "{{Flow-ID}}"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "fields",
+                                            "value": "id,name,categories,preview,status,validation_errors,json_version,data_api_version,data_channel_uri,health_status,whatsapp_business_account,application",
+                                            "description": "Return specific fields in the response"
+                                        }
+                                    ]
+                                },
+                                "description": "Can request specific fields by enabling the \\`fields\\` query param"
+                            },
+                            "response": [
+                                {
+                                    "name": "Get Flow",
+                                    "originalRequest": {
+                                        "method": "GET",
+                                        "header": [],
+                                        "url": {
+                                            "raw": "https://graph.facebook.com/{{Version}}/{{Flow-ID}}?fields=id,name,categories,preview,status,validation_errors,json_version,data_api_version,data_channel_uri,whatsapp_business_account,application",
+                                            "protocol": "https",
+                                            "host": [
+                                                "graph",
+                                                "facebook",
+                                                "com"
+                                            ],
+                                            "path": [
+                                                "{{Version}}",
+                                                "{{Flow-ID}}"
+                                            ],
+                                            "query": [
+                                                {
+                                                    "key": "fields",
+                                                    "value": "id,name,categories,preview,status,validation_errors,json_version,data_api_version,data_channel_uri,whatsapp_business_account,application",
+                                                    "description": "Return specific fields in the response"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "status": "OK",
+                                    "code": 200,
+                                    "_postman_previewlanguage": "json",
+                                    "header": [],
+                                    "cookie": [],
+                                    "body": "{\n    \"id\": \"flow-1\",\n    \"name\": \"my first flow\",\n    \"categories\": [\n        \"OTHER\"\n    ],\n    \"preview\": {\n        \"preview_url\": \"https://business.facebook.com/wa/manage/flows/55000..../preview/?token=b9d6.....\",\n        \"expires_at\": \"2023-05-21T11:18:09+0000\"\n    },\n    \"status\": \"DRAFT\",\n    \"validation_errors\": [],\n    \"json_version\": \"2.1\",\n    \"data_api_version\": \"3.0\",\n    \"data_channel_uri\": \"https://example.com\",\n    \"health_status\": {\n        \"can_send_message\": \"BLOCKED\",\n        \"entities\": [\n            {\n                \"entity_type\": \"FLOW\",\n                \"id\": \"flow-1\",\n                \"can_send_message\": \"AVAILABLE\"\n            },\n            {\n                \"entity_type\": \"WABA\",\n                \"id\": \"waba-1\",\n                \"can_send_message\": \"BLOCKED\",\n                \"errors\": [\n                    {\n                        \"error_code\": 141006,\n                        \"error_description\": \"There is an error with the payment method. This will block business initiated conversations.\",\n                        \"possible_solution\": \"There was an error with your payment method. Please add a new payment method to the account.\"\n                    },\n                    {\n                        \"error_code\": 141014,\n                        \"error_description\": \"The WABA is banned.\",\n                        \"possible_solution\": \"Please visit Business Support Home for more details (https://business.facebook.com/accountquality) on how to appeal the ban.\"\n                    }\n                ]\n            },\n            {\n                \"entity_type\": \"BUSINESS\",\n                \"id\": \"business-1\",\n                \"can_send_message\": \"LIMITED\",\n                \"errors\": [\n                    {\n                        \"error_code\": 141010,\n                        \"error_description\": \"The Business has not passed business verification.\",\n                        \"possible_solution\": \"Visit business settings and start or resolve the business verification request.\"\n                    }\n                ]\n            },\n            {\n                \"entity_type\": \"APP\",\n                \"id\": \"app-1\",\n                \"can_send_message\": \"AVAILABLE\"\n            }\n        ]\n    },\n    \"whatsapp_business_account\": {\n        \"id\": \"waba-1\",\n        \"name\": \"My Awesome WABA\",\n        \"timezone_id\": \"54\",\n        \"business_type\": \"ent\",\n        \"message_template_namespace\": \"namespace-1\"\n    },\n    \"application\": {\n        \"link\": \"https://www.facebook.com/games/?app_id=app-1\",\n        \"name\": \"My Awesome App\",\n        \"id\": \"app-1\"\n    }\n}"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Get Preview URL",
+                            "request": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "https://graph.facebook.com/{{Version}}/{{Flow-ID}}?fields=preview.invalidate(false)",
+                                    "protocol": "https",
+                                    "host": [
+                                        "graph",
+                                        "facebook",
+                                        "com"
+                                    ],
+                                    "path": [
+                                        "{{Version}}",
+                                        "{{Flow-ID}}"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "fields",
+                                            "value": "preview.invalidate(false)",
+                                            "description": "Set to true to generate a new preview link and expire old link"
+                                        },
+                                        {
+                                            "key": "date_format",
+                                            "value": "U",
+                                            "description": "Returns date as unix timestamp in seconds",
+                                            "disabled": true
+                                        }
+                                    ]
+                                },
+                                "description": "Returns link to web page with preview of the flow. The link has an expiry time which is returned in the response. The same link will be returned as long as it's still valid, a new link will be generated when it expires.\n\nTo generate a new link and invalidate the existing link, set\n\n`fields=preview.invalidate(true)`"
+                            },
+                            "response": [
+                                {
+                                    "name": "Get Preview URL",
+                                    "originalRequest": {
+                                        "method": "GET",
+                                        "header": [],
+                                        "url": {
+                                            "raw": "https://graph.facebook.com/{{Version}}/{{Flow-ID}}?fields=preview.invalidate(false)",
+                                            "protocol": "https",
+                                            "host": [
+                                                "graph",
+                                                "facebook",
+                                                "com"
+                                            ],
+                                            "path": [
+                                                "{{Version}}",
+                                                "{{Flow-ID}}"
+                                            ],
+                                            "query": [
+                                                {
+                                                    "key": "fields",
+                                                    "value": "preview.invalidate(false)",
+                                                    "description": "Set to true to generate a new preview link and expire old link"
+                                                },
+                                                {
+                                                    "key": "date_format",
+                                                    "value": "U",
+                                                    "description": "Returns date as unix timestamp in seconds",
+                                                    "disabled": true
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "status": "OK",
+                                    "code": 200,
+                                    "_postman_previewlanguage": "json",
+                                    "header": [],
+                                    "cookie": [],
+                                    "body": "{\n    \"preview\": {\n        \"preview_url\": \"https://business.facebook.com/wa/manage/flows/550.../preview/?token=b9d6....\",\n        \"expires_at\": \"2023-05-21T11:18:09+0000\"\n    },\n    \"id\": \"flow-1\"\n\n}"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "List Flows",
+                            "request": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "https://graph.facebook.com/{{Version}}/{{WABA-ID}}/flows",
+                                    "protocol": "https",
+                                    "host": [
+                                        "graph",
+                                        "facebook",
+                                        "com"
+                                    ],
+                                    "path": [
+                                        "{{Version}}",
+                                        "{{WABA-ID}}",
+                                        "flows"
+                                    ]
+                                }
+                            },
+                            "response": [
+                                {
+                                    "name": "List Flows",
+                                    "originalRequest": {
+                                        "method": "GET",
+                                        "header": [],
+                                        "url": {
+                                            "raw": "https://graph.facebook.com/{{Version}}/{{WABA-ID}}/flows",
+                                            "protocol": "https",
+                                            "host": [
+                                                "graph",
+                                                "facebook",
+                                                "com"
+                                            ],
+                                            "path": [
+                                                "{{Version}}",
+                                                "{{WABA-ID}}",
+                                                "flows"
+                                            ]
+                                        }
+                                    },
+                                    "status": "OK",
+                                    "code": 200,
+                                    "_postman_previewlanguage": "json",
+                                    "header": [],
+                                    "cookie": [],
+                                    "body": "{\n    \"data\": [\n        {\n            \"name\": \"my first flow\",\n            \"status\": \"DRAFT\",\n            \"categories\": [\n                \"SIGN_UP\"\n            ],\n            \"validation_errors\": [],\n            \"id\": \"flow-1\"\n        },\n        {\n            \"name\": \"my second flow\",\n            \"status\": \"DRAFT\",\n            \"categories\": [\n                \"SIGN_UP\",\n                \"SIGN_IN\"\n            ],\n            \"validation_errors\": [\n                {\n                    \"error\": \"INVALID_PROPERTY\",\n                    \"error_type\": \"JSON_SCHEMA_ERROR\",\n                    \"message\": \"The property \\\"initial-text\\\" cannot be specified at \\\"$root/screens/0/layout/children/2/children/0\\\".\",\n                    \"line_start\": 46,\n                    \"line_end\": 46,\n                    \"column_start\": 17,\n                    \"column_end\": 30\n                }\n            ],\n            \"id\": \"flow-2\"\n        },\n        {\n            \"name\": \"another flow\",\n            \"status\": \"PUBLISHED\",\n            \"categories\": [\n                \"CONTACT_US\"\n            ],\n            \"validation_errors\": [],\n            \"id\": \"flow-3\"\n        }\n    ],\n    \"paging\": {\n        \"cursors\": {\n            \"before\": \"QVFIUnpKT...\",\n            \"after\": \"QVFIUnZAWV...\"\n        }\n    }\n}"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Update Flow",
+                    "item": [
+                        {
+                            "name": "Update Flow JSON",
+                            "request": {
+                                "method": "POST",
+                                "header": [],
+                                "body": {
+                                    "mode": "formdata",
+                                    "formdata": [
+                                        {
+                                            "key": "file",
+                                            "type": "file",
+                                            "src": []
+                                        },
+                                        {
+                                            "key": "name",
+                                            "value": "flow.json",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "asset_type",
+                                            "value": "FLOW_JSON",
+                                            "type": "text"
+                                        }
+                                    ]
+                                },
+                                "url": {
+                                    "raw": "https://graph.facebook.com/{{Version}}/{{Flow-ID}}/assets",
+                                    "protocol": "https",
+                                    "host": [
+                                        "graph",
+                                        "facebook",
+                                        "com"
+                                    ],
+                                    "path": [
+                                        "{{Version}}",
+                                        "{{Flow-ID}}",
+                                        "assets"
+                                    ]
+                                },
+                                "description": "Used to upload a flow JSON file with the flow content. Refer to flow JSON documentation here [https://developers.facebook.com/docs/whatsapp/flows/reference/flowjson](https://developers.facebook.com/docs/whatsapp/flows/reference/flowjson)\n\nThe file must be attached as from data. The response will include any validation errors in the JSON file"
+                            },
+                            "response": [
+                                {
+                                    "name": "Upload Flow JSON Asset",
+                                    "originalRequest": {
+                                        "method": "POST",
+                                        "header": [],
+                                        "body": {
+                                            "mode": "formdata",
+                                            "formdata": [
+                                                {
+                                                    "key": "file",
+                                                    "type": "file",
+                                                    "src": []
+                                                },
+                                                {
+                                                    "key": "name",
+                                                    "value": "flow.json",
+                                                    "type": "text"
+                                                },
+                                                {
+                                                    "key": "asset_type",
+                                                    "value": "FLOW_JSON",
+                                                    "type": "text"
+                                                }
+                                            ]
+                                        },
+                                        "url": {
+                                            "raw": "https://graph.facebook.com/{{Version}}/{{Flow-ID}}/assets",
+                                            "protocol": "https",
+                                            "host": [
+                                                "graph",
+                                                "facebook",
+                                                "com"
+                                            ],
+                                            "path": [
+                                                "{{Version}}",
+                                                "{{Flow-ID}}",
+                                                "assets"
+                                            ]
+                                        }
+                                    },
+                                    "status": "OK",
+                                    "code": 200,
+                                    "_postman_previewlanguage": "json",
+                                    "header": [],
+                                    "cookie": [],
+                                    "body": "{\n    \"success\": true,\n    \"validation_errors\": [\n        {\n            \"error\": \"INVALID_PROPERTY\",\n            \"error_type\": \"JSON_SCHEMA_ERROR\",\n            \"message\": \"The property \\\"initial-text\\\" cannot be specified at \\\"$root/screens/0/layout/children/2/children/0\\\".\",\n            \"line_start\": 46,\n            \"line_end\": 46,\n            \"column_start\": 17,\n            \"column_end\": 30\n        }\n    ]\n}"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Publish Flow",
+                            "request": {
+                                "method": "POST",
+                                "header": [],
+                                "url": {
+                                    "raw": "https://graph.facebook.com/{{Version}}/{{Flow-ID}}/publish",
+                                    "protocol": "https",
+                                    "host": [
+                                        "graph",
+                                        "facebook",
+                                        "com"
+                                    ],
+                                    "path": [
+                                        "{{Version}}",
+                                        "{{Flow-ID}}",
+                                        "publish"
+                                    ]
+                                },
+                                "description": "Updates the status of the flow as \"PUBLISHED\". This action is not reversible. The flow and its assets become immutable once published. To update the flow, you must create a new flow and specify the previous flow id as the \\`clone_flow_id\\` parameter"
+                            },
+                            "response": [
+                                {
+                                    "name": "Publish Flow",
+                                    "originalRequest": {
+                                        "method": "POST",
+                                        "header": [],
+                                        "url": {
+                                            "raw": "https://graph.facebook.com/{{Version}}/{{Flow-ID}}/publish",
+                                            "protocol": "https",
+                                            "host": [
+                                                "graph",
+                                                "facebook",
+                                                "com"
+                                            ],
+                                            "path": [
+                                                "{{Version}}",
+                                                "{{Flow-ID}}",
+                                                "publish"
+                                            ]
+                                        }
+                                    },
+                                    "status": "OK",
+                                    "code": 200,
+                                    "_postman_previewlanguage": "json",
+                                    "header": [],
+                                    "cookie": [],
+                                    "body": "{\n    \"success\": true\n}"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Update Flow Metadata",
+                            "request": {
+                                "method": "POST",
+                                "header": [],
+                                "body": {
+                                    "mode": "formdata",
+                                    "formdata": [
+                                        {
+                                            "key": "name",
+                                            "value": "<NEW_FLOW_NAME>",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "categories",
+                                            "value": "[\"OTHER\"]",
+                                            "description": "A list of Flow categories. Multiple values are possible, but at least one is required. Choose the values which represent your business use case. \n\nAllowed values: \"SIGN_UP\", \"SIGN_IN\", \"APPOINTMENT_BOOKING\", \"LEAD_GENERATION\", \"CONTACT_US\", \"CUSTOMER_SUPPORT\", \"SURVEY\", \"OTHER\"",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "endpoint_uri",
+                                            "value": "https://example.com",
+                                            "description": "Endpoint URI for the Flow",
+                                            "type": "text"
+                                        }
+                                    ],
+                                    "options": {
+                                        "formdata": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "https://graph.facebook.com/{{Version}}/{{Flow-ID}}",
+                                    "protocol": "https",
+                                    "host": [
+                                        "graph",
+                                        "facebook",
+                                        "com"
+                                    ],
+                                    "path": [
+                                        "{{Version}}",
+                                        "{{Flow-ID}}"
+                                    ]
+                                }
+                            },
+                            "response": [
+                                {
+                                    "name": "Update Flow Metadata",
+                                    "originalRequest": {
+                                        "method": "POST",
+                                        "header": [],
+                                        "body": {
+                                            "mode": "formdata",
+                                            "formdata": [
+                                                {
+                                                    "key": "name",
+                                                    "value": "<NEW_FLOW_NAME>",
+                                                    "type": "text"
+                                                },
+                                                {
+                                                    "key": "categories",
+                                                    "value": "[\"OTHER\"]",
+                                                    "type": "text"
+                                                },
+                                                {
+                                                    "key": "endpoint_uri",
+                                                    "value": "https://example.com",
+                                                    "type": "text"
+                                                }
+                                            ],
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "https://graph.facebook.com/{{Version}}/{{Flow-ID}}",
+                                            "protocol": "https",
+                                            "host": [
+                                                "graph",
+                                                "facebook",
+                                                "com"
+                                            ],
+                                            "path": [
+                                                "{{Version}}",
+                                                "{{Flow-ID}}"
+                                            ]
+                                        }
+                                    },
+                                    "status": "OK",
+                                    "code": 200,
+                                    "_postman_previewlanguage": "json",
+                                    "header": [],
+                                    "cookie": [],
+                                    "body": "{\n    \"success\": true\n}"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "List Assets (Get Flow JSON URL)",
+                            "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                            },
+                            "request": {
+                                "method": "GET",
+                                "header": [],
+                                "body": {
+                                    "mode": "formdata",
+                                    "formdata": []
+                                },
+                                "url": {
+                                    "raw": "https://graph.facebook.com/{{Version}}/{{Flow-ID}}/assets",
+                                    "protocol": "https",
+                                    "host": [
+                                        "graph",
+                                        "facebook",
+                                        "com"
+                                    ],
+                                    "path": [
+                                        "{{Version}}",
+                                        "{{Flow-ID}}",
+                                        "assets"
+                                    ]
+                                },
+                                "description": "Returns all assets attached to the flow. Currently only FLOW_JSON asset is supported"
+                            },
+                            "response": [
+                                {
+                                    "name": "List Assets",
+                                    "originalRequest": {
+                                        "method": "GET",
+                                        "header": [],
+                                        "url": {
+                                            "raw": "https://graph.facebook.com/{{Version}}/{{Flow-ID}}/assets",
+                                            "protocol": "https",
+                                            "host": [
+                                                "graph",
+                                                "facebook",
+                                                "com"
+                                            ],
+                                            "path": [
+                                                "{{Version}}",
+                                                "{{Flow-ID}}",
+                                                "assets"
+                                            ]
+                                        }
+                                    },
+                                    "status": "OK",
+                                    "code": 200,
+                                    "_postman_previewlanguage": "json",
+                                    "header": [],
+                                    "cookie": [],
+                                    "body": "{\n    \"data\": [\n        {\n            \"name\": \"flow.json\",\n            \"asset_type\": \"FLOW_JSON\",\n            \"download_url\": \"https://scontent.xx.fbcdn.net/m1/v/t0.57323-24/An_Hq0jnfJ...\"\n        }\n    ],\n    \"paging\": {\n        \"cursors\": {\n            \"before\": \"QVFIU...\",\n            \"after\": \"QVFIU...\"\n        }\n    }\n}"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Deprecate Flow",
+                            "request": {
+                                "method": "POST",
+                                "header": [],
+                                "url": {
+                                    "raw": "https://graph.facebook.com/{{Version}}/{{Flow-ID}}/deprecate",
+                                    "protocol": "https",
+                                    "host": [
+                                        "graph",
+                                        "facebook",
+                                        "com"
+                                    ],
+                                    "path": [
+                                        "{{Version}}",
+                                        "{{Flow-ID}}",
+                                        "deprecate"
+                                    ]
+                                },
+                                "description": "Updates the status of the flow as \"DEPRECATED\". This action is not reversible. Only a published flow can be deprecated to prevent sending or opening it."
+                            },
+                            "response": [
+                                {
+                                    "name": "Deprecate Flow",
+                                    "originalRequest": {
+                                        "method": "POST",
+                                        "header": [],
+                                        "url": {
+                                            "raw": "https://graph.facebook.com/{{Version}}/{{Flow-ID}}/publish",
+                                            "protocol": "https",
+                                            "host": [
+                                                "graph",
+                                                "facebook",
+                                                "com"
+                                            ],
+                                            "path": [
+                                                "{{Version}}",
+                                                "{{Flow-ID}}",
+                                                "publish"
+                                            ]
+                                        }
+                                    },
+                                    "status": "OK",
+                                    "code": 200,
+                                    "_postman_previewlanguage": "json",
+                                    "header": [],
+                                    "cookie": [],
+                                    "body": "{\n    \"success\": true\n}"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Delete Flow",
+                            "request": {
+                                "method": "DELETE",
+                                "header": [],
+                                "url": {
+                                    "raw": "https://graph.facebook.com/{{Version}}/{{Flow-ID}}",
+                                    "protocol": "https",
+                                    "host": [
+                                        "graph",
+                                        "facebook",
+                                        "com"
+                                    ],
+                                    "path": [
+                                        "{{Version}}",
+                                        "{{Flow-ID}}"
+                                    ]
+                                },
+                                "description": "Deletes the flow entirely. This action is not reversible. Only a DRAFT flow can be deleted."
+                            },
+                            "response": [
+                                {
+                                    "name": "Delete Flow",
+                                    "originalRequest": {
+                                        "method": "DELETE",
+                                        "header": [],
+                                        "url": {
+                                            "raw": "https://graph.facebook.com/{{Version}}/{{Flow-ID}}",
+                                            "protocol": "https",
+                                            "host": [
+                                                "graph",
+                                                "facebook",
+                                                "com"
+                                            ],
+                                            "path": [
+                                                "{{Version}}",
+                                                "{{Flow-ID}}"
+                                            ]
+                                        }
+                                    },
+                                    "status": "OK",
+                                    "code": 200,
+                                    "_postman_previewlanguage": "json",
+                                    "header": [],
+                                    "cookie": [],
+                                    "body": "{\n    \"success\": true\n}"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Setup Endpoint Encryption",
+                    "item": [
+                        {
+                            "name": "Set Encryption Public Key",
+                            "request": {
+                                "method": "POST",
+                                "header": [],
+                                "body": {
+                                    "mode": "formdata",
+                                    "formdata": [
+                                        {
+                                            "key": "business_public_key",
+                                            "value": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKC\n...\n8QIDAQAB\n-----END PUBLIC KEY-----",
+                                            "type": "text"
+                                        }
+                                    ]
+                                },
+                                "url": {
+                                    "raw": "https://graph.facebook.com/{{Version}}/{{Phone-Number-ID}}/whatsapp_business_encryption",
+                                    "protocol": "https",
+                                    "host": [
+                                        "graph",
+                                        "facebook",
+                                        "com"
+                                    ],
+                                    "path": [
+                                        "{{Version}}",
+                                        "{{Phone-Number-ID}}",
+                                        "whatsapp_business_encryption"
+                                    ]
+                                },
+                                "description": "Sets the public key that is used for encrypting the data channel requests"
+                            },
+                            "response": [
+                                {
+                                    "name": "Set Encryption Public Key",
+                                    "originalRequest": {
+                                        "method": "POST",
+                                        "header": [],
+                                        "body": {
+                                            "mode": "formdata",
+                                            "formdata": [
+                                                {
+                                                    "key": "business_public_key",
+                                                    "value": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKC\n...\n8QIDAQAB\n-----END PUBLIC KEY-----",
+                                                    "type": "text"
+                                                }
+                                            ]
+                                        },
+                                        "url": {
+                                            "raw": "https://graph.facebook.com/{{Version}}/{{Phone-Number-ID}}/whatsapp_business_encryption",
+                                            "protocol": "https",
+                                            "host": [
+                                                "graph",
+                                                "facebook",
+                                                "com"
+                                            ],
+                                            "path": [
+                                                "{{Version}}",
+                                                "{{Phone-Number-ID}}",
+                                                "whatsapp_business_encryption"
+                                            ]
+                                        }
+                                    },
+                                    "status": "OK",
+                                    "code": 200,
+                                    "_postman_previewlanguage": "json",
+                                    "header": [],
+                                    "cookie": [],
+                                    "body": "{\n    \"success\": true\n}"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Get Encryption Public Key",
+                            "request": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "https://graph.facebook.com/{{Version}}/{{Phone-Number-ID}}/whatsapp_business_encryption",
+                                    "protocol": "https",
+                                    "host": [
+                                        "graph",
+                                        "facebook",
+                                        "com"
+                                    ],
+                                    "path": [
+                                        "{{Version}}",
+                                        "{{Phone-Number-ID}}",
+                                        "whatsapp_business_encryption"
+                                    ]
+                                }
+                            },
+                            "response": [
+                                {
+                                    "name": "Get Encryption Public Key",
+                                    "originalRequest": {
+                                        "method": "GET",
+                                        "header": [],
+                                        "url": {
+                                            "raw": "https://graph.facebook.com/{{Version}}/{{Phone-Number-ID}}/whatsapp_business_encryption",
+                                            "protocol": "https",
+                                            "host": [
+                                                "graph",
+                                                "facebook",
+                                                "com"
+                                            ],
+                                            "path": [
+                                                "{{Version}}",
+                                                "{{Phone-Number-ID}}",
+                                                "whatsapp_business_encryption"
+                                            ]
+                                        }
+                                    },
+                                    "status": "OK",
+                                    "code": 200,
+                                    "_postman_previewlanguage": "json",
+                                    "header": [],
+                                    "cookie": [],
+                                    "body": "{\n    \"data\": [\n        {\n            \"business_public_key\": \"-----BEGIN PUBLIC KEY-----\\nMIIBIjANBgkqh...AQAB\\n-----END PUBLIC KEY-----\",\n            \"business_public_key_signature_status\": \"VALID\"\n        }\n    ]\n}"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Send Flow",
+                    "item": [
+                        {
+                            "name": "Send Draft Flow by Name",
+                            "request": {
+                                "method": "POST",
+                                "header": [],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"messaging_product\": \"whatsapp\",\n    \"to\": \"{{Recipient-Phone-Number}}\",\n    \"recipient_type\": \"individual\",\n    \"type\": \"interactive\",\n    \"interactive\": {\n        \"type\": \"flow\",\n        \"header\": {\n            \"type\": \"text\",\n            \"text\": \"Not shown in draft mode\"\n        },\n        \"body\": {\n            \"text\": \"Not shown in draft mode\"\n        },\n        \"footer\": {\n            \"text\": \"Not shown in draft mode\"\n        },\n        \"action\": {\n            \"name\": \"flow\",\n            \"parameters\": {\n                \"flow_message_version\": \"3\",\n                \"flow_action\": \"navigate\",\n                \"flow_token\": \"<FLOW_TOKEN>\",\n                \"flow_name\": \"{{Flow-Name}}\",\n                \"flow_cta\": \"Not shown in draft mode\",\n                \"mode\": \"draft\",\n                \"flow_action_payload\": {\n                    \"screen\": \"<SCREEN_ID>\",\n                    \"data\": {\n                        \"<CUSTOM_KEY>\": \"<CUSTOM_VALUE>\"\n                    }\n                }\n            }\n        }\n    }\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "https://graph.facebook.com/{{Version}}/{{Phone-Number-ID}}/messages",
+                                    "protocol": "https",
+                                    "host": [
+                                        "graph",
+                                        "facebook",
+                                        "com"
+                                    ],
+                                    "path": [
+                                        "{{Version}}",
+                                        "{{Phone-Number-ID}}",
+                                        "messages"
+                                    ]
+                                },
+                                "description": "Flow messages won't be delivered to unsupported WhatsApp versions"
+                            },
+                            "response": [
+                                {
+                                    "name": "Send Draft Flow by Name",
+                                    "originalRequest": {
+                                        "method": "POST",
+                                        "header": [],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "{\n    \"messaging_product\": \"whatsapp\",\n    \"to\": \"{{Recipient-Phone-Number}}\",\n    \"recipient_type\": \"individual\",\n    \"type\": \"interactive\",\n    \"interactive\": {\n        \"type\": \"flow\",\n        \"header\": {\n            \"type\": \"text\",\n            \"text\": \"Not shown in draft mode\"\n        },\n        \"body\": {\n            \"text\": \"Not shown in draft mode\"\n        },\n        \"footer\": {\n            \"text\": \"Not shown in draft mode\"\n        },\n        \"action\": {\n            \"name\": \"flow\",\n            \"parameters\": {\n                \"flow_message_version\": \"3\",\n                \"flow_action\": \"navigate\",\n                \"flow_token\": \"<FLOW_TOKEN>\",\n                \"flow_name\": \"{{Flow-Name}}\",\n                \"flow_cta\": \"Not shown in draft mode\",\n                \"mode\": \"draft\",\n                \"flow_action_payload\": {\n                    \"screen\": \"<SCREEN_ID>\",\n                    \"data\": {\n                        \"<CUSTOM_KEY>\": \"<CUSTOM_VALUE>\"\n                    }\n                }\n            }\n        }\n    }\n}",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "https://graph.facebook.com/{{Version}}/{{Phone-Number-ID}}/messages",
+                                            "protocol": "https",
+                                            "host": [
+                                                "graph",
+                                                "facebook",
+                                                "com"
+                                            ],
+                                            "path": [
+                                                "{{Version}}",
+                                                "{{Phone-Number-ID}}",
+                                                "messages"
+                                            ]
+                                        }
+                                    },
+                                    "status": "OK",
+                                    "code": 200,
+                                    "_postman_previewlanguage": "json",
+                                    "header": [],
+                                    "cookie": [],
+                                    "body": "{\n    \"messaging_product\": \"whatsapp\",\n    \"contacts\": [\n        {\n            \"input\": \"18055555555\",\n            \"wa_id\": \"18055555555\"\n        }\n    ],\n    \"messages\": [\n        {\n            \"id\": \"wamid.HBgL...\"\n        }\n    ]\n}"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Send Draft Flow by ID",
+                            "request": {
+                                "method": "POST",
+                                "header": [],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"messaging_product\": \"whatsapp\",\n    \"to\": \"{{Recipient-Phone-Number}}\",\n    \"recipient_type\": \"individual\",\n    \"type\": \"interactive\",\n    \"interactive\": {\n        \"type\": \"flow\",\n        \"header\": {\n            \"type\": \"text\",\n            \"text\": \"Not shown in draft mode\"\n        },\n        \"body\": {\n            \"text\": \"Not shown in draft mode\"\n        },\n        \"footer\": {\n            \"text\": \"Not shown in draft mode\"\n        },\n        \"action\": {\n            \"name\": \"flow\",\n            \"parameters\": {\n                \"flow_message_version\": \"3\",\n                \"flow_action\": \"navigate\",\n                \"flow_token\": \"<FLOW_TOKEN>\",\n                \"flow_id\": \"{{Flow-ID}}\",\n                \"flow_cta\": \"Not shown in draft mode\",\n                \"mode\": \"draft\",\n                \"flow_action_payload\": {\n                    \"screen\": \"<SCREEN_ID>\",\n                    \"data\": {\n                        \"<CUSTOM_KEY>\": \"<CUSTOM_VALUE>\"\n                    }\n                }\n            }\n        }\n    }\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "https://graph.facebook.com/{{Version}}/{{Phone-Number-ID}}/messages",
+                                    "protocol": "https",
+                                    "host": [
+                                        "graph",
+                                        "facebook",
+                                        "com"
+                                    ],
+                                    "path": [
+                                        "{{Version}}",
+                                        "{{Phone-Number-ID}}",
+                                        "messages"
+                                    ]
+                                },
+                                "description": "Flow messages won't be delivered to unsupported WhatsApp versions"
+                            },
+                            "response": [
+                                {
+                                    "name": "Send Draft Flow by ID",
+                                    "originalRequest": {
+                                        "method": "POST",
+                                        "header": [],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "{\n    \"messaging_product\": \"whatsapp\",\n    \"to\": \"{{Recipient-Phone-Number}}\",\n    \"recipient_type\": \"individual\",\n    \"type\": \"interactive\",\n    \"interactive\": {\n        \"type\": \"flow\",\n        \"header\": {\n            \"type\": \"text\",\n            \"text\": \"Not shown in draft mode\"\n        },\n        \"body\": {\n            \"text\": \"Not shown in draft mode\"\n        },\n        \"footer\": {\n            \"text\": \"Not shown in draft mode\"\n        },\n        \"action\": {\n            \"name\": \"flow\",\n            \"parameters\": {\n                \"flow_message_version\": \"3\",\n                \"flow_action\": \"navigate\",\n                \"flow_token\": \"<FLOW_TOKEN>\",\n                \"flow_id\": \"{{Flow-ID}}\",\n                \"flow_cta\": \"Not shown in draft mode\",\n                \"mode\": \"draft\",\n                \"flow_action_payload\": {\n                    \"screen\": \"<SCREEN_ID>\",\n                    \"data\": {\n                        \"<CUSTOM_KEY>\": \"<CUSTOM_VALUE>\"\n                    }\n                }\n            }\n        }\n    }\n}",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "https://graph.facebook.com/{{Version}}/{{Phone-Number-ID}}/messages",
+                                            "protocol": "https",
+                                            "host": [
+                                                "graph",
+                                                "facebook",
+                                                "com"
+                                            ],
+                                            "path": [
+                                                "{{Version}}",
+                                                "{{Phone-Number-ID}}",
+                                                "messages"
+                                            ]
+                                        }
+                                    },
+                                    "status": "OK",
+                                    "code": 200,
+                                    "_postman_previewlanguage": "json",
+                                    "header": [],
+                                    "cookie": [],
+                                    "body": "{\n    \"messaging_product\": \"whatsapp\",\n    \"contacts\": [\n        {\n            \"input\": \"18055555555\",\n            \"wa_id\": \"18055555555\"\n        }\n    ],\n    \"messages\": [\n        {\n            \"id\": \"wamid.HBgL...\"\n        }\n    ]\n}"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Send Published Flow by Name",
+                            "request": {
+                                "method": "POST",
+                                "header": [],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"messaging_product\": \"whatsapp\",\n    \"to\": \"{{Recipient-Phone-Number}}\",\n    \"recipient_type\": \"individual\",\n    \"type\": \"interactive\",\n    \"interactive\": {\n        \"type\": \"flow\",\n        \"header\": {\n            \"type\": \"text\",\n            \"text\": \"<HEADER_TEXT>\"\n        },\n        \"body\": {\n            \"text\": \"<BODY_TEXT>\"\n        },\n        \"footer\": {\n            \"text\": \"<FOOTER_TEXT>\"\n        },\n        \"action\": {\n            \"name\": \"flow\",\n            \"parameters\": {\n                \"flow_message_version\": \"3\",\n                \"flow_action\": \"navigate\",\n                \"flow_token\": \"<FLOW_TOKEN>\",\n                \"flow_name\": \"{{Flow-Name}}\",\n                \"flow_cta\": \"Open Flow!\",\n                \"flow_action_payload\": {\n                    \"screen\": \"<SCREEN_ID>\",\n                    \"data\": {\n                        \"<CUSTOM_KEY>\": \"<CUSTOM_VALUE>\"\n                    }\n                }\n            }\n        }\n    }\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "https://graph.facebook.com/{{Version}}/{{Phone-Number-ID}}/messages",
+                                    "protocol": "https",
+                                    "host": [
+                                        "graph",
+                                        "facebook",
+                                        "com"
+                                    ],
+                                    "path": [
+                                        "{{Version}}",
+                                        "{{Phone-Number-ID}}",
+                                        "messages"
+                                    ]
+                                },
+                                "description": "Flow messages won't be delivered to unsupported WhatsApp versions"
+                            },
+                            "response": [
+                                {
+                                    "name": "Send Published Flow by Name",
+                                    "originalRequest": {
+                                        "method": "POST",
+                                        "header": [],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "{\n    \"messaging_product\": \"whatsapp\",\n    \"to\": \"{{Recipient-Phone-Number}}\",\n    \"recipient_type\": \"individual\",\n    \"type\": \"interactive\",\n    \"interactive\": {\n        \"type\": \"flow\",\n        \"header\": {\n            \"type\": \"text\",\n            \"text\": \"<HEADER_TEXT>\"\n        },\n        \"body\": {\n            \"text\": \"<BODY_TEXT>\"\n        },\n        \"footer\": {\n            \"text\": \"<FOOTER_TEXT>\"\n        },\n        \"action\": {\n            \"name\": \"flow\",\n            \"parameters\": {\n                \"flow_message_version\": \"3\",\n                \"flow_action\": \"navigate\",\n                \"flow_token\": \"<FLOW_TOKEN>\",\n                \"flow_name\": \"{{Flow-Name}}\",\n                \"flow_cta\": \"Open Flow!\",\n                \"flow_action_payload\": {\n                    \"screen\": \"<SCREEN_ID>\",\n                    \"data\": {\n                        \"<CUSTOM_KEY>\": \"<CUSTOM_VALUE>\"\n                    }\n                }\n            }\n        }\n    }\n}",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "https://graph.facebook.com/{{Version}}/{{Phone-Number-ID}}/messages",
+                                            "protocol": "https",
+                                            "host": [
+                                                "graph",
+                                                "facebook",
+                                                "com"
+                                            ],
+                                            "path": [
+                                                "{{Version}}",
+                                                "{{Phone-Number-ID}}",
+                                                "messages"
+                                            ]
+                                        }
+                                    },
+                                    "status": "OK",
+                                    "code": 200,
+                                    "_postman_previewlanguage": "json",
+                                    "header": [],
+                                    "cookie": [],
+                                    "body": "{\n    \"messaging_product\": \"whatsapp\",\n    \"contacts\": [\n        {\n            \"input\": \"18055555555\",\n            \"wa_id\": \"18055555555\"\n        }\n    ],\n    \"messages\": [\n        {\n            \"id\": \"wamid.HBgL...\"\n        }\n    ]\n}"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Send Published Flow by ID",
+                            "request": {
+                                "method": "POST",
+                                "header": [],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"messaging_product\": \"whatsapp\",\n    \"to\": \"{{Recipient-Phone-Number}}\",\n    \"recipient_type\": \"individual\",\n    \"type\": \"interactive\",\n    \"interactive\": {\n        \"type\": \"flow\",\n        \"header\": {\n            \"type\": \"text\",\n            \"text\": \"<HEADER_TEXT>\"\n        },\n        \"body\": {\n            \"text\": \"<BODY_TEXT>\"\n        },\n        \"footer\": {\n            \"text\": \"<FOOTER_TEXT>\"\n        },\n        \"action\": {\n            \"name\": \"flow\",\n            \"parameters\": {\n                \"flow_message_version\": \"3\",\n                \"flow_action\": \"navigate\",\n                \"flow_token\": \"<FLOW_TOKEN>\",\n                \"flow_id\": \"{{Flow-ID}}\",\n                \"flow_cta\": \"Open Flow!\",\n                \"flow_action_payload\": {\n                    \"screen\": \"<SCREEN_ID>\",\n                    \"data\": {\n                        \"<CUSTOM_KEY>\": \"<CUSTOM_VALUE>\"\n                    }\n                }\n            }\n        }\n    }\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "https://graph.facebook.com/{{Version}}/{{Phone-Number-ID}}/messages",
+                                    "protocol": "https",
+                                    "host": [
+                                        "graph",
+                                        "facebook",
+                                        "com"
+                                    ],
+                                    "path": [
+                                        "{{Version}}",
+                                        "{{Phone-Number-ID}}",
+                                        "messages"
+                                    ]
+                                },
+                                "description": "Flow messages won't be delivered to unsupported WhatsApp versions"
+                            },
+                            "response": [
+                                {
+                                    "name": "Send Published Flow by ID",
+                                    "originalRequest": {
+                                        "method": "POST",
+                                        "header": [],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "{\n    \"messaging_product\": \"whatsapp\",\n    \"to\": \"{{Recipient-Phone-Number}}\",\n    \"recipient_type\": \"individual\",\n    \"type\": \"interactive\",\n    \"interactive\": {\n        \"type\": \"flow\",\n        \"header\": {\n            \"type\": \"text\",\n            \"text\": \"<HEADER_TEXT>\"\n        },\n        \"body\": {\n            \"text\": \"<BODY_TEXT>\"\n        },\n        \"footer\": {\n            \"text\": \"<FOOTER_TEXT>\"\n        },\n        \"action\": {\n            \"name\": \"flow\",\n            \"parameters\": {\n                \"flow_message_version\": \"3\",\n                \"flow_action\": \"navigate\",\n                \"flow_token\": \"<FLOW_TOKEN>\",\n                \"flow_id\": \"{{Flow-ID}}\",\n                \"flow_cta\": \"Open Flow!\",\n                \"flow_action_payload\": {\n                    \"screen\": \"<SCREEN_ID>\",\n                    \"data\": {\n                        \"<CUSTOM_KEY>\": \"<CUSTOM_VALUE>\"\n                    }\n                }\n            }\n        }\n    }\n}",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "https://graph.facebook.com/{{Version}}/{{Phone-Number-ID}}/messages",
+                                            "protocol": "https",
+                                            "host": [
+                                                "graph",
+                                                "facebook",
+                                                "com"
+                                            ],
+                                            "path": [
+                                                "{{Version}}",
+                                                "{{Phone-Number-ID}}",
+                                                "messages"
+                                            ]
+                                        }
+                                    },
+                                    "status": "OK",
+                                    "code": 200,
+                                    "_postman_previewlanguage": "json",
+                                    "header": [],
+                                    "cookie": [],
+                                    "body": "{\n    \"messaging_product\": \"whatsapp\",\n    \"contacts\": [\n        {\n            \"input\": \"18055555555\",\n            \"wa_id\": \"18055555555\"\n        }\n    ],\n    \"messages\": [\n        {\n            \"id\": \"wamid.HBgL...\"\n        }\n    ]\n}"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Create Flow Template Message by Name",
+                            "request": {
+                                "method": "POST",
+                                "header": [],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"name\": \"<TEMPLATE_NAME>\",\n    \"language\": \"en_US\",\n    \"category\": \"MARKETING\",\n    \"components\": [\n        {\n            \"type\": \"body\",\n            \"text\": \"Check out this new offer\"\n        },\n        {\n            \"type\": \"BUTTONS\",\n            \"buttons\": [\n                {\n                    \"type\": \"FLOW\",\n                    \"text\": \"Check out this offer!\",\n                    \"flow_name\": \"{{Flow-Name}}\",\n                    \"navigate_screen\": \"<SCREEN_ID>\",\n                    \"flow_action\": \"navigate\"\n                }\n            ]\n        }\n    ]\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "https://graph.facebook.com/{{Version}}/{{WABA-ID}}/message_templates",
+                                    "protocol": "https",
+                                    "host": [
+                                        "graph",
+                                        "facebook",
+                                        "com"
+                                    ],
+                                    "path": [
+                                        "{{Version}}",
+                                        "{{WABA-ID}}",
+                                        "message_templates"
+                                    ]
+                                }
+                            },
+                            "response": [
+                                {
+                                    "name": "Create Flow Template Message by Name",
+                                    "originalRequest": {
+                                        "method": "POST",
+                                        "header": [],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "{\n    \"name\": \"<TEMPLATE_NAME>\",\n    \"language\": \"en_US\",\n    \"category\": \"MARKETING\",\n    \"components\": [\n        {\n            \"type\": \"body\",\n            \"text\": \"Check out this new offer\"\n        },\n        {\n            \"type\": \"BUTTONS\",\n            \"buttons\": [\n                {\n                    \"type\": \"FLOW\",\n                    \"text\": \"Check out this offer!\",\n                    \"flow_name\": \"{{Flow-Name}}\",\n                    \"navigate_screen\": \"<SCREEN_ID>\",\n                    \"flow_action\": \"navigate\"\n                }\n            ]\n        }\n    ]\n}",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "https://graph.facebook.com/{{Version}}/{{WABA-ID}}/message_templates",
+                                            "protocol": "https",
+                                            "host": [
+                                                "graph",
+                                                "facebook",
+                                                "com"
+                                            ],
+                                            "path": [
+                                                "{{Version}}",
+                                                "{{WABA-ID}}",
+                                                "message_templates"
+                                            ]
+                                        }
+                                    },
+                                    "status": "OK",
+                                    "code": 200,
+                                    "_postman_previewlanguage": "json",
+                                    "header": [],
+                                    "cookie": [],
+                                    "body": "{\n    \"id\": \"template-1\",\n    \"status\": \"PENDING\",\n    \"category\": \"MARKETING\"\n}"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Create Flow Template Message by Flow JSON",
+                            "request": {
+                                "method": "POST",
+                                "header": [],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"name\": \"<TEMPLATE_NAME>\",\n    \"language\": \"en_US\",\n    \"category\": \"MARKETING\",\n    \"components\": [\n        {\n            \"type\": \"body\",\n            \"text\": \"Check out this new offer\"\n        },\n        {\n            \"type\": \"BUTTONS\",\n            \"buttons\": [\n                {\n                    \"type\": \"FLOW\",\n                    \"text\": \"Check out this offer!\",\n                    \"flow_json\": \"{\\\"version\\\":\\\"5.0\\\",\\\"screens\\\":[{\\\"id\\\":\\\"WELCOME_SCREEN\\\",\\\"layout\\\":{\\\"type\\\":\\\"SingleColumnLayout\\\",\\\"children\\\":[{\\\"type\\\":\\\"TextHeading\\\",\\\"text\\\":\\\"Hello World\\\"},{\\\"type\\\":\\\"Footer\\\",\\\"label\\\":\\\"Complete\\\",\\\"on-click-action\\\":{\\\"name\\\":\\\"complete\\\",\\\"payload\\\":{}}}]},\\\"title\\\":\\\"Welcome\\\",\\\"terminal\\\":true,\\\"success\\\":true,\\\"data\\\":{}}]}\",\n                    \"navigate_screen\": \"WELCOME_SCREEN\",\n                    \"flow_action\": \"navigate\"\n                }\n            ]\n        }\n    ]\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "https://graph.facebook.com/{{Version}}/{{WABA-ID}}/message_templates",
+                                    "protocol": "https",
+                                    "host": [
+                                        "graph",
+                                        "facebook",
+                                        "com"
+                                    ],
+                                    "path": [
+                                        "{{Version}}",
+                                        "{{WABA-ID}}",
+                                        "message_templates"
+                                    ]
+                                }
+                            },
+                            "response": [
+                                {
+                                    "name": "Create Flow Template Message by Flow JSON",
+                                    "originalRequest": {
+                                        "method": "POST",
+                                        "header": [],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "{\n    \"name\": \"<TEMPLATE_NAME>\",\n    \"language\": \"en_US\",\n    \"category\": \"MARKETING\",\n    \"components\": [\n        {\n            \"type\": \"body\",\n            \"text\": \"Check out this new offer\"\n        },\n        {\n            \"type\": \"BUTTONS\",\n            \"buttons\": [\n                {\n                    \"type\": \"FLOW\",\n                    \"text\": \"Check out this offer!\",\n                    \"flow_json\": \"{\\\"version\\\":\\\"5.0\\\",\\\"screens\\\":[{\\\"id\\\":\\\"WELCOME_SCREEN\\\",\\\"layout\\\":{\\\"type\\\":\\\"SingleColumnLayout\\\",\\\"children\\\":[{\\\"type\\\":\\\"TextHeading\\\",\\\"text\\\":\\\"Hello World\\\"},{\\\"type\\\":\\\"Footer\\\",\\\"label\\\":\\\"Complete\\\",\\\"on-click-action\\\":{\\\"name\\\":\\\"complete\\\",\\\"payload\\\":{}}}]},\\\"title\\\":\\\"Welcome\\\",\\\"terminal\\\":true,\\\"success\\\":true,\\\"data\\\":{}}]}\",\n                    \"navigate_screen\": \"WELCOME_SCREEN\",\n                    \"flow_action\": \"navigate\"\n                }\n            ]\n        }\n    ]\n}",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "https://graph.facebook.com/{{Version}}/{{WABA-ID}}/message_templates",
+                                            "protocol": "https",
+                                            "host": [
+                                                "graph",
+                                                "facebook",
+                                                "com"
+                                            ],
+                                            "path": [
+                                                "{{Version}}",
+                                                "{{WABA-ID}}",
+                                                "message_templates"
+                                            ]
+                                        }
+                                    },
+                                    "status": "OK",
+                                    "code": 200,
+                                    "_postman_previewlanguage": "json",
+                                    "header": [],
+                                    "cookie": [],
+                                    "body": "{\n    \"id\": \"template-1\",\n    \"status\": \"PENDING\",\n    \"category\": \"MARKETING\"\n}"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Create Flow Template Message by ID",
+                            "request": {
+                                "method": "POST",
+                                "header": [],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"name\": \"<TEMPLATE_NAME>\",\n    \"language\": \"en_US\",\n    \"category\": \"MARKETING\",\n    \"components\": [\n        {\n            \"type\": \"body\",\n            \"text\": \"Check out this new offer\"\n        },\n        {\n            \"type\": \"BUTTONS\",\n            \"buttons\": [\n                {\n                    \"type\": \"FLOW\",\n                    \"text\": \"Check out this offer!\",\n                    \"flow_id\": \"{{Flow-ID}}\",\n                    \"navigate_screen\": \"<SCREEN_ID>\",\n                    \"flow_action\": \"navigate\"\n                }\n            ]\n        }\n    ]\n}\n",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "https://graph.facebook.com/{{Version}}/{{WABA-ID}}/message_templates",
+                                    "protocol": "https",
+                                    "host": [
+                                        "graph",
+                                        "facebook",
+                                        "com"
+                                    ],
+                                    "path": [
+                                        "{{Version}}",
+                                        "{{WABA-ID}}",
+                                        "message_templates"
+                                    ]
+                                }
+                            },
+                            "response": [
+                                {
+                                    "name": "Create Flow Template Message by ID",
+                                    "originalRequest": {
+                                        "method": "POST",
+                                        "header": [],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "{\n    \"name\": \"<TEMPLATE_NAME>\",\n    \"language\": \"en_US\",\n    \"category\": \"MARKETING\",\n    \"components\": [\n        {\n            \"type\": \"body\",\n            \"text\": \"Check out this new offer\"\n        },\n        {\n            \"type\": \"BUTTONS\",\n            \"buttons\": [\n                {\n                    \"type\": \"FLOW\",\n                    \"text\": \"Check out this offer!\",\n                    \"flow_id\": \"{{Flow-ID}}\",\n                    \"navigate_screen\": \"<SCREEN_ID>\",\n                    \"flow_action\": \"navigate\"\n                }\n            ]\n        }\n    ]\n}\n",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "https://graph.facebook.com/{{Version}}/{{WABA-ID}}/message_templates",
+                                            "protocol": "https",
+                                            "host": [
+                                                "graph",
+                                                "facebook",
+                                                "com"
+                                            ],
+                                            "path": [
+                                                "{{Version}}",
+                                                "{{WABA-ID}}",
+                                                "message_templates"
+                                            ]
+                                        }
+                                    },
+                                    "status": "OK",
+                                    "code": 200,
+                                    "_postman_previewlanguage": "json",
+                                    "header": [],
+                                    "cookie": [],
+                                    "body": "{\n    \"id\": \"template-1\",\n    \"status\": \"PENDING\",\n    \"category\": \"MARKETING\"\n}"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Send Flow Template Message",
+                            "request": {
+                                "method": "POST",
+                                "header": [],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"messaging_product\": \"whatsapp\",\n    \"to\": \"{{Recipient-Phone-Number}}\",\n    \"type\": \"template\",\n    \"template\": {\n        \"name\": \"<TEMPLATE_NAME>\",\n        \"language\": {\n            \"code\": \"en_US\"\n        },\n        \"components\": [\n            {\n                \"type\": \"button\",\n                \"sub_type\": \"flow\",\n                \"index\": \"0\",\n                \"parameters\": [\n                    {\n                        \"type\": \"action\",\n                        \"action\": {\n                            \"flow_token\": \"<FLOW_TOKEN>\",\n                            \"flow_action_data\": {\n                                \"<CUSTOM_KEY>\": \"<CUSTOM_VALUE>\"\n                            }\n                        }\n                    }\n                ]\n            }\n        ]\n    }\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "https://graph.facebook.com/{{Version}}/{{Phone-Number-ID}}/messages",
+                                    "protocol": "https",
+                                    "host": [
+                                        "graph",
+                                        "facebook",
+                                        "com"
+                                    ],
+                                    "path": [
+                                        "{{Version}}",
+                                        "{{Phone-Number-ID}}",
+                                        "messages"
+                                    ]
+                                }
+                            },
+                            "response": [
+                                {
+                                    "name": "Send Flow Template Message",
+                                    "originalRequest": {
+                                        "method": "POST",
+                                        "header": [],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "{\n    \"messaging_product\": \"whatsapp\",\n    \"to\": \"{{Recipient-Phone-Number}}\",\n    \"type\": \"template\",\n    \"template\": {\n        \"name\": \"<TEMPLATE_NAME>\",\n        \"language\": {\n            \"code\": \"en_US\"\n        },\n        \"components\": [\n            {\n                \"type\": \"button\",\n                \"sub_type\": \"flow\",\n                \"index\": \"0\",\n                \"parameters\": [\n                    {\n                        \"type\": \"action\",\n                        \"action\": {\n                            \"flow_token\": \"<FLOW_TOKEN>\",\n                            \"flow_action_data\": {\n                                \"<CUSTOM_KEY>\": \"<CUSTOM_VALUE>\"\n                            }\n                        }\n                    }\n                ]\n            }\n        ]\n    }\n}",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "https://graph.facebook.com/{{Version}}/{{Phone-Number-ID}}/messages",
+                                            "protocol": "https",
+                                            "host": [
+                                                "graph",
+                                                "facebook",
+                                                "com"
+                                            ],
+                                            "path": [
+                                                "{{Version}}",
+                                                "{{Phone-Number-ID}}",
+                                                "messages"
+                                            ]
+                                        }
+                                    },
+                                    "status": "OK",
+                                    "code": 200,
+                                    "_postman_previewlanguage": "json",
+                                    "header": [],
+                                    "cookie": [],
+                                    "body": "{\n    \"messaging_product\": \"whatsapp\",\n    \"contacts\": [\n        {\n            \"input\": \"18055555555\",\n            \"wa_id\": \"18055555555\"\n        }\n    ],\n    \"messages\": [\n        {\n            \"id\": \"wamid.HBgL...\"\n        }\n    ]\n}"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Get Endpoint Metrics",
+                    "item": [
+                        {
+                            "name": "Get Endpoint Request Count Metric",
+                            "request": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "https://graph.facebook.com/{{Version}}/{{Flow-ID}}?fields=metric.name(ENDPOINT_REQUEST_COUNT).granularity(DAY).since(2024-01-28).until(2024-01-30)",
+                                    "protocol": "https",
+                                    "host": [
+                                        "graph",
+                                        "facebook",
+                                        "com"
+                                    ],
+                                    "path": [
+                                        "{{Version}}",
+                                        "{{Flow-ID}}"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "fields",
+                                            "value": "metric.name(ENDPOINT_REQUEST_COUNT).granularity(DAY).since(2024-01-28).until(2024-01-30)"
+                                        }
+                                    ]
+                                },
+                                "description": "Can request specific fields by enabling the \\`fields\\` query param"
+                            },
+                            "response": [
+                                {
+                                    "name": "Get Endpoint Request Count Metric",
+                                    "originalRequest": {
+                                        "method": "GET",
+                                        "header": [],
+                                        "url": {
+                                            "raw": "https://graph.facebook.com/{{Version}}/{{Flow-ID}}?fields=metric.name(ENDPOINT_REQUEST_COUNT).granularity(DAY).since(2024-01-28).until(2024-01-30)",
+                                            "protocol": "https",
+                                            "host": [
+                                                "graph",
+                                                "facebook",
+                                                "com"
+                                            ],
+                                            "path": [
+                                                "{{Version}}",
+                                                "{{Flow-ID}}"
+                                            ],
+                                            "query": [
+                                                {
+                                                    "key": "fields",
+                                                    "value": "metric.name(ENDPOINT_REQUEST_COUNT).granularity(DAY).since(2024-01-28).until(2024-01-30)",
+                                                    "description": "Return specific fields in the response"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "status": "OK",
+                                    "code": 200,
+                                    "_postman_previewlanguage": "json",
+                                    "header": [],
+                                    "cookie": [],
+                                    "body": "{\n    \"id\": \"flow-1\",\n    \"metric\": {\n        \"granularity\": \"DAY\",\n        \"name\": \"ENDPOINT_REQUEST_COUNT\",\n        \"data_points\": [\n            {\n                \"timestamp\": \"2024-01-28T08:00:00+0000\",\n                \"data\": [\n                    {\n                        \"key\": \"value\",\n                        \"value\": 138\n                    }\n                ]\n            },\n            {\n                \"timestamp\": \"2024-01-29T08:00:00+0000\",\n                \"data\": [\n                    {\n                        \"key\": \"value\",\n                        \"value\": 361\n                    }\n                ]\n            }\n        ]\n    }\n}"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Get Endpoint Request Error Metric",
+                            "request": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "https://graph.facebook.com/{{Version}}/{{Flow-ID}}?fields=metric.name(ENDPOINT_REQUEST_ERROR).granularity(DAY).since(2024-01-28).until(2024-01-30)",
+                                    "protocol": "https",
+                                    "host": [
+                                        "graph",
+                                        "facebook",
+                                        "com"
+                                    ],
+                                    "path": [
+                                        "{{Version}}",
+                                        "{{Flow-ID}}"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "fields",
+                                            "value": "metric.name(ENDPOINT_REQUEST_ERROR).granularity(DAY).since(2024-01-28).until(2024-01-30)"
+                                        }
+                                    ]
+                                },
+                                "description": "Can request specific fields by enabling the \\`fields\\` query param"
+                            },
+                            "response": [
+                                {
+                                    "name": "Get Endpoint Request Error Metric",
+                                    "originalRequest": {
+                                        "method": "GET",
+                                        "header": [],
+                                        "url": {
+                                            "raw": "https://graph.facebook.com/{{Version}}/{{Flow-ID}}?fields=metric.name(ENDPOINT_REQUEST_ERROR).granularity(DAY).since(2024-01-28).until(2024-01-30)",
+                                            "protocol": "https",
+                                            "host": [
+                                                "graph",
+                                                "facebook",
+                                                "com"
+                                            ],
+                                            "path": [
+                                                "{{Version}}",
+                                                "{{Flow-ID}}"
+                                            ],
+                                            "query": [
+                                                {
+                                                    "key": "fields",
+                                                    "value": "metric.name(ENDPOINT_REQUEST_ERROR).granularity(DAY).since(2024-01-28).until(2024-01-30)",
+                                                    "description": "Return specific fields in the response"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "status": "OK",
+                                    "code": 200,
+                                    "_postman_previewlanguage": "json",
+                                    "header": [],
+                                    "cookie": [],
+                                    "body": "{\n    \"id\": \"flow-1\",\n    \"metric\": {\n        \"granularity\": \"DAY\",\n        \"name\": \"ENDPOINT_REQUEST_ERROR\",\n        \"data_points\": [\n            {\n                \"timestamp\": \"2024-01-28T08:00:00+0000\",\n                \"data\": [\n                    {\n                        \"key\": \"timeout_error\",\n                        \"value\": 25\n                    }\n                ]\n            },\n            {\n                \"timestamp\": \"2024-01-29T08:00:00+0000\",\n                \"data\": [\n                    {\n                        \"key\": \"timeout_error\",\n                        \"value\": 64\n                    }\n                ]\n            }\n        ]\n    }\n}"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Get Endpoint Request Error Rate Metric",
+                            "request": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "https://graph.facebook.com/{{Version}}/{{Flow-ID}}?fields=metric.name(ENDPOINT_REQUEST_ERROR_RATE).granularity(LIFETIME).since(2024-01-28).until(2024-01-30)",
+                                    "protocol": "https",
+                                    "host": [
+                                        "graph",
+                                        "facebook",
+                                        "com"
+                                    ],
+                                    "path": [
+                                        "{{Version}}",
+                                        "{{Flow-ID}}"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "fields",
+                                            "value": "metric.name(ENDPOINT_REQUEST_ERROR_RATE).granularity(LIFETIME).since(2024-01-28).until(2024-01-30)"
+                                        }
+                                    ]
+                                },
+                                "description": "Can request specific fields by enabling the \\`fields\\` query param"
+                            },
+                            "response": [
+                                {
+                                    "name": "Get Endpoint Request Error Rate Metric",
+                                    "originalRequest": {
+                                        "method": "GET",
+                                        "header": [],
+                                        "url": {
+                                            "raw": "https://graph.facebook.com/{{Version}}/{{Flow-ID}}?fields=metric.name(ENDPOINT_REQUEST_ERROR_RATE).granularity(LIFETIME).since(2024-01-28).until(2024-01-30)",
+                                            "protocol": "https",
+                                            "host": [
+                                                "graph",
+                                                "facebook",
+                                                "com"
+                                            ],
+                                            "path": [
+                                                "{{Version}}",
+                                                "{{Flow-ID}}"
+                                            ],
+                                            "query": [
+                                                {
+                                                    "key": "fields",
+                                                    "value": "metric.name(ENDPOINT_REQUEST_ERROR_RATE).granularity(LIFETIME).since(2024-01-28).until(2024-01-30)",
+                                                    "description": "Return specific fields in the response"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "status": "OK",
+                                    "code": 200,
+                                    "_postman_previewlanguage": "json",
+                                    "header": [],
+                                    "cookie": [],
+                                    "body": "{\n    \"id\": \"flow-1\",\n    \"metric\": {\n        \"granularity\": \"LIFETIME\",\n        \"name\": \"ENDPOINT_REQUEST_ERROR_RATE\",\n        \"data_points\": [\n            {\n                \"timestamp\": \"2024-01-28T08:00:00+0000\",\n                \"data\": [\n                    {\n                        \"key\": \"value\",\n                        \"value\": 0.12625250501002\n                    }\n                ]\n            }\n        ]\n    }\n}"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Get Endpoint Request Latencies Metric",
+                            "request": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "https://graph.facebook.com/{{Version}}/{{Flow-ID}}?fields=metric.name(ENDPOINT_REQUEST_LATENCY_SECONDS_CEIL).granularity(DAY).since(2024-01-28).until(2024-01-30)",
+                                    "protocol": "https",
+                                    "host": [
+                                        "graph",
+                                        "facebook",
+                                        "com"
+                                    ],
+                                    "path": [
+                                        "{{Version}}",
+                                        "{{Flow-ID}}"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "fields",
+                                            "value": "metric.name(ENDPOINT_REQUEST_LATENCY_SECONDS_CEIL).granularity(DAY).since(2024-01-28).until(2024-01-30)"
+                                        }
+                                    ]
+                                },
+                                "description": "Can request specific fields by enabling the \\`fields\\` query param"
+                            },
+                            "response": [
+                                {
+                                    "name": "Get Endpoint Request Latencies Metric",
+                                    "originalRequest": {
+                                        "method": "GET",
+                                        "header": [],
+                                        "url": {
+                                            "raw": "https://graph.facebook.com/{{Version}}/{{Flow-ID}}?fields=metric.name(ENDPOINT_REQUEST_LATENCY_SECONDS_CEIL).granularity(DAY).since(2024-01-28).until(2024-01-30)",
+                                            "protocol": "https",
+                                            "host": [
+                                                "graph",
+                                                "facebook",
+                                                "com"
+                                            ],
+                                            "path": [
+                                                "{{Version}}",
+                                                "{{Flow-ID}}"
+                                            ],
+                                            "query": [
+                                                {
+                                                    "key": "fields",
+                                                    "value": "metric.name(ENDPOINT_REQUEST_LATENCY_SECONDS_CEIL).granularity(DAY).since(2024-01-28).until(2024-01-30)",
+                                                    "description": "Return specific fields in the response"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "status": "OK",
+                                    "code": 200,
+                                    "_postman_previewlanguage": "json",
+                                    "header": [],
+                                    "cookie": [],
+                                    "body": "{\n    \"id\": \"flow-1\",\n    \"metric\": {\n        \"granularity\": \"DAY\",\n        \"name\": \"ENDPOINT_REQUEST_LATENCY_SECONDS_CEIL\",\n        \"data_points\": [\n            {\n                \"timestamp\": \"2024-01-28T08:00:00+0000\",\n                \"data\": [\n                    {\n                        \"key\": \"1\",\n                        \"value\": 106\n                    }\n                ]\n            },\n            {\n                \"timestamp\": \"2024-01-29T08:00:00+0000\",\n                \"data\": [\n                    {\n                        \"key\": \"1\",\n                        \"value\": 328\n                    },\n                    {\n                        \"key\": \"2\",\n                        \"value\": 2\n                    }\n                ]\n            }\n        ]\n    }\n}"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Get Endpoint Availability Metric",
+                            "request": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "https://graph.facebook.com/{{Version}}/{{Flow-ID}}?fields=metric.name(ENDPOINT_AVAILABILITY).granularity(DAY).since(2024-01-28).until(2024-01-30)",
+                                    "protocol": "https",
+                                    "host": [
+                                        "graph",
+                                        "facebook",
+                                        "com"
+                                    ],
+                                    "path": [
+                                        "{{Version}}",
+                                        "{{Flow-ID}}"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "fields",
+                                            "value": "metric.name(ENDPOINT_AVAILABILITY).granularity(DAY).since(2024-01-28).until(2024-01-30)"
+                                        }
+                                    ]
+                                },
+                                "description": "Can request specific fields by enabling the \\`fields\\` query param"
+                            },
+                            "response": [
+                                {
+                                    "name": "Get Endpoint Availability Metric",
+                                    "originalRequest": {
+                                        "method": "GET",
+                                        "header": [],
+                                        "url": {
+                                            "raw": "https://graph.facebook.com/{{Version}}/{{Flow-ID}}?fields=metric.name(ENDPOINT_AVAILABILITY).granularity(DAY).since(2024-01-28).until(2024-01-30)",
+                                            "protocol": "https",
+                                            "host": [
+                                                "graph",
+                                                "facebook",
+                                                "com"
+                                            ],
+                                            "path": [
+                                                "{{Version}}",
+                                                "{{Flow-ID}}"
+                                            ],
+                                            "query": [
+                                                {
+                                                    "key": "fields",
+                                                    "value": "metric.name(ENDPOINT_AVAILABILITY).granularity(DAY).since(2024-01-28).until(2024-01-30)",
+                                                    "description": "Return specific fields in the response"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "status": "OK",
+                                    "code": 200,
+                                    "_postman_previewlanguage": "json",
+                                    "header": [],
+                                    "cookie": [],
+                                    "body": "{\n    \"id\": \"flow-1\",\n    \"metric\": {\n        \"granularity\": \"DAY\",\n        \"name\": \"ENDPOINT_AVAILABILITY\",\n        \"data_points\": [\n            {\n                \"timestamp\": \"2024-01-28T08:00:00+0000\",\n                \"data\": [\n                    {\n                        \"key\": \"succeeded\",\n                        \"value\": 713\n                    },\n                    {\n                        \"key\": \"failed\",\n                        \"value\": 335\n                    }\n                ]\n            },\n            {\n                \"timestamp\": \"2024-01-29T08:00:00+0000\",\n                \"data\": [\n                    {\n                        \"key\": \"succeeded\",\n                        \"value\": 623\n                    },\n                    {\n                        \"key\": \"failed\",\n                        \"value\": 2\n                    }\n                ]\n            }\n        ]\n    }\n}"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "name": "Media",
             "item": [
                 {
