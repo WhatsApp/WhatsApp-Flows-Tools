@@ -8,7 +8,7 @@ import uuid
 
 import requests
 from dotenv import load_dotenv
-from flask import Flask, json, make_response, request
+from flask import Flask, json, make_response, request, escape
 from llama_cpp import Llama
 
 app = Flask(__name__)
@@ -39,7 +39,7 @@ def webhook_get():
             request.args.get("hub.mode") == "subscribe"
             and request.args.get("hub.verify_token") == TOKEN
         ):
-            return make_response(request.args.get("hub.challenge"), 200)
+            return make_response(escape(request.args.get("hub.challenge")), 200)
         else:
             return make_response("Success", 403)
 
