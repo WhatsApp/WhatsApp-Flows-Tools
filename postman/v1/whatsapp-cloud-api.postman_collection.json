@@ -2246,6 +2246,27 @@
 							"response": []
 						},
 						{
+							"name": "Status: Message Deleted",
+							"request": {
+								"method": "VIEW",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"object\": \"whatsapp_business_account\",\n    \"entry\": [\n        {\n            \"id\": \"WHATSAPP_BUSINESS_ACCOUNT_ID\",\n            \"changes\": [\n                {\n                    \"value\": {\n                        \"messaging_product\": \"whatsapp\",\n                        \"metadata\": {\n                            \"display_phone_number\": PHONE_NUMBER,\n                            \"phone_number_id\": PHONE_NUMBER\n                        },\n                        \"contacts\": [\n                            {\n                                \"profile\": {\n                                    \"name\": \"NAME\"\n                                },\n                                \"wa_id\": PHONE_NUMBER\n                            }\n                        ],\n                        \"messages\": [\n                            {\n                                \"from\": PHONE_NUMBER,\n                                \"id\": \"wamid.ID\",\n                                \"timestamp\": TIMESTAMP,\n                                \"errors\": [\n                                    {\n                                        \"code\": 131051,\n                                        \"details\": \"Message type is not currently supported\",\n                                        \"title\": \"Unsupported message type\"\n                                    }\n                                ],\n                                \"type\": \"unsupported\"\n                            }\n                        ]\n                    },\n                    \"field\": \"messages\"\n                }\n            ]\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": ""
+								},
+								"description": "Currently, the Cloud API does not support webhook status updates for deleted messages. If a user deletes a message, you will receive a webhook with an error code for an unsupported message type:"
+							},
+							"response": []
+						},
+						{
 							"name": "Status: Message Failed",
 							"request": {
 								"method": "VIEW",
