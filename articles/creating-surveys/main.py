@@ -47,7 +47,7 @@ def create_flow():
 
         print("FLOW CREATED!")
         return make_response("FLOW CREATED", 200)
-    except:
+    except Exception:
         return make_response("ERROR", 500)
 
 
