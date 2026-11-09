@@ -11,7 +11,7 @@
   "license": "MIT",
   "dependencies": {
     "axios": "^1.15.2",
-    "express": "^4.22.1"
+    "express": "^4.22.2"
   },
   "engines": {
     "node": ">=16.0.0"
